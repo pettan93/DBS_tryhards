@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="LoadDimWeather"
   DTS:PackageType="5"
-  DTS:VersionBuild="6"
-  DTS:VersionGUID="{3C01761E-4A13-4F34-A5AD-101F3CC4BCC5}">
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{CBCF0DAA-4C46-49F0-894A-EBC174EC235D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -33,7 +33,7 @@
       DTS:ObjectName="Excel Connection Manager">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Mendelu\DBS2\TryHardsDBSPrj\DBS2_Tryhards_integration\output.xls;Extended Properties=&quot;Excel 8.0;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Mendelu\DBS2\TryHardsDBSPrj\DBS2_Tryhards_integration\output.xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -43,7 +43,7 @@
       DTS:ObjectName="Excel Connection Manager 1">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Mendelu\DBS2\TryHardsDBSPrj\DBS2_Tryhards_integration\aaa.xls;Extended Properties=&quot;Excel 8.0;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Mendelu\DBS2\TryHardsDBSPrj\DBS2_Tryhards_integration\aaa.xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -367,153 +367,267 @@
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Data Flow Task"
+      DTS:refId="Package\Indexy do FactPassage"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{B40CF41C-C0C4-478F-94A0-3C24672EC656}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Indexy do FactPassage"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Vytvořit weather dimenzi"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
       DTS:DTSID="{C541A042-F066-4E76-8ADF-A7258C67D571}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Data Flow Task">
+      DTS:ObjectName="Vytvořit weather dimenzi">
       <DTS:Variables />
       <DTS:ObjectData>
         <pipeline
           version="1">
           <components>
             <component
-              refId="Package\Data Flow Task\Lookup"
-              componentClassID="Microsoft.Lookup"
-              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
-              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
-              name="Lookup"
+              refId="Package\Vytvořit weather dimenzi\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
               usesDispositions="true"
-              version="6">
+              version="4">
               <properties>
                 <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
                   dataType="System.String"
-                  description="Specifies the SQL statement that generates the lookup table."
-                  expressionType="Notify"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DimWeather]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[weatherData]</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
-                  expressionType="Notify"
-                  name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[weatherData]) [refTable]
-where [refTable].[TIS_site_ID] = ?</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the type of connection used to access the reference dataset."
-                  name="ConnectionType"
-                  typeConverter="LookupConnectionType">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the cache type of the lookup table."
-                  name="CacheType"
-                  typeConverter="CacheType">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
-                  name="NoMatchBehavior"
-                  typeConverter="LookupNoMatchBehavior">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
-                  name="NoMatchCachePercentage">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
-                  name="MaxMemoryUsage">25</property>
-                <property
-                  dataType="System.Int64"
-                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
-                  name="MaxMemoryUsage64">25</property>
-                <property
-                  dataType="System.String"
-                  description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="TDS_Locations_ID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TIS_site_ID" dataType="DT_I8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TDS_Locations_Name" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TIS_site_Name" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="GPS_latitude" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="GPS_longitude" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="date" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="summary" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="temperature" dataType="DT_R8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="day_min_temperature" dataType="DT_R8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="day_max_temperature" dataType="DT_R8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="humidity" dataType="DT_R8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="pressure" dataType="DT_R8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="wind_speed" dataType="DT_R8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="wind_bearing" dataType="DT_R8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="cloud_cover" dataType="DT_R8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="visibility" dataType="DT_R8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
-                <property
-                  containsID="true"
-                  dataType="System.String"
-                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[id_TIS]};</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
                   name="DefaultCodePage">1252</property>
                 <property
                   dataType="System.Boolean"
-                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
-                  name="TreatDuplicateKeysAsError">false</property>
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task\Lookup.Connections[OleDbConnection]"
+                  refId="Package\Vytvořit weather dimenzi\OLE DB Destination.Connections[OleDbConnection]"
                   connectionManagerID="{F6BE3F8D-211D-4866-BBF1-1A7C5152E56D}:external"
                   connectionManagerRefId="Project.ConnectionManagers[127.0.0.1.tryhards]"
-                  description="Connection manager used to access lookup data."
+                  description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
               <inputs>
                 <input
-                  refId="Package\Data Flow Task\Lookup.Inputs[Lookup Input]"
-                  name="Lookup Input">
+                  refId="Package\Vytvořit weather dimenzi\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\Lookup.Inputs[Lookup Input].Columns[id_TIS]"
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[date]"
+                      cachedDataType="dbDate"
+                      cachedName="date"
+                      externalMetadataColumnId="Package\Vytvořit weather dimenzi\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[date]"
+                      lineageId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].Columns[date]" />
+                    <inputColumn
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[summary]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="summary"
+                      externalMetadataColumnId="Package\Vytvořit weather dimenzi\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Summary]"
+                      lineageId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].Columns[summary]" />
+                    <inputColumn
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[temperature]"
+                      cachedDataType="r8"
+                      cachedName="temperature"
+                      externalMetadataColumnId="Package\Vytvořit weather dimenzi\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Temperature]"
+                      lineageId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].Columns[temperature]" />
+                    <inputColumn
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[humidity]"
+                      cachedDataType="r8"
+                      cachedName="humidity"
+                      externalMetadataColumnId="Package\Vytvořit weather dimenzi\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Humidity]"
+                      lineageId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].Columns[humidity]" />
+                    <inputColumn
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[pressure]"
+                      cachedDataType="r8"
+                      cachedName="pressure"
+                      externalMetadataColumnId="Package\Vytvořit weather dimenzi\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Pressure]"
+                      lineageId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].Columns[pressure]" />
+                    <inputColumn
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[visibility]"
+                      cachedDataType="r8"
+                      cachedName="visibility"
+                      externalMetadataColumnId="Package\Vytvořit weather dimenzi\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Visibility]"
+                      lineageId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].Columns[visibility]" />
+                    <inputColumn
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cloud_cover]"
+                      cachedDataType="r8"
+                      cachedName="cloud_cover"
+                      externalMetadataColumnId="Package\Vytvořit weather dimenzi\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CloudCover]"
+                      lineageId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].Columns[cloud_cover]" />
+                    <inputColumn
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[wind_bearing]"
+                      cachedDataType="r8"
+                      cachedName="wind_bearing"
+                      externalMetadataColumnId="Package\Vytvořit weather dimenzi\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[WindBearing]"
+                      lineageId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].Columns[wind_bearing]" />
+                    <inputColumn
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[wind_speed]"
+                      cachedDataType="r8"
+                      cachedName="wind_speed"
+                      externalMetadataColumnId="Package\Vytvořit weather dimenzi\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[WindSpeed]"
+                      lineageId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].Columns[wind_speed]" />
+                    <inputColumn
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[day_max_temperature]"
+                      cachedDataType="r8"
+                      cachedName="day_max_temperature"
+                      externalMetadataColumnId="Package\Vytvořit weather dimenzi\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DayMaximalTemperature]"
+                      lineageId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].Columns[day_max_temperature]" />
+                    <inputColumn
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[day_min_temperature]"
+                      cachedDataType="r8"
+                      cachedName="day_min_temperature"
+                      externalMetadataColumnId="Package\Vytvořit weather dimenzi\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DayMinimalTemperature]"
+                      lineageId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].Columns[day_min_temperature]" />
+                    <inputColumn
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TIS_site_ID]"
                       cachedDataType="i8"
-                      cachedName="id_TIS"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[id_TIS]">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">TIS_site_ID</property>
-                        <property
-                          dataType="System.Null"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn" />
-                      </properties>
-                    </inputColumn>
+                      cachedName="TIS_site_ID"
+                      externalMetadataColumnId="Package\Vytvořit weather dimenzi\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id_tis]"
+                      lineageId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].Columns[TIS_site_ID]" />
+                    <inputColumn
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TIS_site_Name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="TIS_site_Name"
+                      externalMetadataColumnId="Package\Vytvořit weather dimenzi\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SiteName]"
+                      lineageId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].Columns[TIS_site_Name]" />
                   </inputColumns>
-                  <externalMetadataColumns />
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[WeatherID]"
+                      dataType="i8"
+                      name="WeatherID" />
+                    <externalMetadataColumn
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[date]"
+                      dataType="dbDate"
+                      name="date" />
+                    <externalMetadataColumn
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id_tis]"
+                      dataType="i8"
+                      name="id_tis" />
+                    <externalMetadataColumn
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SiteName]"
+                      dataType="wstr"
+                      length="150"
+                      name="SiteName" />
+                    <externalMetadataColumn
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Summary]"
+                      dataType="wstr"
+                      length="150"
+                      name="Summary" />
+                    <externalMetadataColumn
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Temperature]"
+                      dataType="r4"
+                      name="Temperature" />
+                    <externalMetadataColumn
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DayMinimalTemperature]"
+                      dataType="r4"
+                      name="DayMinimalTemperature" />
+                    <externalMetadataColumn
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DayMaximalTemperature]"
+                      dataType="r4"
+                      name="DayMaximalTemperature" />
+                    <externalMetadataColumn
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Humidity]"
+                      dataType="r4"
+                      name="Humidity" />
+                    <externalMetadataColumn
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Pressure]"
+                      dataType="r4"
+                      name="Pressure" />
+                    <externalMetadataColumn
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[WindSpeed]"
+                      dataType="r4"
+                      name="WindSpeed" />
+                    <externalMetadataColumn
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[WindBearing]"
+                      dataType="r4"
+                      name="WindBearing" />
+                    <externalMetadataColumn
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CloudCover]"
+                      dataType="r4"
+                      name="CloudCover" />
+                    <externalMetadataColumn
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Visibility]"
+                      dataType="r4"
+                      name="Visibility" />
+                  </externalMetadataColumns>
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\Lookup.Outputs[Lookup Match Output]"
-                  errorOrTruncationOperation="Lookup"
-                  errorRowDisposition="FailComponent"
-                  exclusionGroup="1"
-                  name="Lookup Match Output"
-                  synchronousInputId="Package\Data Flow Task\Lookup.Inputs[Lookup Input]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Data Flow Task\Lookup.Outputs[Lookup No Match Output]"
-                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
-                  exclusionGroup="1"
-                  name="Lookup No Match Output"
-                  synchronousInputId="Package\Data Flow Task\Lookup.Inputs[Lookup Input]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Data Flow Task\Lookup.Outputs[Lookup Error Output]"
+                  refId="Package\Vytvořit weather dimenzi\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
-                  name="Lookup Error Output"
-                  synchronousInputId="Package\Data Flow Task\Lookup.Inputs[Lookup Input]">
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Vytvořit weather dimenzi\OLE DB Destination.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Vytvořit weather dimenzi\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Vytvořit weather dimenzi\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -522,11 +636,11 @@ where [refTable].[TIS_site_ID] = ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage"
+              refId="Package\Vytvořit weather dimenzi\OLE DB Source"
               componentClassID="Microsoft.OLEDBSource"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
-              name="OLE DB Source | CBI DB detection passage"
+              name="OLE DB Source"
               usesDispositions="true"
               version="7">
               <properties>
@@ -537,7 +651,7 @@ where [refTable].[TIS_site_ID] = ?</property>
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[detection].[passage]</property>
+                  name="OpenRowset">[dbo].[weatherData]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -546,9 +660,7 @@ where [refTable].[TIS_site_ID] = ?</property>
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT *
-  FROM [CBI_DB_MENDEL].[detection].[passage]
-  WHERE id_passage = 10 OR id_passage = 1000</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -565,7 +677,7 @@ where [refTable].[TIS_site_ID] = ?</property>
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
                   name="AccessMode"
-                  typeConverter="AccessMode">2</property>
+                  typeConverter="AccessMode">0</property>
                 <property
                   dataType="System.String"
                   description="The mappings between the parameters in the SQL command and variables."
@@ -573,715 +685,296 @@ where [refTable].[TIS_site_ID] = ?</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[127.0.0.1.CBI_DB_MENDEL]"
-                  connectionManagerRefId="Package.ConnectionManagers[127.0.0.1.CBI_DB_MENDEL]"
+                  refId="Package\Vytvořit weather dimenzi\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="{F6BE3F8D-211D-4866-BBF1-1A7C5152E56D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[127.0.0.1.tryhards]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output]"
+                  refId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output]"
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[id_passage]"
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].Columns[TIS_site_ID]"
                       dataType="i8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[id_passage]"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[id_passage]"
-                      name="id_passage"
+                      externalMetadataColumnId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TIS_site_ID]"
+                      lineageId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].Columns[TIS_site_ID]"
+                      name="TIS_site_ID"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[id_diag]"
-                      dataType="i8"
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].Columns[TIS_site_Name]"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[id_diag]"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[id_diag]"
-                      name="id_diag"
+                      externalMetadataColumnId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TIS_site_Name]"
+                      length="255"
+                      lineageId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].Columns[TIS_site_Name]"
+                      name="TIS_site_Name"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[id_TIS]"
-                      dataType="i8"
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].Columns[date]"
+                      dataType="dbDate"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[id_TIS]"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[id_TIS]"
-                      name="id_TIS"
+                      externalMetadataColumnId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[date]"
+                      lineageId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].Columns[date]"
+                      name="date"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[timestamp]"
-                      dataType="dbTimeStamp"
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].Columns[summary]"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[timestamp]"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[timestamp]"
-                      name="timestamp"
+                      externalMetadataColumnId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[summary]"
+                      length="255"
+                      lineageId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].Columns[summary]"
+                      name="summary"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[trainNo]"
-                      codePage="1250"
-                      dataType="str"
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].Columns[temperature]"
+                      dataType="r8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[trainNo]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[trainNo]"
-                      name="trainNo"
+                      externalMetadataColumnId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[temperature]"
+                      lineageId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].Columns[temperature]"
+                      name="temperature"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[axleCount]"
-                      dataType="i2"
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].Columns[day_min_temperature]"
+                      dataType="r8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[axleCount]"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[axleCount]"
-                      name="axleCount"
+                      externalMetadataColumnId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[day_min_temperature]"
+                      lineageId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].Columns[day_min_temperature]"
+                      name="day_min_temperature"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[vehicleCount]"
-                      dataType="i2"
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].Columns[day_max_temperature]"
+                      dataType="r8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[vehicleCount]"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[vehicleCount]"
-                      name="vehicleCount"
+                      externalMetadataColumnId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[day_max_temperature]"
+                      lineageId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].Columns[day_max_temperature]"
+                      name="day_max_temperature"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[locoCount]"
-                      dataType="i2"
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].Columns[humidity]"
+                      dataType="r8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[locoCount]"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[locoCount]"
-                      name="locoCount"
+                      externalMetadataColumnId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[humidity]"
+                      lineageId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].Columns[humidity]"
+                      name="humidity"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[v]"
-                      dataType="r4"
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].Columns[pressure]"
+                      dataType="r8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[v]"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[v]"
-                      name="v"
+                      externalMetadataColumnId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[pressure]"
+                      lineageId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].Columns[pressure]"
+                      name="pressure"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[length]"
-                      dataType="r4"
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].Columns[wind_speed]"
+                      dataType="r8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[length]"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[length]"
-                      name="length"
+                      externalMetadataColumnId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[wind_speed]"
+                      lineageId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].Columns[wind_speed]"
+                      name="wind_speed"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[weight]"
-                      dataType="r4"
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].Columns[wind_bearing]"
+                      dataType="r8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[weight]"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[weight]"
-                      name="weight"
+                      externalMetadataColumnId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[wind_bearing]"
+                      lineageId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].Columns[wind_bearing]"
+                      name="wind_bearing"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[grossWeight]"
-                      dataType="r4"
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].Columns[cloud_cover]"
+                      dataType="r8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[grossWeight]"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[grossWeight]"
-                      name="grossWeight"
+                      externalMetadataColumnId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[cloud_cover]"
+                      lineageId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].Columns[cloud_cover]"
+                      name="cloud_cover"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[tempOut]"
-                      dataType="r4"
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].Columns[visibility]"
+                      dataType="r8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[tempOut]"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[tempOut]"
-                      name="tempOut"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[tempIn]"
-                      dataType="r4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[tempIn]"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[tempIn]"
-                      name="tempIn"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[tempRail]"
-                      dataType="r4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[tempRail]"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[tempRail]"
-                      name="tempRail"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[direction]"
-                      dataType="ui1"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[direction]"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[direction]"
-                      name="direction"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[id_faultLevel]"
-                      dataType="i8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[id_faultLevel]"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[id_faultLevel]"
-                      name="id_faultLevel"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[id_integrity]"
-                      dataType="i8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[id_integrity]"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[id_integrity]"
-                      name="id_integrity"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[id_trainType]"
-                      dataType="i8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[id_trainType]"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[id_trainType]"
-                      name="id_trainType"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[active_HB]"
-                      dataType="bool"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[active_HB]"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[active_HB]"
-                      name="active_HB"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[active_HW]"
-                      dataType="bool"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[active_HW]"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[active_HW]"
-                      name="active_HW"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[active_WIM]"
-                      dataType="bool"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[active_WIM]"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[active_WIM]"
-                      name="active_WIM"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[active_WDD]"
-                      dataType="bool"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[active_WDD]"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[active_WDD]"
-                      name="active_WDD"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[active_WDDDF]"
-                      dataType="bool"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[active_WDDDF]"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[active_WDDDF]"
-                      name="active_WDDDF"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[dayReportNo]"
-                      dataType="i2"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[dayReportNo]"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[dayReportNo]"
-                      name="dayReportNo"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[writeTimestamp]"
-                      dataType="dbTimeStamp"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[writeTimestamp]"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[writeTimestamp]"
-                      name="writeTimestamp"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[correctness]"
-                      dataType="bool"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[correctness]"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[correctness]"
-                      name="correctness"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[stats_receiveTime]"
-                      dataType="dbTimeStamp"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[stats_receiveTime]"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[stats_receiveTime]"
-                      name="stats_receiveTime"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[stats_sendTime]"
-                      dataType="dbTimeStamp"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[stats_sendTime]"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[stats_sendTime]"
-                      name="stats_sendTime"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[stats_transmitTimeInSec]"
-                      dataType="r4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[stats_transmitTimeInSec]"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[stats_transmitTimeInSec]"
-                      name="stats_transmitTimeInSec"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[stats_DataPackSize]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[stats_DataPackSize]"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[stats_DataPackSize]"
-                      name="stats_DataPackSize"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[stats_DataFlowRate]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[stats_DataFlowRate]"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[stats_DataFlowRate]"
-                      name="stats_DataFlowRate"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[attention]"
-                      dataType="bool"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[attention]"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[attention]"
-                      name="attention"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[trainNoERSAT]"
-                      codePage="1250"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[trainNoERSAT]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[trainNoERSAT]"
-                      name="trainNoERSAT"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[recognitionAlgorithmDevice]"
-                      dataType="i8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[recognitionAlgorithmDevice]"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[recognitionAlgorithmDevice]"
-                      name="recognitionAlgorithmDevice"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[recognitionAlgorithmStep]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[recognitionAlgorithmStep]"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[recognitionAlgorithmStep]"
-                      name="recognitionAlgorithmStep"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[OFD_functionality_active]"
-                      dataType="bool"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[OFD_functionality_active]"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[OFD_functionality_active]"
-                      name="OFD_functionality_active"
+                      externalMetadataColumnId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[visibility]"
+                      lineageId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].Columns[visibility]"
+                      name="visibility"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[id_passage]"
-                      dataType="i8"
-                      name="id_passage" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[id_diag]"
-                      dataType="i8"
-                      name="id_diag" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[id_TIS]"
-                      dataType="i8"
-                      name="id_TIS" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[timestamp]"
-                      dataType="dbTimeStamp"
-                      name="timestamp" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[trainNo]"
-                      codePage="1250"
-                      dataType="str"
-                      length="50"
-                      name="trainNo" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[axleCount]"
-                      dataType="i2"
-                      name="axleCount" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[vehicleCount]"
-                      dataType="i2"
-                      name="vehicleCount" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[locoCount]"
-                      dataType="i2"
-                      name="locoCount" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[v]"
-                      dataType="r4"
-                      name="v" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[length]"
-                      dataType="r4"
-                      name="length" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[weight]"
-                      dataType="r4"
-                      name="weight" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[grossWeight]"
-                      dataType="r4"
-                      name="grossWeight" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[tempOut]"
-                      dataType="r4"
-                      name="tempOut" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[tempIn]"
-                      dataType="r4"
-                      name="tempIn" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[tempRail]"
-                      dataType="r4"
-                      name="tempRail" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[direction]"
-                      dataType="ui1"
-                      name="direction" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[id_faultLevel]"
-                      dataType="i8"
-                      name="id_faultLevel" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[id_integrity]"
-                      dataType="i8"
-                      name="id_integrity" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[id_trainType]"
-                      dataType="i8"
-                      name="id_trainType" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[active_HB]"
-                      dataType="bool"
-                      name="active_HB" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[active_HW]"
-                      dataType="bool"
-                      name="active_HW" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[active_WIM]"
-                      dataType="bool"
-                      name="active_WIM" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[active_WDD]"
-                      dataType="bool"
-                      name="active_WDD" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[active_WDDDF]"
-                      dataType="bool"
-                      name="active_WDDDF" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[dayReportNo]"
-                      dataType="i2"
-                      name="dayReportNo" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[writeTimestamp]"
-                      dataType="dbTimeStamp"
-                      name="writeTimestamp" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[correctness]"
-                      dataType="bool"
-                      name="correctness" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[stats_receiveTime]"
-                      dataType="dbTimeStamp"
-                      name="stats_receiveTime" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[stats_sendTime]"
-                      dataType="dbTimeStamp"
-                      name="stats_sendTime" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[stats_transmitTimeInSec]"
-                      dataType="r4"
-                      name="stats_transmitTimeInSec" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[stats_DataPackSize]"
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TDS_Locations_ID]"
                       dataType="i4"
-                      name="stats_DataPackSize" />
+                      name="TDS_Locations_ID" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[stats_DataFlowRate]"
-                      dataType="i4"
-                      name="stats_DataFlowRate" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[attention]"
-                      dataType="bool"
-                      name="attention" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[trainNoERSAT]"
-                      codePage="1250"
-                      dataType="str"
-                      length="50"
-                      name="trainNoERSAT" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[recognitionAlgorithmDevice]"
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TIS_site_ID]"
                       dataType="i8"
-                      name="recognitionAlgorithmDevice" />
+                      name="TIS_site_ID" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[recognitionAlgorithmStep]"
-                      dataType="i4"
-                      name="recognitionAlgorithmStep" />
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TDS_Locations_Name]"
+                      dataType="wstr"
+                      length="255"
+                      name="TDS_Locations_Name" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[OFD_functionality_active]"
-                      dataType="bool"
-                      name="OFD_functionality_active" />
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TIS_site_Name]"
+                      dataType="wstr"
+                      length="255"
+                      name="TIS_site_Name" />
+                    <externalMetadataColumn
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[GPS_latitude]"
+                      dataType="wstr"
+                      length="255"
+                      name="GPS_latitude" />
+                    <externalMetadataColumn
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[GPS_longitude]"
+                      dataType="wstr"
+                      length="255"
+                      name="GPS_longitude" />
+                    <externalMetadataColumn
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[date]"
+                      dataType="dbDate"
+                      name="date" />
+                    <externalMetadataColumn
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[summary]"
+                      dataType="wstr"
+                      length="255"
+                      name="summary" />
+                    <externalMetadataColumn
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[temperature]"
+                      dataType="r8"
+                      name="temperature" />
+                    <externalMetadataColumn
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[day_min_temperature]"
+                      dataType="r8"
+                      name="day_min_temperature" />
+                    <externalMetadataColumn
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[day_max_temperature]"
+                      dataType="r8"
+                      name="day_max_temperature" />
+                    <externalMetadataColumn
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[humidity]"
+                      dataType="r8"
+                      name="humidity" />
+                    <externalMetadataColumn
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[pressure]"
+                      dataType="r8"
+                      name="pressure" />
+                    <externalMetadataColumn
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[wind_speed]"
+                      dataType="r8"
+                      name="wind_speed" />
+                    <externalMetadataColumn
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[wind_bearing]"
+                      dataType="r8"
+                      name="wind_bearing" />
+                    <externalMetadataColumn
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[cloud_cover]"
+                      dataType="r8"
+                      name="cloud_cover" />
+                    <externalMetadataColumn
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[visibility]"
+                      dataType="r8"
+                      name="visibility" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output]"
+                  refId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Error Output]"
                   isErrorOut="true"
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[id_passage]"
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TIS_site_ID]"
                       dataType="i8"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[id_passage]"
-                      name="id_passage" />
+                      lineageId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TIS_site_ID]"
+                      name="TIS_site_ID" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[id_diag]"
-                      dataType="i8"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[id_diag]"
-                      name="id_diag" />
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TIS_site_Name]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TIS_site_Name]"
+                      name="TIS_site_Name" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[id_TIS]"
-                      dataType="i8"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[id_TIS]"
-                      name="id_TIS" />
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[date]"
+                      dataType="dbDate"
+                      lineageId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[date]"
+                      name="date" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[timestamp]"
-                      dataType="dbTimeStamp"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[timestamp]"
-                      name="timestamp" />
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[summary]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[summary]"
+                      name="summary" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[trainNo]"
-                      codePage="1250"
-                      dataType="str"
-                      length="50"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[trainNo]"
-                      name="trainNo" />
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[temperature]"
+                      dataType="r8"
+                      lineageId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[temperature]"
+                      name="temperature" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[axleCount]"
-                      dataType="i2"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[axleCount]"
-                      name="axleCount" />
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[day_min_temperature]"
+                      dataType="r8"
+                      lineageId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[day_min_temperature]"
+                      name="day_min_temperature" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[vehicleCount]"
-                      dataType="i2"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[vehicleCount]"
-                      name="vehicleCount" />
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[day_max_temperature]"
+                      dataType="r8"
+                      lineageId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[day_max_temperature]"
+                      name="day_max_temperature" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[locoCount]"
-                      dataType="i2"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[locoCount]"
-                      name="locoCount" />
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[humidity]"
+                      dataType="r8"
+                      lineageId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[humidity]"
+                      name="humidity" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[v]"
-                      dataType="r4"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[v]"
-                      name="v" />
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[pressure]"
+                      dataType="r8"
+                      lineageId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[pressure]"
+                      name="pressure" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[length]"
-                      dataType="r4"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[length]"
-                      name="length" />
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[wind_speed]"
+                      dataType="r8"
+                      lineageId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[wind_speed]"
+                      name="wind_speed" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[weight]"
-                      dataType="r4"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[weight]"
-                      name="weight" />
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[wind_bearing]"
+                      dataType="r8"
+                      lineageId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[wind_bearing]"
+                      name="wind_bearing" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[grossWeight]"
-                      dataType="r4"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[grossWeight]"
-                      name="grossWeight" />
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[cloud_cover]"
+                      dataType="r8"
+                      lineageId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[cloud_cover]"
+                      name="cloud_cover" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[tempOut]"
-                      dataType="r4"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[tempOut]"
-                      name="tempOut" />
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[visibility]"
+                      dataType="r8"
+                      lineageId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[visibility]"
+                      name="visibility" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[tempIn]"
-                      dataType="r4"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[tempIn]"
-                      name="tempIn" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[tempRail]"
-                      dataType="r4"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[tempRail]"
-                      name="tempRail" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[direction]"
-                      dataType="ui1"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[direction]"
-                      name="direction" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[id_faultLevel]"
-                      dataType="i8"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[id_faultLevel]"
-                      name="id_faultLevel" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[id_integrity]"
-                      dataType="i8"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[id_integrity]"
-                      name="id_integrity" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[id_trainType]"
-                      dataType="i8"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[id_trainType]"
-                      name="id_trainType" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[active_HB]"
-                      dataType="bool"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[active_HB]"
-                      name="active_HB" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[active_HW]"
-                      dataType="bool"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[active_HW]"
-                      name="active_HW" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[active_WIM]"
-                      dataType="bool"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[active_WIM]"
-                      name="active_WIM" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[active_WDD]"
-                      dataType="bool"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[active_WDD]"
-                      name="active_WDD" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[active_WDDDF]"
-                      dataType="bool"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[active_WDDDF]"
-                      name="active_WDDDF" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[dayReportNo]"
-                      dataType="i2"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[dayReportNo]"
-                      name="dayReportNo" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[writeTimestamp]"
-                      dataType="dbTimeStamp"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[writeTimestamp]"
-                      name="writeTimestamp" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[correctness]"
-                      dataType="bool"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[correctness]"
-                      name="correctness" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[stats_receiveTime]"
-                      dataType="dbTimeStamp"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[stats_receiveTime]"
-                      name="stats_receiveTime" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[stats_sendTime]"
-                      dataType="dbTimeStamp"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[stats_sendTime]"
-                      name="stats_sendTime" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[stats_transmitTimeInSec]"
-                      dataType="r4"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[stats_transmitTimeInSec]"
-                      name="stats_transmitTimeInSec" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[stats_DataPackSize]"
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[stats_DataPackSize]"
-                      name="stats_DataPackSize" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[stats_DataFlowRate]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[stats_DataFlowRate]"
-                      name="stats_DataFlowRate" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[attention]"
-                      dataType="bool"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[attention]"
-                      name="attention" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[trainNoERSAT]"
-                      codePage="1250"
-                      dataType="str"
-                      length="50"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[trainNoERSAT]"
-                      name="trainNoERSAT" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[recognitionAlgorithmDevice]"
-                      dataType="i8"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[recognitionAlgorithmDevice]"
-                      name="recognitionAlgorithmDevice" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[recognitionAlgorithmStep]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[recognitionAlgorithmStep]"
-                      name="recognitionAlgorithmStep" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[OFD_functionality_active]"
-                      dataType="bool"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[OFD_functionality_active]"
-                      name="OFD_functionality_active" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1292,15 +985,25 @@ where [refTable].[TIS_site_ID] = ?</property>
           </components>
           <paths>
             <path
-              refId="Package\Data Flow Task.Paths[OLE DB Source Output]"
-              endId="Package\Data Flow Task\Lookup.Inputs[Lookup Input]"
+              refId="Package\Vytvořit weather dimenzi.Paths[OLE DB Source Output]"
+              endId="Package\Vytvořit weather dimenzi\OLE DB Destination.Inputs[OLE DB Destination Input]"
               name="OLE DB Source Output"
-              startId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output]" />
+              startId="Package\Vytvořit weather dimenzi\OLE DB Source.Outputs[OLE DB Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{83BC4FF1-E921-47C5-B5DB-A73384F785C8}"
+      DTS:From="Package\Vytvořit weather dimenzi"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Indexy do FactPassage" />
+  </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -1312,41 +1015,29 @@ where [refTable].[TIS_site_ID] = ?</property>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
-        <NodeLayout
-          Size="151,42"
-          Id="Package\Data Flow Task"
-          TopLeft="5.5,5.5" />
-      </GraphLayout>
-    </LayoutInfo>
-  </Package>
-  <TaskHost
-    design-time-name="Package\Data Flow Task">
-    <LayoutInfo>
-      <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="283,42"
-          Id="Package\Data Flow Task\OLE DB Source | CBI DB detection passage"
-          TopLeft="379,134" />
+          Size="196,42"
+          Id="Package\Vytvořit weather dimenzi"
+          TopLeft="424.5,182.5" />
         <NodeLayout
-          Size="113,42"
-          Id="Package\Data Flow Task\Lookup"
-          TopLeft="464,335" />
+          Size="187,42"
+          Id="Package\Indexy do FactPassage"
+          TopLeft="424,370" />
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
-          TopLeft="520.5,176">
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="520,224.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,159"
+              EndConnector="0,145.5"
               Start="0,0"
-              End="0,151.5">
+              End="0,138">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,151.5" />
+                    End="0,138" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1357,9 +1048,66 @@ where [refTable].[TIS_site_ID] = ?</property>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Vytvořit weather dimenzi">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Vytvořit weather dimenzi\OLE DB Destination"
+          TopLeft="468,471" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Vytvořit weather dimenzi\OLE DB Source"
+          TopLeft="495,160" />
+        <EdgeLayout
+          Id="Package\Vytvořit weather dimenzi.Paths[OLE DB Source Output]"
+          TopLeft="570,202">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-16.5,269"
+              Start="0,0"
+              End="-16.5,261.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,130.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,130.5"
+                    Point2="0,134.5"
+                    Point3="-4,134.5" />
+                  <mssgle:LineSegment
+                    End="-12.5,134.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-12.5,134.5"
+                    Point2="-16.5,134.5"
+                    Point3="-16.5,138.5" />
+                  <mssgle:LineSegment
+                    End="-16.5,261.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="Přetavit data z weatherData do DimWeather, bez větších změn"
+          ParentId="Package\Vytvořit weather dimenzi"
+          FontInfo="{assembly:Null}"
+          Size="358,60"
+          Id="dc432e35-c127-4fe9-b3d6-8aa6b8cda484"
+          TopLeft="755,293" />
+      </GraphLayout>
+    </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\OLE DB Source | CBI DB detection passage">
+    design-time-name="Package\Vytvořit weather dimenzi\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1372,27 +1120,39 @@ where [refTable].[TIS_site_ID] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Lookup">
+    design-time-name="Package\Vytvořit weather dimenzi\OLE DB Source">
     <Properties>
       <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[weatherData]</Value>
+        <Name>DataSourceViewID</Name>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Indexy do FactPassage">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <AnnotationLayout
+          Text="UPDATE [dbo].[FactPassage]&#xD;&#xA;   SET WeatherID = w.WeatherID&#xD;&#xA; FROM [dbo].[FactPassage] f&#xD;&#xA; JOIN  [dbo].[DimWeather] w&#xD;&#xA; ON&#xD;&#xA;  w.date =  CAST(f.Timestamp AS DATE)&#xD;&#xA; AND&#xD;&#xA;  w.id_tis =  f.id_TIS_docasne&#xD;&#xA;&#xD;&#xA;&#xD;&#xA; &#xD;&#xA;"
+          ParentId="Package\Indexy do FactPassage"
+          FontInfo="{assembly:Null}"
+          Size="236,216"
+          Id="6870fc1d-7b97-48c6-bf9e-ed315c3f181f"
+          TopLeft="428,158" />
+        <AnnotationLayout
+          Text="SELECT TOP 1000 *&#xD;&#xA; FROM [dbo].[FactPassage] f&#xD;&#xA; JOIN  [dbo].[DimWeather] w&#xD;&#xA; ON&#xD;&#xA;  f.WeatherID = w.WeatherID"
+          ParentId="Package\Indexy do FactPassage"
+          FontInfo="{assembly:Null}"
+          Size="181,104"
+          Id="6d4cb32c-12b2-4f5c-b233-591fc88119c9"
+          TopLeft="471,402" />
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>

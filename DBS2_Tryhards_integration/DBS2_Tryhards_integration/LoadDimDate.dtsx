@@ -11,10 +11,22 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="LoadDimDate"
   DTS:PackageType="5"
-  DTS:VersionBuild="12"
-  DTS:VersionGUID="{7BECFB38-97A7-4264-B16D-D588790FED32}">
+  DTS:VersionBuild="14"
+  DTS:VersionGUID="{0DED8F98-58E1-4167-A826-891B9B902ECA}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[127.0.0.1.tryhards 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{EE0B748F-ED80-40DD-BCD2-A87A0F23DA54}"
+      DTS:ObjectName="127.0.0.1.tryhards 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=127.0.0.1;Initial Catalog=tryhards;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
@@ -29,380 +41,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <pipeline
-          version="1">
-          <components>
-            <component
-              refId="Package\Vytvořit klíče do FactPassage\OLE DB Source"
-              componentClassID="Microsoft.OLEDBSource"
-              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
-              description="OLE DB Source"
-              name="OLE DB Source"
-              usesDispositions="true"
-              version="7">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[FactPassage]</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
-                <property
-                  dataType="System.String"
-                  description="The variable that contains the SQL command to be executed."
-                  name="SqlCommandVariable"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  name="AccessMode"
-                  typeConverter="AccessMode">0</property>
-                <property
-                  dataType="System.String"
-                  description="The mappings between the parameters in the SQL command and variables."
-                  name="ParameterMapping"></property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Connections[OleDbConnection]"
-                  connectionManagerID="{F6BE3F8D-211D-4866-BBF1-1A7C5152E56D}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[127.0.0.1.tryhards]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <outputs>
-                <output
-                  refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output]"
-                  name="OLE DB Source Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].Columns[PassageID]"
-                      dataType="i8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PassageID]"
-                      lineageId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].Columns[PassageID]"
-                      name="PassageID"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].Columns[WeatherID]"
-                      dataType="i8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[WeatherID]"
-                      lineageId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].Columns[WeatherID]"
-                      name="WeatherID"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].Columns[SiteID]"
-                      dataType="i8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SiteID]"
-                      lineageId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].Columns[SiteID]"
-                      name="SiteID"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_TIS_docasne]"
-                      dataType="i8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_TIS_docasne]"
-                      lineageId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_TIS_docasne]"
-                      name="id_TIS_docasne"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].Columns[TrainNumber]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TrainNumber]"
-                      length="150"
-                      lineageId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].Columns[TrainNumber]"
-                      name="TrainNumber"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].Columns[Timestamp]"
-                      dataType="dbTimeStamp"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Timestamp]"
-                      lineageId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].Columns[Timestamp]"
-                      name="Timestamp"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].Columns[Velocity]"
-                      dataType="r4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Velocity]"
-                      lineageId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].Columns[Velocity]"
-                      name="Velocity"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].Columns[Length]"
-                      dataType="r4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Length]"
-                      lineageId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].Columns[Length]"
-                      name="Length"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].Columns[AxleCount]"
-                      dataType="i2"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AxleCount]"
-                      lineageId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].Columns[AxleCount]"
-                      name="AxleCount"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].Columns[VehicleCount]"
-                      dataType="i2"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[VehicleCount]"
-                      lineageId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].Columns[VehicleCount]"
-                      name="VehicleCount"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].Columns[LocoCount]"
-                      dataType="i2"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LocoCount]"
-                      lineageId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].Columns[LocoCount]"
-                      name="LocoCount"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].Columns[ActiveHB]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ActiveHB]"
-                      length="150"
-                      lineageId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].Columns[ActiveHB]"
-                      name="ActiveHB"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].Columns[ActiveHW]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ActiveHW]"
-                      length="150"
-                      lineageId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].Columns[ActiveHW]"
-                      name="ActiveHW"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].Columns[ActiveWDD]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ActiveWDD]"
-                      length="150"
-                      lineageId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].Columns[ActiveWDD]"
-                      name="ActiveWDD"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].Columns[DateID]"
-                      dataType="i8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DateID]"
-                      lineageId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].Columns[DateID]"
-                      name="DateID"
-                      truncationRowDisposition="FailComponent" />
-                  </outputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PassageID]"
-                      dataType="i8"
-                      name="PassageID" />
-                    <externalMetadataColumn
-                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[WeatherID]"
-                      dataType="i8"
-                      name="WeatherID" />
-                    <externalMetadataColumn
-                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SiteID]"
-                      dataType="i8"
-                      name="SiteID" />
-                    <externalMetadataColumn
-                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_TIS_docasne]"
-                      dataType="i8"
-                      name="id_TIS_docasne" />
-                    <externalMetadataColumn
-                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TrainNumber]"
-                      dataType="wstr"
-                      length="150"
-                      name="TrainNumber" />
-                    <externalMetadataColumn
-                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Timestamp]"
-                      dataType="dbTimeStamp"
-                      name="Timestamp" />
-                    <externalMetadataColumn
-                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Velocity]"
-                      dataType="r4"
-                      name="Velocity" />
-                    <externalMetadataColumn
-                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Length]"
-                      dataType="r4"
-                      name="Length" />
-                    <externalMetadataColumn
-                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AxleCount]"
-                      dataType="i2"
-                      name="AxleCount" />
-                    <externalMetadataColumn
-                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[VehicleCount]"
-                      dataType="i2"
-                      name="VehicleCount" />
-                    <externalMetadataColumn
-                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LocoCount]"
-                      dataType="i2"
-                      name="LocoCount" />
-                    <externalMetadataColumn
-                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ActiveHB]"
-                      dataType="wstr"
-                      length="150"
-                      name="ActiveHB" />
-                    <externalMetadataColumn
-                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ActiveHW]"
-                      dataType="wstr"
-                      length="150"
-                      name="ActiveHW" />
-                    <externalMetadataColumn
-                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ActiveWDD]"
-                      dataType="wstr"
-                      length="150"
-                      name="ActiveWDD" />
-                    <externalMetadataColumn
-                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DateID]"
-                      dataType="i8"
-                      name="DateID" />
-                  </externalMetadataColumns>
-                </output>
-                <output
-                  refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output]"
-                  isErrorOut="true"
-                  name="OLE DB Source Error Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PassageID]"
-                      dataType="i8"
-                      lineageId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PassageID]"
-                      name="PassageID" />
-                    <outputColumn
-                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DateID]"
-                      dataType="i8"
-                      lineageId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DateID]"
-                      name="DateID" />
-                    <outputColumn
-                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[WeatherID]"
-                      dataType="i8"
-                      lineageId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[WeatherID]"
-                      name="WeatherID" />
-                    <outputColumn
-                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SiteID]"
-                      dataType="i8"
-                      lineageId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SiteID]"
-                      name="SiteID" />
-                    <outputColumn
-                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_TIS_docasne]"
-                      dataType="i8"
-                      lineageId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_TIS_docasne]"
-                      name="id_TIS_docasne" />
-                    <outputColumn
-                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TrainNumber]"
-                      dataType="wstr"
-                      length="150"
-                      lineageId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TrainNumber]"
-                      name="TrainNumber" />
-                    <outputColumn
-                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Timestamp]"
-                      dataType="dbTimeStamp"
-                      lineageId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Timestamp]"
-                      name="Timestamp" />
-                    <outputColumn
-                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Velocity]"
-                      dataType="r4"
-                      lineageId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Velocity]"
-                      name="Velocity" />
-                    <outputColumn
-                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Length]"
-                      dataType="r4"
-                      lineageId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Length]"
-                      name="Length" />
-                    <outputColumn
-                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AxleCount]"
-                      dataType="i2"
-                      lineageId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AxleCount]"
-                      name="AxleCount" />
-                    <outputColumn
-                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[VehicleCount]"
-                      dataType="i2"
-                      lineageId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[VehicleCount]"
-                      name="VehicleCount" />
-                    <outputColumn
-                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LocoCount]"
-                      dataType="i2"
-                      lineageId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LocoCount]"
-                      name="LocoCount" />
-                    <outputColumn
-                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ActiveHB]"
-                      dataType="wstr"
-                      length="150"
-                      lineageId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ActiveHB]"
-                      name="ActiveHB" />
-                    <outputColumn
-                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ActiveHW]"
-                      dataType="wstr"
-                      length="150"
-                      lineageId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ActiveHW]"
-                      name="ActiveHW" />
-                    <outputColumn
-                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ActiveWDD]"
-                      dataType="wstr"
-                      length="150"
-                      lineageId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ActiveWDD]"
-                      name="ActiveWDD" />
-                    <outputColumn
-                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-          </components>
-        </pipeline>
+          version="1" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -1164,13 +803,13 @@ SELECT * FROM [dbo].[DimDate]</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="163,42"
-          Id="Package\Vytvořit time data"
-          TopLeft="408.5,108.5" />
-        <NodeLayout
           Size="215,42"
           Id="Package\Vytvořit klíče do FactPassage"
           TopLeft="406,256" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Vytvořit time data"
+          TopLeft="408.5,108.5" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="490,150.5">
@@ -1209,6 +848,42 @@ SELECT * FROM [dbo].[DimDate]</property>
     </LayoutInfo>
   </Package>
   <TaskHost
+    design-time-name="Package\Vytvořit klíče do FactPassage">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <AnnotationLayout
+          Text="Vytvoří indexy do tabulky FactPassage pomocí SQL dotazu&#xD;&#xA;&#xA;fakt jsem nepřišel nato jak to udělat tady v té SRAČCE pomocí těch komponent z toolboxu&#xD;&#xA;&#xA;takže prostě pusť tento SQL command.......... deal with it"
+          ParentId="Package\Vytvořit klíče do FactPassage"
+          FontInfo="{assembly:Null}"
+          Size="505,104"
+          Id="078eaafc-a4bc-4a99-9d36-286e2ae41c15"
+          TopLeft="301,57" />
+        <AnnotationLayout
+          Text="UPDATE [dbo].[FactPassage]&#xD;&#xA;   SET DateID = d.DateID&#xD;&#xA;   FROM [dbo].[DimDate] d&#xD;&#xA;JOIN  [dbo].[FactPassage] f&#xD;&#xA; ON d.Date = CAST(f.Timestamp AS DATE)"
+          ParentId="Package\Vytvořit klíče do FactPassage"
+          FontInfo="{assembly:Null}"
+          Size="251,104"
+          Id="fc4bdd0b-77d2-419b-82ec-f97431476a99"
+          TopLeft="453,188" />
+        <AnnotationLayout
+          Text=" SELECT TOP 1000 *&#xD;&#xA; FROM [dbo].[FactPassage] f&#xD;&#xA; JOIN  [dbo].[DimDate] d&#xD;&#xA; ON d.DateID = f.DateID"
+          ParentId="Package\Vytvořit klíče do FactPassage"
+          FontInfo="{assembly:Null}"
+          Size="177,88"
+          Id="854190ef-aaa4-4113-93de-75944e7c25da"
+          TopLeft="440,454" />
+        <AnnotationLayout
+          Text="ověření že je to OK"
+          ParentId="Package\Vytvořit klíče do FactPassage"
+          FontInfo="{assembly:Null}"
+          Size="129,60"
+          Id="92a199d7-5c3c-474f-8b74-eb19ec72d488"
+          TopLeft="413,410" />
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <TaskHost
     design-time-name="Package\Vytvořit time data">
     <LayoutInfo>
       <GraphLayout
@@ -1239,38 +914,6 @@ SELECT * FROM [dbo].[DimDate]</property>
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Vytvořit klíče do FactPassage">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="150,42"
-          Id="Package\Vytvořit klíče do FactPassage\OLE DB Source"
-          TopLeft="457,153" />
-        <AnnotationLayout
-          Text="Vytvoří indexy do tabulky FactPassage pomocí SQL dotazu&#xD;&#xA;fakt jsem nepřišel nato jak to udělat tady v té SRAČCE pomocí těch komponent z toolboxu&#xD;&#xA;takže jeto přes command provedený v tomhle source. .......... deal with it"
-          ParentId="Package\Vytvořit klíče do FactPassage"
-          FontInfo="{assembly:Null}"
-          Size="505,72"
-          Id="078eaafc-a4bc-4a99-9d36-286e2ae41c15"
-          TopLeft="301,57" />
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Vytvořit klíče do FactPassage\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
