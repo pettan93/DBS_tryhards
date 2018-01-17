@@ -11,12 +11,1296 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="LoadDimWeather"
   DTS:PackageType="5"
-  DTS:VersionBuild="1"
-  DTS:VersionGUID="{99125188-767A-4D34-864B-C35FA097F645}">
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{3C01761E-4A13-4F34-A5AD-101F3CC4BCC5}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[127.0.0.1.CBI_DB_MENDEL]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{1E5723FA-5AD9-44A2-B4F3-230ABA80DC3E}"
+      DTS:ObjectName="127.0.0.1.CBI_DB_MENDEL">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=127.0.0.1;Initial Catalog=CBI_DB_MENDEL;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{DEA5C0E1-65E8-4114-B575-6E69D1664C48}"
+      DTS:ObjectName="Excel Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Mendelu\DBS2\TryHardsDBSPrj\DBS2_Tryhards_integration\output.xls;Extended Properties=&quot;Excel 8.0;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager 1]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{0D06AE2F-3359-4D2A-BF34-A6EADEA2C4C6}"
+      DTS:ObjectName="Excel Connection Manager 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Mendelu\DBS2\TryHardsDBSPrj\DBS2_Tryhards_integration\aaa.xls;Extended Properties=&quot;Excel 8.0;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{4465A25A-2BD2-4F97-891A-B4C43084E2E5}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="FixedWidth"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1250"
+          DTS:ConnectionString="C:\Mendelu\DBS2\TryHardsDBSPrj\DBS2_Tryhards_integration\otuput.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnDelimiter=""
+              DTS:ColumnWidth="20"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="id_passage"
+              DTS:DTSID="{B3B3802D-A26A-49EB-913D-A024F042822A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnDelimiter=""
+              DTS:ColumnWidth="20"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="id_diag"
+              DTS:DTSID="{31144171-090B-4655-951F-2EF159687C66}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnDelimiter=""
+              DTS:ColumnWidth="20"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="id_TIS"
+              DTS:DTSID="{BEC00EA7-5987-412F-935D-6025455EEC14}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnDelimiter=""
+              DTS:ColumnWidth="30"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="timestamp"
+              DTS:DTSID="{8372B0AA-19F0-4C1B-AF85-D119530A52F1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnDelimiter=""
+              DTS:ColumnWidth="50"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="trainNo"
+              DTS:DTSID="{8C697D15-ED61-4366-A509-833F58E826BD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnDelimiter=""
+              DTS:ColumnWidth="6"
+              DTS:DataType="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="axleCount"
+              DTS:DTSID="{1A0A0D17-CC32-49B2-B4A5-47064291ED1A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnDelimiter=""
+              DTS:ColumnWidth="6"
+              DTS:DataType="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="vehicleCount"
+              DTS:DTSID="{3C52CE17-2618-4217-8EE8-17959817880B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnDelimiter=""
+              DTS:ColumnWidth="6"
+              DTS:DataType="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="locoCount"
+              DTS:DTSID="{FAE12FB3-62D9-41CC-BA32-2854FE0180BA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnDelimiter=""
+              DTS:ColumnWidth="24"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="v"
+              DTS:DTSID="{8E423B71-E75A-40E3-AB56-520E89116909}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnDelimiter=""
+              DTS:ColumnWidth="24"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="length"
+              DTS:DTSID="{0553AE88-3AE9-4B29-9731-02B78B223801}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnDelimiter=""
+              DTS:ColumnWidth="24"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="weight"
+              DTS:DTSID="{66873C2E-C158-4DA0-B2DD-027E36C0C09E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnDelimiter=""
+              DTS:ColumnWidth="24"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="grossWeight"
+              DTS:DTSID="{D6FD30F8-F17C-4022-B255-01120E9D562C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnDelimiter=""
+              DTS:ColumnWidth="24"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="tempOut"
+              DTS:DTSID="{3B370089-1691-4ADE-907B-7E2FC421D48A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnDelimiter=""
+              DTS:ColumnWidth="24"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="tempIn"
+              DTS:DTSID="{2E1BF46C-40A0-49F2-B11B-09CD87121A18}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnDelimiter=""
+              DTS:ColumnWidth="24"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="tempRail"
+              DTS:DTSID="{DA7AD6D6-D4BE-45C8-B069-4392FAA1E191}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnDelimiter=""
+              DTS:ColumnWidth="3"
+              DTS:DataType="17"
+              DTS:TextQualified="True"
+              DTS:ObjectName="direction"
+              DTS:DTSID="{D0BA995A-722F-41BF-AE63-2EE6FD4E3343}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnDelimiter=""
+              DTS:ColumnWidth="20"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="id_faultLevel"
+              DTS:DTSID="{EFBA3EAB-0015-436C-A482-DD3CA8A2C108}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnDelimiter=""
+              DTS:ColumnWidth="20"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="id_integrity"
+              DTS:DTSID="{5F7500EC-C1BE-43B2-BABA-11B88057B631}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnDelimiter=""
+              DTS:ColumnWidth="20"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="id_trainType"
+              DTS:DTSID="{05AFA15B-3F2C-4B53-BA69-9ED337C3E4A6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnDelimiter=""
+              DTS:ColumnWidth="5"
+              DTS:DataType="11"
+              DTS:TextQualified="True"
+              DTS:ObjectName="active_HB"
+              DTS:DTSID="{9B55C54B-BD57-4B29-9BB7-1818CD629AD2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnDelimiter=""
+              DTS:ColumnWidth="5"
+              DTS:DataType="11"
+              DTS:TextQualified="True"
+              DTS:ObjectName="active_HW"
+              DTS:DTSID="{ED499EE5-89B0-4ED8-8322-D6056DAD5ED7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnDelimiter=""
+              DTS:ColumnWidth="5"
+              DTS:DataType="11"
+              DTS:TextQualified="True"
+              DTS:ObjectName="active_WIM"
+              DTS:DTSID="{8867F332-0569-45EF-93AB-8FD3A3084735}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnDelimiter=""
+              DTS:ColumnWidth="5"
+              DTS:DataType="11"
+              DTS:TextQualified="True"
+              DTS:ObjectName="active_WDD"
+              DTS:DTSID="{D6652910-CA79-4439-A751-52DB947B3E75}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnDelimiter=""
+              DTS:ColumnWidth="5"
+              DTS:DataType="11"
+              DTS:TextQualified="True"
+              DTS:ObjectName="active_WDDDF"
+              DTS:DTSID="{2820DBF9-08B3-4010-9EC9-DA6BACFFDFAC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnDelimiter=""
+              DTS:ColumnWidth="6"
+              DTS:DataType="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="dayReportNo"
+              DTS:DTSID="{8B5B0C12-CBBF-4E76-AD6C-B1CB1771B120}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnDelimiter=""
+              DTS:ColumnWidth="30"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="writeTimestamp"
+              DTS:DTSID="{672755E9-7008-461A-BADA-6711C33C7068}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnDelimiter=""
+              DTS:ColumnWidth="5"
+              DTS:DataType="11"
+              DTS:TextQualified="True"
+              DTS:ObjectName="correctness"
+              DTS:DTSID="{37F6BA05-8EE4-4077-BD77-CA99278AF8E0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnDelimiter=""
+              DTS:ColumnWidth="30"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="stats_receiveTime"
+              DTS:DTSID="{617B36BD-F554-4676-A9B6-0B5EA660FACD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnDelimiter=""
+              DTS:ColumnWidth="30"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="stats_sendTime"
+              DTS:DTSID="{05EF2D86-EFB7-42FE-84AF-5111C48ADCFB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnDelimiter=""
+              DTS:ColumnWidth="24"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="stats_transmitTimeInSec"
+              DTS:DTSID="{6D1D01C3-4C48-47F4-AF49-5A50BC1CC15E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnDelimiter=""
+              DTS:ColumnWidth="11"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="stats_DataPackSize"
+              DTS:DTSID="{09617E13-9F4A-482C-BD85-0C28A727709C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnDelimiter=""
+              DTS:ColumnWidth="11"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="stats_DataFlowRate"
+              DTS:DTSID="{26A7D533-C3E8-4989-925F-52DF38650AC8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnDelimiter=""
+              DTS:ColumnWidth="5"
+              DTS:DataType="11"
+              DTS:TextQualified="True"
+              DTS:ObjectName="attention"
+              DTS:DTSID="{12CB6F45-C2FA-4C12-9D55-DC9632F2475B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnDelimiter=""
+              DTS:ColumnWidth="50"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="trainNoERSAT"
+              DTS:DTSID="{D02EFAAF-BBD7-49C0-AC28-00EFA9BD224B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnDelimiter=""
+              DTS:ColumnWidth="20"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="recognitionAlgorithmDevice"
+              DTS:DTSID="{B599FA49-FD68-4843-92CC-861D5708F70B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnDelimiter=""
+              DTS:ColumnWidth="11"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="recognitionAlgorithmStep"
+              DTS:DTSID="{854A384E-5EA5-4C3E-A147-8CF43AE5D173}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnDelimiter=""
+              DTS:ColumnWidth="5"
+              DTS:DataType="11"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OFD_functionality_active"
+              DTS:DTSID="{89653581-56AC-4F93-92C2-01AC54B31F50}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
   <DTS:Variables />
-  <DTS:Executables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{C541A042-F066-4E76-8ADF-A7258C67D571}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task\Lookup"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[weatherData]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[weatherData]) [refTable]
+where [refTable].[TIS_site_ID] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="TDS_Locations_ID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TIS_site_ID" dataType="DT_I8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TDS_Locations_Name" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TIS_site_Name" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="GPS_latitude" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="GPS_longitude" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="date" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="summary" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="temperature" dataType="DT_R8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="day_min_temperature" dataType="DT_R8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="day_max_temperature" dataType="DT_R8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="humidity" dataType="DT_R8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="pressure" dataType="DT_R8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="wind_speed" dataType="DT_R8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="wind_bearing" dataType="DT_R8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="cloud_cover" dataType="DT_R8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="visibility" dataType="DT_R8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[id_TIS]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Lookup.Connections[OleDbConnection]"
+                  connectionManagerID="{F6BE3F8D-211D-4866-BBF1-1A7C5152E56D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[127.0.0.1.tryhards]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Lookup.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Lookup.Inputs[Lookup Input].Columns[id_TIS]"
+                      cachedDataType="i8"
+                      cachedName="id_TIS"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[id_TIS]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">TIS_site_ID</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Lookup.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Data Flow Task\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Lookup.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Data Flow Task\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Lookup.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Data Flow Task\Lookup.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source | CBI DB detection passage"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[detection].[passage]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT *
+  FROM [CBI_DB_MENDEL].[detection].[passage]
+  WHERE id_passage = 10 OR id_passage = 1000</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[127.0.0.1.CBI_DB_MENDEL]"
+                  connectionManagerRefId="Package.ConnectionManagers[127.0.0.1.CBI_DB_MENDEL]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[id_passage]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[id_passage]"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[id_passage]"
+                      name="id_passage"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[id_diag]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[id_diag]"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[id_diag]"
+                      name="id_diag"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[id_TIS]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[id_TIS]"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[id_TIS]"
+                      name="id_TIS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[timestamp]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[timestamp]"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[timestamp]"
+                      name="timestamp"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[trainNo]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[trainNo]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[trainNo]"
+                      name="trainNo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[axleCount]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[axleCount]"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[axleCount]"
+                      name="axleCount"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[vehicleCount]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[vehicleCount]"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[vehicleCount]"
+                      name="vehicleCount"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[locoCount]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[locoCount]"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[locoCount]"
+                      name="locoCount"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[v]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[v]"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[v]"
+                      name="v"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[length]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[length]"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[length]"
+                      name="length"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[weight]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[weight]"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[weight]"
+                      name="weight"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[grossWeight]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[grossWeight]"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[grossWeight]"
+                      name="grossWeight"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[tempOut]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[tempOut]"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[tempOut]"
+                      name="tempOut"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[tempIn]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[tempIn]"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[tempIn]"
+                      name="tempIn"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[tempRail]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[tempRail]"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[tempRail]"
+                      name="tempRail"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[direction]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[direction]"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[direction]"
+                      name="direction"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[id_faultLevel]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[id_faultLevel]"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[id_faultLevel]"
+                      name="id_faultLevel"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[id_integrity]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[id_integrity]"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[id_integrity]"
+                      name="id_integrity"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[id_trainType]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[id_trainType]"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[id_trainType]"
+                      name="id_trainType"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[active_HB]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[active_HB]"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[active_HB]"
+                      name="active_HB"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[active_HW]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[active_HW]"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[active_HW]"
+                      name="active_HW"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[active_WIM]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[active_WIM]"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[active_WIM]"
+                      name="active_WIM"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[active_WDD]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[active_WDD]"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[active_WDD]"
+                      name="active_WDD"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[active_WDDDF]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[active_WDDDF]"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[active_WDDDF]"
+                      name="active_WDDDF"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[dayReportNo]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[dayReportNo]"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[dayReportNo]"
+                      name="dayReportNo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[writeTimestamp]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[writeTimestamp]"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[writeTimestamp]"
+                      name="writeTimestamp"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[correctness]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[correctness]"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[correctness]"
+                      name="correctness"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[stats_receiveTime]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[stats_receiveTime]"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[stats_receiveTime]"
+                      name="stats_receiveTime"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[stats_sendTime]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[stats_sendTime]"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[stats_sendTime]"
+                      name="stats_sendTime"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[stats_transmitTimeInSec]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[stats_transmitTimeInSec]"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[stats_transmitTimeInSec]"
+                      name="stats_transmitTimeInSec"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[stats_DataPackSize]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[stats_DataPackSize]"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[stats_DataPackSize]"
+                      name="stats_DataPackSize"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[stats_DataFlowRate]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[stats_DataFlowRate]"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[stats_DataFlowRate]"
+                      name="stats_DataFlowRate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[attention]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[attention]"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[attention]"
+                      name="attention"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[trainNoERSAT]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[trainNoERSAT]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[trainNoERSAT]"
+                      name="trainNoERSAT"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[recognitionAlgorithmDevice]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[recognitionAlgorithmDevice]"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[recognitionAlgorithmDevice]"
+                      name="recognitionAlgorithmDevice"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[recognitionAlgorithmStep]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[recognitionAlgorithmStep]"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[recognitionAlgorithmStep]"
+                      name="recognitionAlgorithmStep"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[OFD_functionality_active]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[OFD_functionality_active]"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].Columns[OFD_functionality_active]"
+                      name="OFD_functionality_active"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[id_passage]"
+                      dataType="i8"
+                      name="id_passage" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[id_diag]"
+                      dataType="i8"
+                      name="id_diag" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[id_TIS]"
+                      dataType="i8"
+                      name="id_TIS" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[timestamp]"
+                      dataType="dbTimeStamp"
+                      name="timestamp" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[trainNo]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="trainNo" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[axleCount]"
+                      dataType="i2"
+                      name="axleCount" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[vehicleCount]"
+                      dataType="i2"
+                      name="vehicleCount" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[locoCount]"
+                      dataType="i2"
+                      name="locoCount" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[v]"
+                      dataType="r4"
+                      name="v" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[length]"
+                      dataType="r4"
+                      name="length" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[weight]"
+                      dataType="r4"
+                      name="weight" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[grossWeight]"
+                      dataType="r4"
+                      name="grossWeight" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[tempOut]"
+                      dataType="r4"
+                      name="tempOut" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[tempIn]"
+                      dataType="r4"
+                      name="tempIn" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[tempRail]"
+                      dataType="r4"
+                      name="tempRail" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[direction]"
+                      dataType="ui1"
+                      name="direction" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[id_faultLevel]"
+                      dataType="i8"
+                      name="id_faultLevel" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[id_integrity]"
+                      dataType="i8"
+                      name="id_integrity" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[id_trainType]"
+                      dataType="i8"
+                      name="id_trainType" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[active_HB]"
+                      dataType="bool"
+                      name="active_HB" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[active_HW]"
+                      dataType="bool"
+                      name="active_HW" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[active_WIM]"
+                      dataType="bool"
+                      name="active_WIM" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[active_WDD]"
+                      dataType="bool"
+                      name="active_WDD" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[active_WDDDF]"
+                      dataType="bool"
+                      name="active_WDDDF" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[dayReportNo]"
+                      dataType="i2"
+                      name="dayReportNo" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[writeTimestamp]"
+                      dataType="dbTimeStamp"
+                      name="writeTimestamp" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[correctness]"
+                      dataType="bool"
+                      name="correctness" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[stats_receiveTime]"
+                      dataType="dbTimeStamp"
+                      name="stats_receiveTime" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[stats_sendTime]"
+                      dataType="dbTimeStamp"
+                      name="stats_sendTime" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[stats_transmitTimeInSec]"
+                      dataType="r4"
+                      name="stats_transmitTimeInSec" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[stats_DataPackSize]"
+                      dataType="i4"
+                      name="stats_DataPackSize" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[stats_DataFlowRate]"
+                      dataType="i4"
+                      name="stats_DataFlowRate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[attention]"
+                      dataType="bool"
+                      name="attention" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[trainNoERSAT]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="trainNoERSAT" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[recognitionAlgorithmDevice]"
+                      dataType="i8"
+                      name="recognitionAlgorithmDevice" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[recognitionAlgorithmStep]"
+                      dataType="i4"
+                      name="recognitionAlgorithmStep" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output].ExternalColumns[OFD_functionality_active]"
+                      dataType="bool"
+                      name="OFD_functionality_active" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[id_passage]"
+                      dataType="i8"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[id_passage]"
+                      name="id_passage" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[id_diag]"
+                      dataType="i8"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[id_diag]"
+                      name="id_diag" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[id_TIS]"
+                      dataType="i8"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[id_TIS]"
+                      name="id_TIS" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[timestamp]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[timestamp]"
+                      name="timestamp" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[trainNo]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[trainNo]"
+                      name="trainNo" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[axleCount]"
+                      dataType="i2"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[axleCount]"
+                      name="axleCount" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[vehicleCount]"
+                      dataType="i2"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[vehicleCount]"
+                      name="vehicleCount" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[locoCount]"
+                      dataType="i2"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[locoCount]"
+                      name="locoCount" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[v]"
+                      dataType="r4"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[v]"
+                      name="v" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[length]"
+                      dataType="r4"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[length]"
+                      name="length" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[weight]"
+                      dataType="r4"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[weight]"
+                      name="weight" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[grossWeight]"
+                      dataType="r4"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[grossWeight]"
+                      name="grossWeight" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[tempOut]"
+                      dataType="r4"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[tempOut]"
+                      name="tempOut" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[tempIn]"
+                      dataType="r4"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[tempIn]"
+                      name="tempIn" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[tempRail]"
+                      dataType="r4"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[tempRail]"
+                      name="tempRail" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[direction]"
+                      dataType="ui1"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[direction]"
+                      name="direction" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[id_faultLevel]"
+                      dataType="i8"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[id_faultLevel]"
+                      name="id_faultLevel" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[id_integrity]"
+                      dataType="i8"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[id_integrity]"
+                      name="id_integrity" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[id_trainType]"
+                      dataType="i8"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[id_trainType]"
+                      name="id_trainType" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[active_HB]"
+                      dataType="bool"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[active_HB]"
+                      name="active_HB" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[active_HW]"
+                      dataType="bool"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[active_HW]"
+                      name="active_HW" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[active_WIM]"
+                      dataType="bool"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[active_WIM]"
+                      name="active_WIM" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[active_WDD]"
+                      dataType="bool"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[active_WDD]"
+                      name="active_WDD" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[active_WDDDF]"
+                      dataType="bool"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[active_WDDDF]"
+                      name="active_WDDDF" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[dayReportNo]"
+                      dataType="i2"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[dayReportNo]"
+                      name="dayReportNo" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[writeTimestamp]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[writeTimestamp]"
+                      name="writeTimestamp" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[correctness]"
+                      dataType="bool"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[correctness]"
+                      name="correctness" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[stats_receiveTime]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[stats_receiveTime]"
+                      name="stats_receiveTime" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[stats_sendTime]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[stats_sendTime]"
+                      name="stats_sendTime" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[stats_transmitTimeInSec]"
+                      dataType="r4"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[stats_transmitTimeInSec]"
+                      name="stats_transmitTimeInSec" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[stats_DataPackSize]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[stats_DataPackSize]"
+                      name="stats_DataPackSize" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[stats_DataFlowRate]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[stats_DataFlowRate]"
+                      name="stats_DataFlowRate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[attention]"
+                      dataType="bool"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[attention]"
+                      name="attention" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[trainNoERSAT]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[trainNoERSAT]"
+                      name="trainNoERSAT" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[recognitionAlgorithmDevice]"
+                      dataType="i8"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[recognitionAlgorithmDevice]"
+                      name="recognitionAlgorithmDevice" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[recognitionAlgorithmStep]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[recognitionAlgorithmStep]"
+                      name="recognitionAlgorithmStep" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[OFD_functionality_active]"
+                      dataType="bool"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[OFD_functionality_active]"
+                      name="OFD_functionality_active" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task.Paths[OLE DB Source Output]"
+              endId="Package\Data Flow Task\Lookup.Inputs[Lookup Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task\OLE DB Source | CBI DB detection passage.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -24,5 +1308,91 @@
 <Objects
   Version="8">
   <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Data Flow Task"
+          TopLeft="5.5,5.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="283,42"
+          Id="Package\Data Flow Task\OLE DB Source | CBI DB detection passage"
+          TopLeft="379,134" />
+        <NodeLayout
+          Size="113,42"
+          Id="Package\Data Flow Task\Lookup"
+          TopLeft="464,335" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
+          TopLeft="520.5,176">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,159"
+              Start="0,0"
+              End="0,151.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,151.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\OLE DB Source | CBI DB detection passage">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[weatherData]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>

@@ -11,27 +11,415 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="LoadDimDate"
   DTS:PackageType="5"
-  DTS:VersionBuild="4"
-  DTS:VersionGUID="{6B6BC196-171D-40C9-9E3F-756778FE69D3}">
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{7BECFB38-97A7-4264-B16D-D588790FED32}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Data Flow Task"
+      DTS:refId="Package\Vytvořit klíče do FactPassage"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{FFC17C41-DE27-4A72-9A50-F6F99920228E}"
+      DTS:DTSID="{A5C45570-A996-4629-A8E4-BFDFC0B1C9EC}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Data Flow Task">
+      DTS:ObjectName="Vytvořit klíče do FactPassage"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
         <pipeline
           version="1">
           <components>
             <component
-              refId="Package\Data Flow Task\OLE DB Source"
+              refId="Package\Vytvořit klíče do FactPassage\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[FactPassage]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="{F6BE3F8D-211D-4866-BBF1-1A7C5152E56D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[127.0.0.1.tryhards]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].Columns[PassageID]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PassageID]"
+                      lineageId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].Columns[PassageID]"
+                      name="PassageID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].Columns[WeatherID]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[WeatherID]"
+                      lineageId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].Columns[WeatherID]"
+                      name="WeatherID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].Columns[SiteID]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SiteID]"
+                      lineageId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].Columns[SiteID]"
+                      name="SiteID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_TIS_docasne]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_TIS_docasne]"
+                      lineageId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_TIS_docasne]"
+                      name="id_TIS_docasne"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].Columns[TrainNumber]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TrainNumber]"
+                      length="150"
+                      lineageId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].Columns[TrainNumber]"
+                      name="TrainNumber"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].Columns[Timestamp]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Timestamp]"
+                      lineageId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].Columns[Timestamp]"
+                      name="Timestamp"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].Columns[Velocity]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Velocity]"
+                      lineageId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].Columns[Velocity]"
+                      name="Velocity"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].Columns[Length]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Length]"
+                      lineageId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].Columns[Length]"
+                      name="Length"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].Columns[AxleCount]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AxleCount]"
+                      lineageId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].Columns[AxleCount]"
+                      name="AxleCount"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].Columns[VehicleCount]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[VehicleCount]"
+                      lineageId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].Columns[VehicleCount]"
+                      name="VehicleCount"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].Columns[LocoCount]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LocoCount]"
+                      lineageId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].Columns[LocoCount]"
+                      name="LocoCount"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].Columns[ActiveHB]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ActiveHB]"
+                      length="150"
+                      lineageId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].Columns[ActiveHB]"
+                      name="ActiveHB"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].Columns[ActiveHW]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ActiveHW]"
+                      length="150"
+                      lineageId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].Columns[ActiveHW]"
+                      name="ActiveHW"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].Columns[ActiveWDD]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ActiveWDD]"
+                      length="150"
+                      lineageId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].Columns[ActiveWDD]"
+                      name="ActiveWDD"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].Columns[DateID]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DateID]"
+                      lineageId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].Columns[DateID]"
+                      name="DateID"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PassageID]"
+                      dataType="i8"
+                      name="PassageID" />
+                    <externalMetadataColumn
+                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[WeatherID]"
+                      dataType="i8"
+                      name="WeatherID" />
+                    <externalMetadataColumn
+                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SiteID]"
+                      dataType="i8"
+                      name="SiteID" />
+                    <externalMetadataColumn
+                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_TIS_docasne]"
+                      dataType="i8"
+                      name="id_TIS_docasne" />
+                    <externalMetadataColumn
+                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TrainNumber]"
+                      dataType="wstr"
+                      length="150"
+                      name="TrainNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Timestamp]"
+                      dataType="dbTimeStamp"
+                      name="Timestamp" />
+                    <externalMetadataColumn
+                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Velocity]"
+                      dataType="r4"
+                      name="Velocity" />
+                    <externalMetadataColumn
+                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Length]"
+                      dataType="r4"
+                      name="Length" />
+                    <externalMetadataColumn
+                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AxleCount]"
+                      dataType="i2"
+                      name="AxleCount" />
+                    <externalMetadataColumn
+                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[VehicleCount]"
+                      dataType="i2"
+                      name="VehicleCount" />
+                    <externalMetadataColumn
+                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LocoCount]"
+                      dataType="i2"
+                      name="LocoCount" />
+                    <externalMetadataColumn
+                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ActiveHB]"
+                      dataType="wstr"
+                      length="150"
+                      name="ActiveHB" />
+                    <externalMetadataColumn
+                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ActiveHW]"
+                      dataType="wstr"
+                      length="150"
+                      name="ActiveHW" />
+                    <externalMetadataColumn
+                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ActiveWDD]"
+                      dataType="wstr"
+                      length="150"
+                      name="ActiveWDD" />
+                    <externalMetadataColumn
+                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DateID]"
+                      dataType="i8"
+                      name="DateID" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PassageID]"
+                      dataType="i8"
+                      lineageId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PassageID]"
+                      name="PassageID" />
+                    <outputColumn
+                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DateID]"
+                      dataType="i8"
+                      lineageId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DateID]"
+                      name="DateID" />
+                    <outputColumn
+                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[WeatherID]"
+                      dataType="i8"
+                      lineageId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[WeatherID]"
+                      name="WeatherID" />
+                    <outputColumn
+                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SiteID]"
+                      dataType="i8"
+                      lineageId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SiteID]"
+                      name="SiteID" />
+                    <outputColumn
+                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_TIS_docasne]"
+                      dataType="i8"
+                      lineageId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_TIS_docasne]"
+                      name="id_TIS_docasne" />
+                    <outputColumn
+                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TrainNumber]"
+                      dataType="wstr"
+                      length="150"
+                      lineageId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TrainNumber]"
+                      name="TrainNumber" />
+                    <outputColumn
+                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Timestamp]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Timestamp]"
+                      name="Timestamp" />
+                    <outputColumn
+                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Velocity]"
+                      dataType="r4"
+                      lineageId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Velocity]"
+                      name="Velocity" />
+                    <outputColumn
+                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Length]"
+                      dataType="r4"
+                      lineageId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Length]"
+                      name="Length" />
+                    <outputColumn
+                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AxleCount]"
+                      dataType="i2"
+                      lineageId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AxleCount]"
+                      name="AxleCount" />
+                    <outputColumn
+                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[VehicleCount]"
+                      dataType="i2"
+                      lineageId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[VehicleCount]"
+                      name="VehicleCount" />
+                    <outputColumn
+                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LocoCount]"
+                      dataType="i2"
+                      lineageId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LocoCount]"
+                      name="LocoCount" />
+                    <outputColumn
+                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ActiveHB]"
+                      dataType="wstr"
+                      length="150"
+                      lineageId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ActiveHB]"
+                      name="ActiveHB" />
+                    <outputColumn
+                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ActiveHW]"
+                      dataType="wstr"
+                      length="150"
+                      lineageId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ActiveHW]"
+                      name="ActiveHW" />
+                    <outputColumn
+                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ActiveWDD]"
+                      dataType="wstr"
+                      length="150"
+                      lineageId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ActiveWDD]"
+                      name="ActiveWDD" />
+                    <outputColumn
+                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Vytvořit klíče do FactPassage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Vytvořit time data"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{FFC17C41-DE27-4A72-9A50-F6F99920228E}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Vytvořit time data">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Vytvořit time data\OLE DB Source"
               componentClassID="Microsoft.OLEDBSource"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
@@ -55,7 +443,10 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">DELETE FROM [dbo].[DimDate]
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">DELETE FROM [dbo].[DimDate];
+
+DBCC CHECKIDENT ('[dbo].[DimDate]', RESEED, 0);
+
 /********************************************************************************************/
 --Specify Start Date and End date here
 --Value of Start Date Must be Less than Your End Date 
@@ -242,7 +633,7 @@ SELECT * FROM [dbo].[DimDate]</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task\OLE DB Source.Connections[OleDbConnection]"
+                  refId="Package\Vytvořit time data\OLE DB Source.Connections[OleDbConnection]"
                   connectionManagerID="{F6BE3F8D-211D-4866-BBF1-1A7C5152E56D}:external"
                   connectionManagerRefId="Project.ConnectionManagers[127.0.0.1.tryhards]"
                   description="The OLE DB runtime connection used to access the database."
@@ -250,494 +641,494 @@ SELECT * FROM [dbo].[DimDate]</property>
               </connections>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output]"
+                  refId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output]"
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[DateKey]"
-                      dataType="i8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DateKey]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[DateKey]"
-                      name="DateKey"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Date]"
+                      refId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Date]"
                       dataType="dbTimeStamp"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Date]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Date]"
+                      externalMetadataColumnId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Date]"
+                      lineageId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Date]"
                       name="Date"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Season]"
+                      refId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Season]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Season]"
+                      externalMetadataColumnId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Season]"
                       length="150"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Season]"
+                      lineageId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Season]"
                       name="Season"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[DateFormatted]"
+                      refId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].Columns[DateFormatted]"
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DateFormatted]"
+                      externalMetadataColumnId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DateFormatted]"
                       length="10"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[DateFormatted]"
+                      lineageId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].Columns[DateFormatted]"
                       name="DateFormatted"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[DayOfMonth]"
+                      refId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].Columns[DayOfMonth]"
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DayOfMonth]"
+                      externalMetadataColumnId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DayOfMonth]"
                       length="2"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[DayOfMonth]"
+                      lineageId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].Columns[DayOfMonth]"
                       name="DayOfMonth"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[DayName]"
+                      refId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].Columns[DayName]"
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DayName]"
+                      externalMetadataColumnId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DayName]"
                       length="9"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[DayName]"
+                      lineageId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].Columns[DayName]"
                       name="DayName"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[DayOfWeekInMonth]"
+                      refId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].Columns[DayOfWeekInMonth]"
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DayOfWeekInMonth]"
+                      externalMetadataColumnId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DayOfWeekInMonth]"
                       length="2"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[DayOfWeekInMonth]"
+                      lineageId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].Columns[DayOfWeekInMonth]"
                       name="DayOfWeekInMonth"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[DayOfWeekInYear]"
+                      refId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].Columns[DayOfWeekInYear]"
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DayOfWeekInYear]"
+                      externalMetadataColumnId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DayOfWeekInYear]"
                       length="2"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[DayOfWeekInYear]"
+                      lineageId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].Columns[DayOfWeekInYear]"
                       name="DayOfWeekInYear"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[DayOfQuarter]"
+                      refId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].Columns[DayOfQuarter]"
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DayOfQuarter]"
+                      externalMetadataColumnId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DayOfQuarter]"
                       length="3"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[DayOfQuarter]"
+                      lineageId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].Columns[DayOfQuarter]"
                       name="DayOfQuarter"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[DayOfYear]"
+                      refId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].Columns[DayOfYear]"
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DayOfYear]"
+                      externalMetadataColumnId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DayOfYear]"
                       length="3"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[DayOfYear]"
+                      lineageId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].Columns[DayOfYear]"
                       name="DayOfYear"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[WeekOfMonth]"
+                      refId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].Columns[WeekOfMonth]"
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[WeekOfMonth]"
+                      externalMetadataColumnId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[WeekOfMonth]"
                       length="1"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[WeekOfMonth]"
+                      lineageId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].Columns[WeekOfMonth]"
                       name="WeekOfMonth"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[WeekOfQuarter]"
+                      refId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].Columns[WeekOfQuarter]"
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[WeekOfQuarter]"
+                      externalMetadataColumnId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[WeekOfQuarter]"
                       length="2"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[WeekOfQuarter]"
+                      lineageId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].Columns[WeekOfQuarter]"
                       name="WeekOfQuarter"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[WeekOfYear]"
+                      refId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].Columns[WeekOfYear]"
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[WeekOfYear]"
+                      externalMetadataColumnId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[WeekOfYear]"
                       length="2"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[WeekOfYear]"
+                      lineageId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].Columns[WeekOfYear]"
                       name="WeekOfYear"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Month]"
+                      refId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Month]"
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Month]"
+                      externalMetadataColumnId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Month]"
                       length="2"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Month]"
+                      lineageId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Month]"
                       name="Month"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[MonthName]"
+                      refId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].Columns[MonthName]"
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MonthName]"
+                      externalMetadataColumnId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MonthName]"
                       length="9"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[MonthName]"
+                      lineageId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].Columns[MonthName]"
                       name="MonthName"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[MonthOfQuarter]"
+                      refId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].Columns[MonthOfQuarter]"
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MonthOfQuarter]"
+                      externalMetadataColumnId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MonthOfQuarter]"
                       length="2"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[MonthOfQuarter]"
+                      lineageId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].Columns[MonthOfQuarter]"
                       name="MonthOfQuarter"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Quarter]"
+                      refId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Quarter]"
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Quarter]"
+                      externalMetadataColumnId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Quarter]"
                       length="1"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Quarter]"
+                      lineageId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Quarter]"
                       name="Quarter"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[QuarterName]"
+                      refId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].Columns[QuarterName]"
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[QuarterName]"
+                      externalMetadataColumnId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[QuarterName]"
                       length="9"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[QuarterName]"
+                      lineageId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].Columns[QuarterName]"
                       name="QuarterName"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Year]"
+                      refId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Year]"
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Year]"
+                      externalMetadataColumnId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Year]"
                       length="4"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Year]"
+                      lineageId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Year]"
                       name="Year"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[IsWeekday]"
+                      refId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].Columns[IsWeekday]"
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IsWeekday]"
+                      externalMetadataColumnId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IsWeekday]"
                       length="150"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[IsWeekday]"
+                      lineageId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].Columns[IsWeekday]"
                       name="IsWeekday"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].Columns[DateID]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DateID]"
+                      lineageId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].Columns[DateID]"
+                      name="DateID"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DateKey]"
-                      dataType="i8"
-                      name="DateKey" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Date]"
+                      refId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Date]"
                       dataType="dbTimeStamp"
                       name="Date" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Season]"
+                      refId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Season]"
                       dataType="wstr"
                       length="150"
                       name="Season" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DateFormatted]"
+                      refId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DateFormatted]"
                       codePage="1250"
                       dataType="str"
                       length="10"
                       name="DateFormatted" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DayOfMonth]"
+                      refId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DayOfMonth]"
                       codePage="1250"
                       dataType="str"
                       length="2"
                       name="DayOfMonth" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DayName]"
+                      refId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DayName]"
                       codePage="1250"
                       dataType="str"
                       length="9"
                       name="DayName" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DayOfWeekInMonth]"
+                      refId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DayOfWeekInMonth]"
                       codePage="1250"
                       dataType="str"
                       length="2"
                       name="DayOfWeekInMonth" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DayOfWeekInYear]"
+                      refId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DayOfWeekInYear]"
                       codePage="1250"
                       dataType="str"
                       length="2"
                       name="DayOfWeekInYear" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DayOfQuarter]"
+                      refId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DayOfQuarter]"
                       codePage="1250"
                       dataType="str"
                       length="3"
                       name="DayOfQuarter" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DayOfYear]"
+                      refId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DayOfYear]"
                       codePage="1250"
                       dataType="str"
                       length="3"
                       name="DayOfYear" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[WeekOfMonth]"
+                      refId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[WeekOfMonth]"
                       codePage="1250"
                       dataType="str"
                       length="1"
                       name="WeekOfMonth" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[WeekOfQuarter]"
+                      refId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[WeekOfQuarter]"
                       codePage="1250"
                       dataType="str"
                       length="2"
                       name="WeekOfQuarter" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[WeekOfYear]"
+                      refId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[WeekOfYear]"
                       codePage="1250"
                       dataType="str"
                       length="2"
                       name="WeekOfYear" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Month]"
+                      refId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Month]"
                       codePage="1250"
                       dataType="str"
                       length="2"
                       name="Month" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MonthName]"
+                      refId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MonthName]"
                       codePage="1250"
                       dataType="str"
                       length="9"
                       name="MonthName" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MonthOfQuarter]"
+                      refId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MonthOfQuarter]"
                       codePage="1250"
                       dataType="str"
                       length="2"
                       name="MonthOfQuarter" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Quarter]"
+                      refId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Quarter]"
                       codePage="1250"
                       dataType="str"
                       length="1"
                       name="Quarter" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[QuarterName]"
+                      refId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[QuarterName]"
                       codePage="1250"
                       dataType="str"
                       length="9"
                       name="QuarterName" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Year]"
+                      refId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Year]"
                       codePage="1250"
                       dataType="str"
                       length="4"
                       name="Year" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IsWeekday]"
+                      refId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IsWeekday]"
                       codePage="1250"
                       dataType="str"
                       length="150"
                       name="IsWeekday" />
+                    <externalMetadataColumn
+                      refId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DateID]"
+                      dataType="i8"
+                      name="DateID" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  refId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Error Output]"
                   isErrorOut="true"
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DateKey]"
+                      refId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DateID]"
                       dataType="i8"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DateKey]"
-                      name="DateKey" />
+                      lineageId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DateID]"
+                      name="DateID" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Date]"
+                      refId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Date]"
                       dataType="dbTimeStamp"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Date]"
+                      lineageId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Date]"
                       name="Date" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Season]"
+                      refId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Season]"
                       dataType="wstr"
                       length="150"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Season]"
+                      lineageId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Season]"
                       name="Season" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DateFormatted]"
+                      refId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DateFormatted]"
                       codePage="1250"
                       dataType="str"
                       length="10"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DateFormatted]"
+                      lineageId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DateFormatted]"
                       name="DateFormatted" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DayOfMonth]"
+                      refId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DayOfMonth]"
                       codePage="1250"
                       dataType="str"
                       length="2"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DayOfMonth]"
+                      lineageId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DayOfMonth]"
                       name="DayOfMonth" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DayName]"
+                      refId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DayName]"
                       codePage="1250"
                       dataType="str"
                       length="9"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DayName]"
+                      lineageId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DayName]"
                       name="DayName" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DayOfWeekInMonth]"
+                      refId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DayOfWeekInMonth]"
                       codePage="1250"
                       dataType="str"
                       length="2"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DayOfWeekInMonth]"
+                      lineageId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DayOfWeekInMonth]"
                       name="DayOfWeekInMonth" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DayOfWeekInYear]"
+                      refId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DayOfWeekInYear]"
                       codePage="1250"
                       dataType="str"
                       length="2"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DayOfWeekInYear]"
+                      lineageId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DayOfWeekInYear]"
                       name="DayOfWeekInYear" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DayOfQuarter]"
+                      refId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DayOfQuarter]"
                       codePage="1250"
                       dataType="str"
                       length="3"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DayOfQuarter]"
+                      lineageId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DayOfQuarter]"
                       name="DayOfQuarter" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DayOfYear]"
+                      refId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DayOfYear]"
                       codePage="1250"
                       dataType="str"
                       length="3"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DayOfYear]"
+                      lineageId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DayOfYear]"
                       name="DayOfYear" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[WeekOfMonth]"
+                      refId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[WeekOfMonth]"
                       codePage="1250"
                       dataType="str"
                       length="1"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[WeekOfMonth]"
+                      lineageId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[WeekOfMonth]"
                       name="WeekOfMonth" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[WeekOfQuarter]"
+                      refId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[WeekOfQuarter]"
                       codePage="1250"
                       dataType="str"
                       length="2"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[WeekOfQuarter]"
+                      lineageId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[WeekOfQuarter]"
                       name="WeekOfQuarter" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[WeekOfYear]"
+                      refId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[WeekOfYear]"
                       codePage="1250"
                       dataType="str"
                       length="2"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[WeekOfYear]"
+                      lineageId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[WeekOfYear]"
                       name="WeekOfYear" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Month]"
+                      refId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Month]"
                       codePage="1250"
                       dataType="str"
                       length="2"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Month]"
+                      lineageId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Month]"
                       name="Month" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MonthName]"
+                      refId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MonthName]"
                       codePage="1250"
                       dataType="str"
                       length="9"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MonthName]"
+                      lineageId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MonthName]"
                       name="MonthName" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MonthOfQuarter]"
+                      refId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MonthOfQuarter]"
                       codePage="1250"
                       dataType="str"
                       length="2"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MonthOfQuarter]"
+                      lineageId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MonthOfQuarter]"
                       name="MonthOfQuarter" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Quarter]"
+                      refId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Quarter]"
                       codePage="1250"
                       dataType="str"
                       length="1"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Quarter]"
+                      lineageId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Quarter]"
                       name="Quarter" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[QuarterName]"
+                      refId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[QuarterName]"
                       codePage="1250"
                       dataType="str"
                       length="9"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[QuarterName]"
+                      lineageId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[QuarterName]"
                       name="QuarterName" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Year]"
+                      refId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Year]"
                       codePage="1250"
                       dataType="str"
                       length="4"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Year]"
+                      lineageId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Year]"
                       name="Year" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IsWeekday]"
+                      refId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IsWeekday]"
                       codePage="1250"
                       dataType="str"
                       length="150"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IsWeekday]"
+                      lineageId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IsWeekday]"
                       name="IsWeekday" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Vytvořit time data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -750,6 +1141,16 @@ SELECT * FROM [dbo].[DimDate]</property>
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{BD427D80-36E7-4A06-8DE9-D5978D1D4D09}"
+      DTS:From="Package\Vytvořit time data"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Vytvořit klíče do FactPassage" />
+  </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -761,45 +1162,115 @@ SELECT * FROM [dbo].[DimDate]</property>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="151,42"
-          Id="Package\Data Flow Task"
-          TopLeft="5.5,5.5" />
+          Size="163,42"
+          Id="Package\Vytvořit time data"
+          TopLeft="408.5,108.5" />
+        <NodeLayout
+          Size="215,42"
+          Id="Package\Vytvořit klíče do FactPassage"
+          TopLeft="406,256" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="490,150.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="23.5,105.5"
+              Start="0,0"
+              End="23.5,98">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,48.75"
+                    Point2="0,52.75"
+                    Point3="4,52.75" />
+                  <mssgle:LineSegment
+                    End="19.5,52.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="19.5,52.75"
+                    Point2="23.5,52.75"
+                    Point3="23.5,56.75" />
+                  <mssgle:LineSegment
+                    End="23.5,98" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\Data Flow Task">
+    design-time-name="Package\Vytvořit time data">
     <LayoutInfo>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="150,42"
-          Id="Package\Data Flow Task\OLE DB Source"
+          Id="Package\Vytvořit time data\OLE DB Source"
           TopLeft="470,241" />
         <AnnotationLayout
           Text="V tomhle je skript na vytvoření časových dat"
-          ParentId="Package\Data Flow Task"
+          ParentId="Package\Vytvořit time data"
           FontInfo="{assembly:Null}"
-          Size="262,60"
+          Size="262,40"
           Id="4ab0aefe-0d58-418a-a741-c7bf1bcfd1ea"
           TopLeft="410,197" />
         <AnnotationLayout
           Text="Zatím to není napojený do ničeho, ale mělo by to ve FactPassage udělat indexy"
-          ParentId="Package\Data Flow Task"
+          ParentId="Package\Vytvořit time data"
           FontInfo="{assembly:Null}"
-          Size="445,60"
+          Size="445,40"
           Id="6a0c9a05-87fe-4a43-9b44-387229a6b4fd"
           TopLeft="329,316" />
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\OLE DB Source">
+    design-time-name="Package\Vytvořit time data\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Vytvořit klíče do FactPassage">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Vytvořit klíče do FactPassage\OLE DB Source"
+          TopLeft="457,153" />
+        <AnnotationLayout
+          Text="Vytvoří indexy do tabulky FactPassage pomocí SQL dotazu&#xD;&#xA;fakt jsem nepřišel nato jak to udělat tady v té SRAČCE pomocí těch komponent z toolboxu&#xD;&#xA;takže jeto přes command provedený v tomhle source. .......... deal with it"
+          ParentId="Package\Vytvořit klíče do FactPassage"
+          FontInfo="{assembly:Null}"
+          Size="505,72"
+          Id="078eaafc-a4bc-4a99-9d36-286e2ae41c15"
+          TopLeft="301,57" />
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Vytvořit klíče do FactPassage\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

@@ -2,18 +2,23 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>DBS2_Tryhards_integration</Name>
-    <LastWriteTime>2018-01-17T09:24:00.6738449Z</LastWriteTime>
+    <LastWriteTime>2018-01-17T15:12:59.8261616Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>LoadDimDate.dtsx</Name>
-      <LastWriteTime>2018-01-17T09:25:34.0957011Z</LastWriteTime>
+      <LastWriteTime>2018-01-17T16:24:57.1325469Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>LoadDimWeather.dtsx</Name>
-      <LastWriteTime>2018-01-16T21:58:40.4807249Z</LastWriteTime>
+      <LastWriteTime>2018-01-17T14:34:45.2345971Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>LoadFactPassage.dtsx</Name>
+      <LastWriteTime>2018-01-17T15:42:52.4213273Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
