@@ -1,0 +1,8 @@
+DimDate
+Udělat indexy ve faktové tabulce
+
+UPDATE [dbo].[FactPassage]
+   SET DateID = d.DateID
+   FROM [dbo].[DimDate] d
+JOIN  [dbo].[FactPassage] f
+ ON d.Date = CAST(f.Timestamp AS DATE)
