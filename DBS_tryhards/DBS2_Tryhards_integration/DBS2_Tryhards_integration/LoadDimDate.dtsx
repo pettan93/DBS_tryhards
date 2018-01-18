@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="LoadDimDate"
   DTS:PackageType="5"
-  DTS:VersionBuild="14"
-  DTS:VersionGUID="{0DED8F98-58E1-4167-A826-891B9B902ECA}">
+  DTS:VersionBuild="16"
+  DTS:VersionGUID="{A4A8DD1E-7C60-4533-BF99-93896E648A52}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -803,39 +803,39 @@ SELECT * FROM [dbo].[DimDate]</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="215,42"
+          Size="214.666666666667,42"
           Id="Package\Vytvořit klíče do FactPassage"
-          TopLeft="406,256" />
+          TopLeft="281.000001862645,207.033334208926" />
         <NodeLayout
-          Size="163,42"
+          Size="162.666666666667,42"
           Id="Package\Vytvořit time data"
-          TopLeft="408.5,108.5" />
+          TopLeft="286.833335146308,105.466666720907" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="490,150.5">
+          TopLeft="368.166668479641,147.466666720907">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="23.5,105.5"
+              EndConnector="20.166666716337,59.5666674880191"
               Start="0,0"
-              End="23.5,98">
+              End="20.166666716337,52.0666674880191">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,48.75" />
+                    End="0,25.7833337440095" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,48.75"
-                    Point2="0,52.75"
-                    Point3="4,52.75" />
+                    Point1="0,25.7833337440095"
+                    Point2="0,29.7833337440095"
+                    Point3="4,29.7833337440095" />
                   <mssgle:LineSegment
-                    End="19.5,52.75" />
+                    End="16.166666716337,29.7833337440095" />
                   <mssgle:CubicBezierSegment
-                    Point1="19.5,52.75"
-                    Point2="23.5,52.75"
-                    Point3="23.5,56.75" />
+                    Point1="16.166666716337,29.7833337440095"
+                    Point2="20.166666716337,29.7833337440095"
+                    Point3="20.166666716337,33.7833337440095" />
                   <mssgle:LineSegment
-                    End="23.5,98" />
+                    End="20.166666716337,52.0666674880191" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -903,7 +903,7 @@ SELECT * FROM [dbo].[DimDate]</property>
           Text="Zatím to není napojený do ničeho, ale mělo by to ve FactPassage udělat indexy"
           ParentId="Package\Vytvořit time data"
           FontInfo="{assembly:Null}"
-          Size="445,40"
+          Size="445.333333333334,40"
           Id="6a0c9a05-87fe-4a43-9b44-387229a6b4fd"
           TopLeft="329,316" />
       </GraphLayout>

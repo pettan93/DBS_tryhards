@@ -11,8 +11,8 @@
   DTS:LocaleID="1029"
   DTS:ObjectName="LoadDimIntegrity"
   DTS:PackageType="5"
-  DTS:VersionBuild="2"
-  DTS:VersionGUID="{F570F38D-6ED5-4D7D-AA70-B1875D7C17C7}">
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{D593EADF-41D1-4705-8C01-058EA575405C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -43,6 +43,451 @@
         <pipeline
           version="1">
           <components>
+            <component
+              refId="Package\Data Flow Task\Derived Column All Integrity Columns"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column All Integrity Columns"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Derived Column All Integrity Columns.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Derived Column All Integrity Columns.Inputs[Derived Column Input].Columns[state]"
+                      cachedDataType="bool"
+                      cachedName="state"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[state]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Derived Column All Integrity Columns.Inputs[Derived Column Input].Columns[dataDamage]"
+                      cachedDataType="bool"
+                      cachedName="dataDamage"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[dataDamage]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Derived Column All Integrity Columns.Inputs[Derived Column Input].Columns[dataError]"
+                      cachedDataType="bool"
+                      cachedName="dataError"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[dataError]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Derived Column All Integrity Columns.Inputs[Derived Column Input].Columns[sensorDamage]"
+                      cachedDataType="bool"
+                      cachedName="sensorDamage"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[sensorDamage]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Derived Column All Integrity Columns.Inputs[Derived Column Input].Columns[wheelDetectorError]"
+                      cachedDataType="bool"
+                      cachedName="wheelDetectorError"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[wheelDetectorError]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Derived Column All Integrity Columns.Inputs[Derived Column Input].Columns[vCritical]"
+                      cachedDataType="bool"
+                      cachedName="vCritical"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[vCritical]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Derived Column All Integrity Columns.Inputs[Derived Column Input].Columns[railDirt]"
+                      cachedDataType="bool"
+                      cachedName="railDirt"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[railDirt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Derived Column All Integrity Columns.Inputs[Derived Column Input].Columns[suddenBrake]"
+                      cachedDataType="bool"
+                      cachedName="suddenBrake"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[suddenBrake]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Derived Column All Integrity Columns.Inputs[Derived Column Input].Columns[configurationDetectionError]"
+                      cachedDataType="bool"
+                      cachedName="configurationDetectionError"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[configurationDetectionError]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Derived Column All Integrity Columns.Inputs[Derived Column Input].Columns[noCalibration]"
+                      cachedDataType="bool"
+                      cachedName="noCalibration"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[noCalibration]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Derived Column All Integrity Columns.Inputs[Derived Column Input].Columns[functionSelfOffline]"
+                      cachedDataType="bool"
+                      cachedName="functionSelfOffline"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[functionSelfOffline]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Derived Column All Integrity Columns.Inputs[Derived Column Input].Columns[lowPrecisionMeasure]"
+                      cachedDataType="bool"
+                      cachedName="lowPrecisionMeasure"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[lowPrecisionMeasure]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Derived Column All Integrity Columns.Inputs[Derived Column Input].Columns[measureOutOfRange]"
+                      cachedDataType="bool"
+                      cachedName="measureOutOfRange"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[measureOutOfRange]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Derived Column All Integrity Columns.Inputs[Derived Column Input].Columns[potentialStandStill]"
+                      cachedDataType="bool"
+                      cachedName="potentialStandStill"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[potentialStandStill]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Derived Column All Integrity Columns.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Data Flow Task\Derived Column All Integrity Columns.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column All Integrity Columns.Outputs[Derived Column Output].Columns[Derived Column 1]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="3"
+                      lineageId="Package\Data Flow Task\Derived Column All Integrity Columns.Outputs[Derived Column Output].Columns[Derived Column 1]"
+                      name="Derived Column 1"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[state]} ? "Yes" : "No")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(state ? "Yes" : "No")</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column All Integrity Columns.Outputs[Derived Column Output].Columns[Derived Column 2]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="3"
+                      lineageId="Package\Data Flow Task\Derived Column All Integrity Columns.Outputs[Derived Column Output].Columns[Derived Column 2]"
+                      name="Derived Column 2"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[dataDamage]} ? "Yes" : "No")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(dataDamage ? "Yes" : "No")</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column All Integrity Columns.Outputs[Derived Column Output].Columns[Derived Column 3]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="3"
+                      lineageId="Package\Data Flow Task\Derived Column All Integrity Columns.Outputs[Derived Column Output].Columns[Derived Column 3]"
+                      name="Derived Column 3"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[dataError]} ? "Yes" : "No")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(dataError ? "Yes" : "No")</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column All Integrity Columns.Outputs[Derived Column Output].Columns[Derived Column 4]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="3"
+                      lineageId="Package\Data Flow Task\Derived Column All Integrity Columns.Outputs[Derived Column Output].Columns[Derived Column 4]"
+                      name="Derived Column 4"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[sensorDamage]} ? "Yes" : "No")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(sensorDamage ? "Yes" : "No")</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column All Integrity Columns.Outputs[Derived Column Output].Columns[Derived Column 5]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="3"
+                      lineageId="Package\Data Flow Task\Derived Column All Integrity Columns.Outputs[Derived Column Output].Columns[Derived Column 5]"
+                      name="Derived Column 5"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[wheelDetectorError]} ? "Yes" : "No")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(wheelDetectorError ? "Yes" : "No")</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column All Integrity Columns.Outputs[Derived Column Output].Columns[Derived Column 6]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="3"
+                      lineageId="Package\Data Flow Task\Derived Column All Integrity Columns.Outputs[Derived Column Output].Columns[Derived Column 6]"
+                      name="Derived Column 6"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[vCritical]} ? "Yes" : "No")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(vCritical ? "Yes" : "No")</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column All Integrity Columns.Outputs[Derived Column Output].Columns[Derived Column 7]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="3"
+                      lineageId="Package\Data Flow Task\Derived Column All Integrity Columns.Outputs[Derived Column Output].Columns[Derived Column 7]"
+                      name="Derived Column 7"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[railDirt]} ? "Yes" : "No")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(railDirt ? "Yes" : "No")</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column All Integrity Columns.Outputs[Derived Column Output].Columns[Derived Column 8]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="3"
+                      lineageId="Package\Data Flow Task\Derived Column All Integrity Columns.Outputs[Derived Column Output].Columns[Derived Column 8]"
+                      name="Derived Column 8"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[suddenBrake]} ? "Yes" : "No")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(suddenBrake ? "Yes" : "No")</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column All Integrity Columns.Outputs[Derived Column Output].Columns[Derived Column 9]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="3"
+                      lineageId="Package\Data Flow Task\Derived Column All Integrity Columns.Outputs[Derived Column Output].Columns[Derived Column 9]"
+                      name="Derived Column 9"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[configurationDetectionError]} ? "Yes" : "No")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(configurationDetectionError ? "Yes" : "No")</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column All Integrity Columns.Outputs[Derived Column Output].Columns[Derived Column 10]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="3"
+                      lineageId="Package\Data Flow Task\Derived Column All Integrity Columns.Outputs[Derived Column Output].Columns[Derived Column 10]"
+                      name="Derived Column 10"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[noCalibration]} ? "Yes" : "No")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(noCalibration ? "Yes" : "No")</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column All Integrity Columns.Outputs[Derived Column Output].Columns[Derived Column 11]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="3"
+                      lineageId="Package\Data Flow Task\Derived Column All Integrity Columns.Outputs[Derived Column Output].Columns[Derived Column 11]"
+                      name="Derived Column 11"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[functionSelfOffline]} ? "Yes" : "No")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(functionSelfOffline ? "Yes" : "No")</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column All Integrity Columns.Outputs[Derived Column Output].Columns[Derived Column 12]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="3"
+                      lineageId="Package\Data Flow Task\Derived Column All Integrity Columns.Outputs[Derived Column Output].Columns[Derived Column 12]"
+                      name="Derived Column 12"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[lowPrecisionMeasure]} ? "Yes" : "No")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(lowPrecisionMeasure ? "Yes" : "No")</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column All Integrity Columns.Outputs[Derived Column Output].Columns[Derived Column 13]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="3"
+                      lineageId="Package\Data Flow Task\Derived Column All Integrity Columns.Outputs[Derived Column Output].Columns[Derived Column 13]"
+                      name="Derived Column 13"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[measureOutOfRange]} ? "Yes" : "No")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(measureOutOfRange ? "Yes" : "No")</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column All Integrity Columns.Outputs[Derived Column Output].Columns[Derived Column 14]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="7"
+                      lineageId="Package\Data Flow Task\Derived Column All Integrity Columns.Outputs[Derived Column Output].Columns[Derived Column 14]"
+                      name="Derived Column 14"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">([ISNULL](#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[potentialStandStill]}) ? "Unknown" : (#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[potentialStandStill]} ? "Yes" : "No"))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(ISNULL(potentialStandStill) ? "Unknown" : (potentialStandStill ? "Yes" : "No"))</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Derived Column All Integrity Columns.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Data Flow Task\Derived Column All Integrity Columns.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column All Integrity Columns.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Derived Column All Integrity Columns.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column All Integrity Columns.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Derived Column All Integrity Columns.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
             <component
               refId="Package\Data Flow Task\OLE DB Destination"
               componentClassID="Microsoft.OLEDBDestination"
@@ -116,95 +561,109 @@
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[state]"
-                      cachedDataType="bool"
-                      cachedName="state"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[State]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[state]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[dataDamage]"
-                      cachedDataType="bool"
-                      cachedName="dataDamage"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DataDamage]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[dataDamage]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[dataError]"
-                      cachedDataType="bool"
-                      cachedName="dataError"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DataError]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[dataError]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[sensorDamage]"
-                      cachedDataType="bool"
-                      cachedName="sensorDamage"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SensorDamage]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[sensorDamage]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[wheelDetectorError]"
-                      cachedDataType="bool"
-                      cachedName="wheelDetectorError"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[WheelDetectorError]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[wheelDetectorError]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[vCritical]"
-                      cachedDataType="bool"
-                      cachedName="vCritical"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[vCritical]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[vCritical]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[railDirt]"
-                      cachedDataType="bool"
-                      cachedName="railDirt"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RailDirt]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[railDirt]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[suddenBrake]"
-                      cachedDataType="bool"
-                      cachedName="suddenBrake"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SuddenBrake]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[suddenBrake]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[configurationDetectionError]"
-                      cachedDataType="bool"
-                      cachedName="configurationDetectionError"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ConfigurationDetectionError]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[configurationDetectionError]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[noCalibration]"
-                      cachedDataType="bool"
-                      cachedName="noCalibration"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NoCalibration]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[noCalibration]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[functionSelfOffline]"
-                      cachedDataType="bool"
-                      cachedName="functionSelfOffline"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FunctionSelfOffline]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[functionSelfOffline]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[lowPrecisionMeasure]"
-                      cachedDataType="bool"
-                      cachedName="lowPrecisionMeasure"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LowPrecisionMeasure]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[lowPrecisionMeasure]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[measureOutOfRange]"
-                      cachedDataType="bool"
-                      cachedName="measureOutOfRange"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MeasureOutOfRange]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[measureOutOfRange]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[potentialStandStill]"
-                      cachedDataType="bool"
-                      cachedName="potentialStandStill"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PotentialStandStill]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[potentialStandStill]" />
-                    <inputColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[id_integrity]"
                       cachedDataType="i8"
                       cachedName="id_integrity"
                       externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IntegrityID]"
                       lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_integrity]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Derived Column 1]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="Derived Column 1"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[State]"
+                      lineageId="Package\Data Flow Task\Derived Column All Integrity Columns.Outputs[Derived Column Output].Columns[Derived Column 1]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Derived Column 2]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="Derived Column 2"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DataDamage]"
+                      lineageId="Package\Data Flow Task\Derived Column All Integrity Columns.Outputs[Derived Column Output].Columns[Derived Column 2]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Derived Column 3]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="Derived Column 3"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DataError]"
+                      lineageId="Package\Data Flow Task\Derived Column All Integrity Columns.Outputs[Derived Column Output].Columns[Derived Column 3]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Derived Column 4]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="Derived Column 4"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SensorDamage]"
+                      lineageId="Package\Data Flow Task\Derived Column All Integrity Columns.Outputs[Derived Column Output].Columns[Derived Column 4]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Derived Column 5]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="Derived Column 5"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[WheelDetectorError]"
+                      lineageId="Package\Data Flow Task\Derived Column All Integrity Columns.Outputs[Derived Column Output].Columns[Derived Column 5]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Derived Column 6]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="Derived Column 6"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[vCritical]"
+                      lineageId="Package\Data Flow Task\Derived Column All Integrity Columns.Outputs[Derived Column Output].Columns[Derived Column 6]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Derived Column 7]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="Derived Column 7"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RailDirt]"
+                      lineageId="Package\Data Flow Task\Derived Column All Integrity Columns.Outputs[Derived Column Output].Columns[Derived Column 7]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Derived Column 8]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="Derived Column 8"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SuddenBrake]"
+                      lineageId="Package\Data Flow Task\Derived Column All Integrity Columns.Outputs[Derived Column Output].Columns[Derived Column 8]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Derived Column 9]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="Derived Column 9"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ConfigurationDetectionError]"
+                      lineageId="Package\Data Flow Task\Derived Column All Integrity Columns.Outputs[Derived Column Output].Columns[Derived Column 9]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Derived Column 10]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="Derived Column 10"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NoCalibration]"
+                      lineageId="Package\Data Flow Task\Derived Column All Integrity Columns.Outputs[Derived Column Output].Columns[Derived Column 10]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Derived Column 11]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="Derived Column 11"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FunctionSelfOffline]"
+                      lineageId="Package\Data Flow Task\Derived Column All Integrity Columns.Outputs[Derived Column Output].Columns[Derived Column 11]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Derived Column 12]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="Derived Column 12"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LowPrecisionMeasure]"
+                      lineageId="Package\Data Flow Task\Derived Column All Integrity Columns.Outputs[Derived Column Output].Columns[Derived Column 12]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Derived Column 13]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="Derived Column 13"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MeasureOutOfRange]"
+                      lineageId="Package\Data Flow Task\Derived Column All Integrity Columns.Outputs[Derived Column Output].Columns[Derived Column 13]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Derived Column 14]"
+                      cachedDataType="wstr"
+                      cachedLength="7"
+                      cachedName="Derived Column 14"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PotentialStandStill]"
+                      lineageId="Package\Data Flow Task\Derived Column All Integrity Columns.Outputs[Derived Column Output].Columns[Derived Column 14]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -214,59 +673,73 @@
                       name="IntegrityID" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[State]"
-                      dataType="bool"
+                      dataType="wstr"
+                      length="50"
                       name="State" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DataDamage]"
-                      dataType="bool"
+                      dataType="wstr"
+                      length="50"
                       name="DataDamage" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DataError]"
-                      dataType="bool"
+                      dataType="wstr"
+                      length="50"
                       name="DataError" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SensorDamage]"
-                      dataType="bool"
+                      dataType="wstr"
+                      length="50"
                       name="SensorDamage" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[WheelDetectorError]"
-                      dataType="bool"
+                      dataType="wstr"
+                      length="50"
                       name="WheelDetectorError" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[vCritical]"
-                      dataType="bool"
+                      dataType="wstr"
+                      length="50"
                       name="vCritical" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RailDirt]"
-                      dataType="bool"
+                      dataType="wstr"
+                      length="50"
                       name="RailDirt" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SuddenBrake]"
-                      dataType="bool"
+                      dataType="wstr"
+                      length="50"
                       name="SuddenBrake" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ConfigurationDetectionError]"
-                      dataType="bool"
+                      dataType="wstr"
+                      length="50"
                       name="ConfigurationDetectionError" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NoCalibration]"
-                      dataType="bool"
+                      dataType="wstr"
+                      length="50"
                       name="NoCalibration" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FunctionSelfOffline]"
-                      dataType="bool"
+                      dataType="wstr"
+                      length="50"
                       name="FunctionSelfOffline" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LowPrecisionMeasure]"
-                      dataType="bool"
+                      dataType="wstr"
+                      length="50"
                       name="LowPrecisionMeasure" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MeasureOutOfRange]"
-                      dataType="bool"
+                      dataType="wstr"
+                      length="50"
                       name="MeasureOutOfRange" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PotentialStandStill]"
-                      dataType="bool"
+                      dataType="wstr"
+                      length="50"
                       name="PotentialStandStill" />
                   </externalMetadataColumns>
                 </input>
@@ -657,8 +1130,13 @@
           </components>
           <paths>
             <path
-              refId="Package\Data Flow Task.Paths[OLE DB Source Output]"
+              refId="Package\Data Flow Task.Paths[Derived Column Output]"
               endId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Task\Derived Column All Integrity Columns.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[OLE DB Source Output]"
+              endId="Package\Data Flow Task\Derived Column All Integrity Columns.Inputs[Derived Column Input]"
               name="OLE DB Source Output"
               startId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output]" />
           </paths>
@@ -679,7 +1157,7 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="151,42"
+          Size="150.666666666667,42"
           Id="Package\Data Flow Task"
           TopLeft="91,68" />
       </GraphLayout>
@@ -689,41 +1167,55 @@
     design-time-name="Package\Data Flow Task">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="172,42.6666666666667"
+          Id="Package\Data Flow Task\OLE DB Destination"
+          TopLeft="96.6666661202908,235.299999976754" />
         <NodeLayout
           Size="150,42"
           Id="Package\Data Flow Task\OLE DB Source"
-          TopLeft="85,60" />
+          TopLeft="97.9166664741933,60" />
         <NodeLayout
-          Size="171,42"
-          Id="Package\Data Flow Task\OLE DB Destination"
-          TopLeft="60,234" />
+          Size="256,42.6666666666667"
+          Id="Package\Data Flow Task\Derived Column All Integrity Columns"
+          TopLeft="51.2499992363155,148.599997938871" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
-          TopLeft="160,102">
+          TopLeft="176.083332855254,102">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-14.5,132"
+              EndConnector="0,46.5999979388714"
               Start="0,0"
-              End="-14.5,124.5">
+              End="0,39.0999979388714">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,62" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,62"
-                    Point2="0,66"
-                    Point3="-4,66" />
+                    End="0,39.0999979388714" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Derived Column Output]"
+          TopLeft="180.958332678303,191.266664605538">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44.0333353712161"
+              Start="0,0"
+              End="0,36.5333353712161">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="-10.5,66" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-10.5,66"
-                    Point2="-14.5,66"
-                    Point3="-14.5,70" />
-                  <mssgle:LineSegment
-                    End="-14.5,124.5" />
+                    End="0,36.5333353712161" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -736,7 +1228,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\OLE DB Source">
+    design-time-name="Package\Data Flow Task\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -749,7 +1241,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\OLE DB Destination">
+    design-time-name="Package\Data Flow Task\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
