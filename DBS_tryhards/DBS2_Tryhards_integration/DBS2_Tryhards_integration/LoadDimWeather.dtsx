@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="LoadDimWeather"
   DTS:PackageType="5"
-  DTS:VersionBuild="11"
-  DTS:VersionGUID="{CBCF0DAA-4C46-49F0-894A-EBC174EC235D}">
+  DTS:VersionBuild="13"
+  DTS:VersionGUID="{FCC17C54-0882-4350-B75A-11F3AB028141}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -366,21 +366,6 @@
   </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
-    <DTS:Executable
-      DTS:refId="Package\Indexy do FactPassage"
-      DTS:CreationName="Microsoft.Pipeline"
-      DTS:Description="Data Flow Task"
-      DTS:DTSID="{B40CF41C-C0C4-478F-94A0-3C24672EC656}"
-      DTS:ExecutableType="Microsoft.Pipeline"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Indexy do FactPassage"
-      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <pipeline
-          version="1" />
-      </DTS:ObjectData>
-    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Vytvořit weather dimenzi"
       DTS:CreationName="Microsoft.Pipeline"
@@ -994,16 +979,6 @@
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
-  <DTS:PrecedenceConstraints>
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint]"
-      DTS:CreationName=""
-      DTS:DTSID="{83BC4FF1-E921-47C5-B5DB-A73384F785C8}"
-      DTS:From="Package\Vytvořit weather dimenzi"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint"
-      DTS:To="Package\Indexy do FactPassage" />
-  </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -1015,37 +990,11 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
           Size="196,42"
           Id="Package\Vytvořit weather dimenzi"
           TopLeft="424.5,182.5" />
-        <NodeLayout
-          Size="187,42"
-          Id="Package\Indexy do FactPassage"
-          TopLeft="424,370" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="520,224.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,145.5"
-              Start="0,0"
-              End="0,138">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,138" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -1055,39 +1004,27 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="171,42"
-          Id="Package\Vytvořit weather dimenzi\OLE DB Destination"
-          TopLeft="468,471" />
-        <NodeLayout
           Size="150,42"
           Id="Package\Vytvořit weather dimenzi\OLE DB Source"
           TopLeft="495,160" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Vytvořit weather dimenzi\OLE DB Destination"
+          TopLeft="481,472" />
         <EdgeLayout
           Id="Package\Vytvořit weather dimenzi.Paths[OLE DB Source Output]"
-          TopLeft="570,202">
+          TopLeft="568.25,202">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-16.5,269"
+              EndConnector="0,270"
               Start="0,0"
-              End="-16.5,261.5">
+              End="0,262.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,130.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,130.5"
-                    Point2="0,134.5"
-                    Point3="-4,134.5" />
-                  <mssgle:LineSegment
-                    End="-12.5,134.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-12.5,134.5"
-                    Point2="-16.5,134.5"
-                    Point3="-16.5,138.5" />
-                  <mssgle:LineSegment
-                    End="-16.5,261.5" />
+                    End="0,262.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1100,9 +1037,9 @@
           Text="Přetavit data z weatherData do DimWeather, bez větších změn"
           ParentId="Package\Vytvořit weather dimenzi"
           FontInfo="{assembly:Null}"
-          Size="358,60"
+          Size="358,40"
           Id="dc432e35-c127-4fe9-b3d6-8aa6b8cda484"
-          TopLeft="755,293" />
+          TopLeft="610,311" />
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -1132,27 +1069,5 @@
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Indexy do FactPassage">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <AnnotationLayout
-          Text="UPDATE [dbo].[FactPassage]&#xD;&#xA;   SET WeatherID = w.WeatherID&#xD;&#xA; FROM [dbo].[FactPassage] f&#xD;&#xA; JOIN  [dbo].[DimWeather] w&#xD;&#xA; ON&#xD;&#xA;  w.date =  CAST(f.Timestamp AS DATE)&#xD;&#xA; AND&#xD;&#xA;  w.id_tis =  f.id_TIS_docasne&#xD;&#xA;&#xD;&#xA;&#xD;&#xA; &#xD;&#xA;"
-          ParentId="Package\Indexy do FactPassage"
-          FontInfo="{assembly:Null}"
-          Size="236,216"
-          Id="6870fc1d-7b97-48c6-bf9e-ed315c3f181f"
-          TopLeft="428,158" />
-        <AnnotationLayout
-          Text="SELECT TOP 1000 *&#xD;&#xA; FROM [dbo].[FactPassage] f&#xD;&#xA; JOIN  [dbo].[DimWeather] w&#xD;&#xA; ON&#xD;&#xA;  f.WeatherID = w.WeatherID"
-          ParentId="Package\Indexy do FactPassage"
-          FontInfo="{assembly:Null}"
-          Size="181,104"
-          Id="6d4cb32c-12b2-4f5c-b233-591fc88119c9"
-          TopLeft="471,402" />
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>

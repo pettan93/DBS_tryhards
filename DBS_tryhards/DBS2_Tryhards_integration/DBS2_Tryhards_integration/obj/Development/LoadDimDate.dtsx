@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="LoadDimDate"
   DTS:PackageType="5"
-  DTS:VersionBuild="16"
-  DTS:VersionGUID="{A4A8DD1E-7C60-4533-BF99-93896E648A52}">
+  DTS:VersionBuild="17"
+  DTS:VersionGUID="{4CA2B36D-728A-472C-8178-97FFD6827BD1}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -803,11 +803,11 @@ SELECT * FROM [dbo].[DimDate]</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="214.666666666667,42"
+          Size="215,42"
           Id="Package\Vytvořit klíče do FactPassage"
           TopLeft="281.000001862645,207.033334208926" />
         <NodeLayout
-          Size="162.666666666667,42"
+          Size="163,42"
           Id="Package\Vytvořit time data"
           TopLeft="286.833335146308,105.466666720907" />
         <EdgeLayout
@@ -853,21 +853,21 @@ SELECT * FROM [dbo].[DimDate]</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <AnnotationLayout
-          Text="Vytvoří indexy do tabulky FactPassage pomocí SQL dotazu&#xD;&#xA;&#xA;fakt jsem nepřišel nato jak to udělat tady v té SRAČCE pomocí těch komponent z toolboxu&#xD;&#xA;&#xA;takže prostě pusť tento SQL command.......... deal with it"
+          Text="Vytvoří indexy do tabulky FactPassage pomocí SQL dotazu&#xA;&#xA;fakt jsem nepřišel nato jak to udělat tady v té SRAČCE pomocí těch komponent z toolboxu&#xA;&#xA;takže prostě pusť tento SQL command.......... deal with it"
           ParentId="Package\Vytvořit klíče do FactPassage"
           FontInfo="{assembly:Null}"
           Size="505,104"
           Id="078eaafc-a4bc-4a99-9d36-286e2ae41c15"
           TopLeft="301,57" />
         <AnnotationLayout
-          Text="UPDATE [dbo].[FactPassage]&#xD;&#xA;   SET DateID = d.DateID&#xD;&#xA;   FROM [dbo].[DimDate] d&#xD;&#xA;JOIN  [dbo].[FactPassage] f&#xD;&#xA; ON d.Date = CAST(f.Timestamp AS DATE)"
+          Text="UPDATE [dbo].[FactPassage]&#xA;   SET DateID = d.DateID&#xA;   FROM [dbo].[DimDate] d&#xA;JOIN  [dbo].[FactPassage] f&#xA; ON d.Date = CAST(f.Timestamp AS DATE)"
           ParentId="Package\Vytvořit klíče do FactPassage"
           FontInfo="{assembly:Null}"
           Size="251,104"
           Id="fc4bdd0b-77d2-419b-82ec-f97431476a99"
           TopLeft="453,188" />
         <AnnotationLayout
-          Text=" SELECT TOP 1000 *&#xD;&#xA; FROM [dbo].[FactPassage] f&#xD;&#xA; JOIN  [dbo].[DimDate] d&#xD;&#xA; ON d.DateID = f.DateID"
+          Text=" SELECT TOP 1000 *&#xA; FROM [dbo].[FactPassage] f&#xA; JOIN  [dbo].[DimDate] d&#xA; ON d.DateID = f.DateID"
           ParentId="Package\Vytvořit klíče do FactPassage"
           FontInfo="{assembly:Null}"
           Size="177,88"
@@ -877,7 +877,7 @@ SELECT * FROM [dbo].[DimDate]</property>
           Text="ověření že je to OK"
           ParentId="Package\Vytvořit klíče do FactPassage"
           FontInfo="{assembly:Null}"
-          Size="129,60"
+          Size="129,40"
           Id="92a199d7-5c3c-474f-8b74-eb19ec72d488"
           TopLeft="413,410" />
       </GraphLayout>
