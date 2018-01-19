@@ -1,0 +1,223 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="266356f2-006b-4f07-bcc4-16a5f59f3404" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Fact HB Passage</ID>
+  <Name>Fact HB Passage</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="c1640f73-a992-4a5f-8faf-0aa726127fde">
+    <DataSourceViewID>ViewHB</DataSourceViewID>
+  </Source>
+  <ErrorConfiguration dwd:design-time-name="9bfe2b26-b24b-43bd-877b-7bad214f2eff">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="e489bb48-1e3e-45e7-9b69-b8278ccdce75">
+      <ID>HB Passage ID</ID>
+      <Name>HB Passage ID</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="e496cca2-7050-4217-bff0-484799429d7d">
+          <DataType>BigInt</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="b88473b9-fbb5-4385-b371-18c85ef66768">
+            <TableID>dbo_FactHBPassage</TableID>
+            <ColumnID>HBPassageID</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="06d56978-6dc8-4a22-997b-a7573b6ae5b2">
+          <AttributeID>Date ID</AttributeID>
+          <Name>Date ID</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="084241a4-b5f5-417f-808c-8285df3771c4">
+          <AttributeID>Weather ID</AttributeID>
+          <Name>Weather ID</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="d0bb6c57-7a95-45c2-b82c-b9bf994c4ee8">
+          <AttributeID>Site ID</AttributeID>
+          <Name>Site ID</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="ec1de212-8052-4a74-9fec-1e073855ff82">
+          <AttributeID>Fault Level ID</AttributeID>
+          <Name>Fault Level ID</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="4a150b69-4a54-4f2f-af26-9001b556aeb3">
+          <AttributeID>Train Type ID</AttributeID>
+          <Name>Train Type ID</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="bc0dae08-6bd1-4480-a4c4-30b636ceee92">
+          <AttributeID>Direction ID</AttributeID>
+          <Name>Direction ID</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="22aed7e3-1353-485d-9870-649237d129ae">
+          <AttributeID>Integrity ID</AttributeID>
+          <Name>Integrity ID</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="e887b385-8297-45e0-b9e2-8c812e39d941">
+      <ID>Date ID</ID>
+      <Name>Date ID</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="6be78e4e-20e6-4d23-98a6-dc3f0734aa12">
+          <DataType>BigInt</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="da6af6b9-646b-4d26-9a91-a2ac1daaa3cb">
+            <TableID>dbo_FactHBPassage</TableID>
+            <ColumnID>DateID</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="5cc278dd-d6aa-4a17-8d43-c4495b14676a">
+      <ID>Weather ID</ID>
+      <Name>Weather ID</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="5726a487-f2e7-4e8e-9bf0-1a6d061332db">
+          <DataType>BigInt</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="1ce74185-3106-4bcc-a094-aa6bdeb7e444">
+            <TableID>dbo_FactHBPassage</TableID>
+            <ColumnID>WeatherID</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="58e9d5b8-2cb8-4ac2-944a-01d180c93235">
+      <ID>Site ID</ID>
+      <Name>Site ID</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="9daf8c20-b05d-41b0-a28f-d9394368df78">
+          <DataType>BigInt</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="df11371e-960e-41be-a791-a54369ce50d4">
+            <TableID>dbo_FactHBPassage</TableID>
+            <ColumnID>SiteID</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="09dc768f-5dfe-45f5-9751-4b0bad083723">
+      <ID>Fault Level ID</ID>
+      <Name>Fault Level ID</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="969ebd0e-eb2d-49c1-96ed-9f5573b4d99f">
+          <DataType>BigInt</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="1bc902ad-3989-433d-9dfe-9c63fa229f9e">
+            <TableID>dbo_FactHBPassage</TableID>
+            <ColumnID>FaultLevelID</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="0327703b-1146-4a27-9d3d-2ec009a87ffd">
+      <ID>Train Type ID</ID>
+      <Name>Train Type ID</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="d2da57cb-ed44-4c3f-b5ad-8d0c50db9045">
+          <DataType>BigInt</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="b0998c9c-9888-4297-b533-ef8f54cf169e">
+            <TableID>dbo_FactHBPassage</TableID>
+            <ColumnID>TrainTypeID</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="5522872f-12ec-47e5-85fb-b03c894d7f88">
+      <ID>Direction ID</ID>
+      <Name>Direction ID</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="1359d464-05cf-4f71-868a-e4612e82cdb4">
+          <DataType>UnsignedTinyInt</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="0b61d9e3-4785-47e6-aa9e-00de8a967950">
+            <TableID>dbo_FactHBPassage</TableID>
+            <ColumnID>DirectionID</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="263b5666-1a5a-4907-8bf4-05f5bd54700a">
+      <ID>Integrity ID</ID>
+      <Name>Integrity ID</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="9d397ac9-bb42-4c81-95b7-e7895b7b594f">
+          <DataType>BigInt</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="2f584815-a3d5-4e04-9e9a-28e6e46e85a7">
+            <TableID>dbo_FactHBPassage</TableID>
+            <ColumnID>IntegrityID</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>

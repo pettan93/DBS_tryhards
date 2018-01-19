@@ -1,0 +1,372 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="d0c1b890-2916-48b8-aed1-9d331b0d7883" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Dim Integrity</ID>
+  <Name>Dim Integrity</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="0c63d030-19e0-4187-b2c6-a40073f8dca3">
+    <DataSourceViewID>Tryhards</DataSourceViewID>
+  </Source>
+  <UnknownMember>Visible</UnknownMember>
+  <ErrorConfiguration dwd:design-time-name="e30a824b-8d97-448c-9b99-71d4bc9dab8c">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="346d6302-e05a-4cb1-9fdd-1b76bae7a846">
+      <ID>Integrity ID</ID>
+      <Name>Integrity ID</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="e08b8c01-434d-43cc-9384-ffa3d5fe9c5c">
+          <NullProcessing>UnknownMember</NullProcessing>
+          <DataType>BigInt</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="cb437c41-f097-4495-800b-d9e5f0b34921">
+            <TableID>dbo_DimIntegrity</TableID>
+            <ColumnID>IntegrityID</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="60d2b489-4dd4-421c-86a2-7a24ddf91735">
+          <AttributeID>State</AttributeID>
+          <Name>State</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="453a92b0-5522-426b-a45b-9045c2ba5807">
+          <AttributeID>Data Damage</AttributeID>
+          <Name>Data Damage</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="e7844fe0-2812-4330-be40-81af47d60e9d">
+          <AttributeID>Data Error</AttributeID>
+          <Name>Data Error</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="cda4f60f-87ca-47d5-bf56-15f7b1b8bcb7">
+          <AttributeID>Sensor Damage</AttributeID>
+          <Name>Sensor Damage</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="9d2c6237-48c3-44d2-9854-b72f63ad0457">
+          <AttributeID>Wheel Detector Error</AttributeID>
+          <Name>Wheel Detector Error</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="82906c39-7f22-4c83-9dd6-abcdd2134f2e">
+          <AttributeID>v Critical</AttributeID>
+          <Name>v Critical</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="34e87ed5-fc9a-4fb9-a4c1-754042c81482">
+          <AttributeID>Rail Dirt</AttributeID>
+          <Name>Rail Dirt</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="289e73b7-f73d-4696-9a71-d33d92e4b231">
+          <AttributeID>Sudden Brake</AttributeID>
+          <Name>Sudden Brake</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="dab49271-df24-4c7b-9658-a4e21d806b77">
+          <AttributeID>Configuration Detection Error</AttributeID>
+          <Name>Configuration Detection Error</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="0cc40987-e03a-4d4e-bbbd-caaf3d77524d">
+          <AttributeID>No Calibration</AttributeID>
+          <Name>No Calibration</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="513fcef9-7df5-4e02-95bc-08ba508498b4">
+          <AttributeID>Function Self Offline</AttributeID>
+          <Name>Function Self Offline</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="b2275c94-6103-4077-9460-0b259d0d948d">
+          <AttributeID>Low Precision Measure</AttributeID>
+          <Name>Low Precision Measure</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="8a8acc01-87b3-4fbe-a2a6-e03319b6bbe2">
+          <AttributeID>Measure Out Of Range</AttributeID>
+          <Name>Measure Out Of Range</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="24ae3142-2ea5-4435-b7c1-29525d924084">
+          <AttributeID>Potential Stand Still</AttributeID>
+          <Name>Potential Stand Still</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="3bbbfcd9-3fe8-472a-9103-e0e150c84bab">
+      <ID>State</ID>
+      <Name>State</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="5b3d2216-1a3e-4c75-902a-5cb447f1723c">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="927770a2-bea0-4893-a62d-1c09f5f8c7f7">
+            <TableID>dbo_DimIntegrity</TableID>
+            <ColumnID>State</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="260fcbf4-138e-453d-a3b8-dce0e047410f">
+      <ID>Data Damage</ID>
+      <Name>Data Damage</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="4b5cdd67-8706-4871-8c01-9032149a3b4f">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="f180ef6c-b26c-4518-a663-868f08350246">
+            <TableID>dbo_DimIntegrity</TableID>
+            <ColumnID>DataDamage</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="69d72b74-ffc4-4bb1-b203-bcf0ef76a16c">
+      <ID>Data Error</ID>
+      <Name>Data Error</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="bed98f9c-1feb-4ab1-93ac-c1f91574c542">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="5af3ef89-09cf-41b4-9c9a-d0869053ba76">
+            <TableID>dbo_DimIntegrity</TableID>
+            <ColumnID>DataError</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="3843a894-ccf2-4cb8-a91d-e6a8c430f946">
+      <ID>Sensor Damage</ID>
+      <Name>Sensor Damage</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="82484158-f0e7-49c1-9a24-11e5b10f05bb">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ef0e5998-d206-4607-b44f-fbf880f7d7db">
+            <TableID>dbo_DimIntegrity</TableID>
+            <ColumnID>SensorDamage</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="d6234f7f-2ab3-49c1-8dbe-cb9f156184c3">
+      <ID>Wheel Detector Error</ID>
+      <Name>Wheel Detector Error</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="40afcea8-001c-4c9f-ace7-c8827b7155d7">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="52329870-009a-40ad-8545-1033f86cfcc3">
+            <TableID>dbo_DimIntegrity</TableID>
+            <ColumnID>WheelDetectorError</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="e7d6a1c4-35a0-4235-8e1c-2c91dd0233d3">
+      <ID>v Critical</ID>
+      <Name>v Critical</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="23be7824-2107-4d85-b22f-9887fac6fec5">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="3d090932-73d6-41f2-90d3-a1a9d816bfa9">
+            <TableID>dbo_DimIntegrity</TableID>
+            <ColumnID>vCritical</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="a3ee79df-8387-4d88-8ced-fd4028a1a987">
+      <ID>Rail Dirt</ID>
+      <Name>Rail Dirt</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="0be4d08a-2fde-4845-bbf3-40bf591ed986">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="66624a1b-b0ac-489d-bd4b-9d83dc618ff6">
+            <TableID>dbo_DimIntegrity</TableID>
+            <ColumnID>RailDirt</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="f57b50cc-945c-4a09-a2d5-15e3505fd540">
+      <ID>Sudden Brake</ID>
+      <Name>Sudden Brake</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="e403a1ac-e6c7-47fc-819b-c3d080c11c74">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e284a781-1514-4699-bfe4-305a2ae502a2">
+            <TableID>dbo_DimIntegrity</TableID>
+            <ColumnID>SuddenBrake</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="c90d61c0-f9a4-4107-9da4-770ca29c107b">
+      <ID>Configuration Detection Error</ID>
+      <Name>Configuration Detection Error</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="da9180c1-09cd-4c37-a5e7-149c442a2d72">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="9e362970-7f80-4cff-870f-ddda11115c3f">
+            <TableID>dbo_DimIntegrity</TableID>
+            <ColumnID>ConfigurationDetectionError</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="052961a4-fc09-4efd-8547-3bfb2ea195de">
+      <ID>No Calibration</ID>
+      <Name>No Calibration</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="7a44d04d-d723-4311-a595-aa4b3abd5f1b">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="221299ea-444c-48be-9637-264ab7c124c4">
+            <TableID>dbo_DimIntegrity</TableID>
+            <ColumnID>NoCalibration</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="8f036090-b4ec-44d8-96ff-32048403fe78">
+      <ID>Function Self Offline</ID>
+      <Name>Function Self Offline</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="49d956d3-503b-41d5-bf1d-d5cea4ce86e7">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="28cb06e9-7d72-40a9-8473-39132ba3ba7b">
+            <TableID>dbo_DimIntegrity</TableID>
+            <ColumnID>FunctionSelfOffline</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="d9326e0b-b214-4cb9-a47a-f030b34dc340">
+      <ID>Low Precision Measure</ID>
+      <Name>Low Precision Measure</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="2582cf54-7c33-48b1-bc9e-69f186fe6791">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="4737273c-b051-4698-9d6a-234721e4b5ee">
+            <TableID>dbo_DimIntegrity</TableID>
+            <ColumnID>LowPrecisionMeasure</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="96342635-4239-42e8-97d4-cbaee72261d7">
+      <ID>Measure Out Of Range</ID>
+      <Name>Measure Out Of Range</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="018eb0c2-f3dd-4ea3-bc24-ea550cb12432">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="5255f06b-55c3-4a41-8ab6-01585bdb2e79">
+            <TableID>dbo_DimIntegrity</TableID>
+            <ColumnID>MeasureOutOfRange</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="ce0c3b55-9c81-4f99-8389-34c44215d2f5">
+      <ID>Potential Stand Still</ID>
+      <Name>Potential Stand Still</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="89809415-ecf9-4626-a65e-1260d864f364">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="dffb0878-ad8b-4195-9992-48ada587393c">
+            <TableID>dbo_DimIntegrity</TableID>
+            <ColumnID>PotentialStandStill</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>
