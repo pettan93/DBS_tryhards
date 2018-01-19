@@ -5,14 +5,14 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="R16"
   DTS:CreatorName="R16\Pettan-Desktop"
-  DTS:DTSID="{E71FB441-E63D-47D4-B848-A052CB7865B2}"
+  DTS:DTSID="{32836F25-E2FA-4375-A5C4-93D4B66B1124}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="14.0.3008.28"
   DTS:LocaleID="1033"
-  DTS:ObjectName="LoadFactPassage"
+  DTS:ObjectName="LoadFactPassage_OLD"
   DTS:PackageType="5"
-  DTS:VersionBuild="28"
-  DTS:VersionGUID="{A3214C57-781B-49E3-BA1F-08CE73903551}">
+  DTS:VersionBuild="29"
+  DTS:VersionGUID="{A0153D5B-A3C1-46A3-BD01-6A1A3BD7E849}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1465,12 +1465,6 @@ where [refTable].[id_passage] = ?</property>
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[id_TIS]"
-                      cachedDataType="i8"
-                      cachedName="id_TIS"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id_TIS_docasne]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_TIS]" />
-                    <inputColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[timestamp]"
                       cachedDataType="dbTimeStamp"
                       cachedName="timestamp"
@@ -1514,12 +1508,6 @@ where [refTable].[id_passage] = ?</property>
                       externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TrainNumber]"
                       lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[TrainNumberUnicode]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DirectionID]"
-                      cachedDataType="ui1"
-                      cachedName="DirectionID"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DirectrionID]"
-                      lineageId="Package\Data Flow Task\Lookup DimDirection.Outputs[Lookup Match Output].Columns[DirectionID]" />
-                    <inputColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SiteID]"
                       cachedDataType="i8"
                       cachedName="SiteID"
@@ -1554,10 +1542,6 @@ where [refTable].[id_passage] = ?</property>
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SiteID]"
                       dataType="i8"
                       name="SiteID" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id_TIS_docasne]"
-                      dataType="i8"
-                      name="id_TIS_docasne" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TrainNumber]"
                       dataType="wstr"
@@ -1600,10 +1584,6 @@ where [refTable].[id_passage] = ?</property>
                       dataType="i8"
                       name="TrainTypeID" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DirectrionID]"
-                      dataType="ui1"
-                      name="DirectrionID" />
-                    <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IntegrityID]"
                       dataType="i8"
                       name="IntegrityID" />
@@ -1621,6 +1601,26 @@ where [refTable].[id_passage] = ?</property>
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HWPassageID]"
                       dataType="i8"
                       name="HWPassageID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DirectionID]"
+                      dataType="ui1"
+                      name="DirectionID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id_TIS]"
+                      dataType="i8"
+                      name="id_TIS" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TemperatureLeft]"
+                      dataType="r4"
+                      name="TemperatureLeft" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TemperatureRight]"
+                      dataType="r4"
+                      name="TemperatureRight" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AxleDistance]"
+                      dataType="r4"
+                      name="AxleDistance" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -2187,7 +2187,7 @@ where [refTable].[id_passage] = ?</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="150.666666666667,42"
+          Size="151,42"
           Id="Package\Data Flow Task"
           TopLeft="5.5,5.5" />
       </GraphLayout>
@@ -2513,6 +2513,19 @@ where [refTable].[id_passage] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Data Flow Task\Lookup DimDirection">
     <Properties>
       <Property>
@@ -2541,7 +2554,7 @@ where [refTable].[id_passage] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -2551,7 +2564,7 @@ where [refTable].[id_passage] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2660,19 +2673,6 @@ where [refTable].[id_passage] = ?</property>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
