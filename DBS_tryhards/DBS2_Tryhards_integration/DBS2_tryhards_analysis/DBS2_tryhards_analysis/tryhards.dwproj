@@ -6,34 +6,26 @@
     <Name>DBS2_tryhards_analysis.database</Name>
     <FullPath>DBS2_tryhards_analysis.database</FullPath>
   </Database>
+  <Cubes>
+    <ProjectItem>
+      <Name>HBView.cube</Name>
+      <FullPath>HBView.cube</FullPath>
+      <Dependencies>
+        <ProjectItem>
+          <Name>HBView.partitions</Name>
+          <FullPath>HBView.partitions</FullPath>
+        </ProjectItem>
+      </Dependencies>
+    </ProjectItem>
+  </Cubes>
   <Dimensions>
     <ProjectItem>
-      <Name>Dim Direction.dim</Name>
-      <FullPath>Dim Direction.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Dim Fault Level.dim</Name>
-      <FullPath>Dim Fault Level.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Dim Integrity.dim</Name>
-      <FullPath>Dim Integrity.dim</FullPath>
+      <Name>Dim Date.dim</Name>
+      <FullPath>Dim Date.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
       <Name>Dim Site.dim</Name>
       <FullPath>Dim Site.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Dim Train Type.dim</Name>
-      <FullPath>Dim Train Type.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Dim Weather.dim</Name>
-      <FullPath>Dim Weather.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Dim Date.dim</Name>
-      <FullPath>Dim Date.dim</FullPath>
     </ProjectItem>
   </Dimensions>
   <DataSources>
@@ -44,16 +36,16 @@
   </DataSources>
   <DataSourceViews>
     <ProjectItem>
-      <Name>ViewHB.dsv</Name>
-      <FullPath>ViewHB.dsv</FullPath>
+      <Name>HBView.dsv</Name>
+      <FullPath>HBView.dsv</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>ViewHW.dsv</Name>
-      <FullPath>ViewHW.dsv</FullPath>
+      <Name>HWView.dsv</Name>
+      <FullPath>HWView.dsv</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>ViewWDD.dsv</Name>
-      <FullPath>ViewWDD.dsv</FullPath>
+      <Name>WDDView.dsv</Name>
+      <FullPath>WDDView.dsv</FullPath>
     </ProjectItem>
   </DataSourceViews>
   <Configurations>

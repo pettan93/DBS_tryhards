@@ -11,8 +11,8 @@
   DTS:LocaleID="1029"
   DTS:ObjectName="LoadFactHBPassage"
   DTS:PackageType="5"
-  DTS:VersionBuild="48"
-  DTS:VersionGUID="{56162BB2-12B4-47CA-A403-C5D24CACAB6F}">
+  DTS:VersionBuild="49"
+  DTS:VersionGUID="{AE21C28C-3B11-467C-9066-9FEF6142D61A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1791,7 +1791,7 @@ where [refTable].[id_passage] = ?</property>
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT TOP (50000) * FROM [CBI_DB_MENDEL].[detection].[passage_HB_Axle] 
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT TOP (800000) * FROM [CBI_DB_MENDEL].[detection].[passage_HB_Axle] 
 WHERE 
 [CBI_DB_MENDEL].[detection].[passage_HB_Axle].HBL IS NOT NULL</property>
                 <property
@@ -2140,7 +2140,7 @@ WHERE
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
         <NodeLayout
           Size="217,42"
           Id="Package\Data Flow Task | Create data"
@@ -2162,7 +2162,7 @@ WHERE
           TopLeft="424.208332510665,135">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,146.433332395752"
               Start="0,0"
               End="0,138.933332395752">
@@ -2184,7 +2184,7 @@ WHERE
           TopLeft="426.708332510665,323.433332395752">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,159.566667604248"
               Start="0,0"
               End="0,152.066667604248">
@@ -2206,7 +2206,7 @@ WHERE
           TopLeft="427,525">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,43"
               Start="0,0"
               End="0,35.5">
@@ -2253,10 +2253,6 @@ WHERE
           Id="Package\Data Flow Task | Create data\Lookup DimTrainType"
           TopLeft="144.166663326323,718.43332774659" />
         <NodeLayout
-          Size="253,42"
-          Id="Package\Data Flow Task | Create data\OLE DB Destination | FactHBPassage"
-          TopLeft="100.499996609986,1073.46666125814" />
-        <NodeLayout
           Size="207,43"
           Id="Package\Data Flow Task | Create data\Derived Column HWL HWR"
           TopLeft="131.749996740371,324.499997791648" />
@@ -2272,6 +2268,10 @@ WHERE
           Size="155,43"
           Id="Package\Data Flow Task | Create data\Lookup Passage"
           TopLeft="152.83333004266,116.666664884488" />
+        <NodeLayout
+          Size="253,42"
+          Id="Package\Data Flow Task | Create data\OLE DB Destination | FactHBPassage"
+          TopLeft="100.499996609986,1073.46666125814" />
         <NodeLayout
           Size="168,42"
           Id="Package\Data Flow Task | Create data\Lookup PassageHB"
@@ -2525,19 +2525,6 @@ WHERE
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task | Create data\OLE DB Destination | FactHBPassage">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Data Flow Task | Create data\Lookup DimDirection">
     <Properties>
       <Property>
@@ -2589,7 +2576,7 @@ WHERE
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -2599,10 +2586,23 @@ WHERE
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task | Create data\OLE DB Destination | FactHBPassage">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -2612,7 +2612,7 @@ WHERE
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -2622,7 +2622,7 @@ WHERE
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>

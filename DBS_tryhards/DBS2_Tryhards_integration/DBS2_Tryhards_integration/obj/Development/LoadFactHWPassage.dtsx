@@ -11,8 +11,8 @@
   DTS:LocaleID="1029"
   DTS:ObjectName="LoadFactHWPassage"
   DTS:PackageType="5"
-  DTS:VersionBuild="46"
-  DTS:VersionGUID="{E9FBF7F4-A9EB-4DD3-AEEF-294A8362931F}">
+  DTS:VersionBuild="47"
+  DTS:VersionGUID="{9E56334E-D1E0-42BF-A224-B2D26919D534}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1679,7 +1679,7 @@ where [refTable].[id_passage] = ?</property>
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT TOP (50000) * FROM [CBI_DB_MENDEL].[detection].[passage_HW_Axle] 
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT TOP (1000) * FROM [CBI_DB_MENDEL].[detection].[passage_HW_Axle] 
 WHERE 
 [CBI_DB_MENDEL].[detection].[passage_HW_Axle].hwl IS NOT NULL</property>
                 <property
@@ -2164,14 +2164,14 @@ WHERE
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
-              EndConnector="0,70.0999984425305"
+              EndConnector="0,70.0999984425308"
               Start="0,0"
-              End="0,62.5999984425305">
+              End="0,62.5999984425308">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,62.5999984425305" />
+                    End="0,62.5999984425308" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

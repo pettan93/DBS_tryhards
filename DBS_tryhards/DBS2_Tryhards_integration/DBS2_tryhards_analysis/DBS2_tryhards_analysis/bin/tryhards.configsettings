@@ -6,34 +6,34 @@
         <ConnectionString>Provider=SQLNCLI11.1;Data Source=127.0.0.1;Integrated Security=SSPI;Initial Catalog=tryhards</ConnectionString>
         <ImpersonationInfo>
           <ImpersonationMode xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">ImpersonateAccount</ImpersonationMode>
-          <Account xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">AD\xslegl</Account>
+          <Account xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">AD\xkalas1</Account>
           <ImpersonationInfoSecurity xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">Unchanged</ImpersonationInfoSecurity>
         </ImpersonationInfo>
       </DataSource>
     </DataSources>
     <Dimensions>
       <Dimension>
-        <ID>Dim Direction</ID>
-      </Dimension>
-      <Dimension>
-        <ID>Dim Fault Level</ID>
-      </Dimension>
-      <Dimension>
-        <ID>Dim Integrity</ID>
+        <ID>Dim Date</ID>
       </Dimension>
       <Dimension>
         <ID>Dim Site</ID>
       </Dimension>
-      <Dimension>
-        <ID>Dim Train Type</ID>
-      </Dimension>
-      <Dimension>
-        <ID>Dim Weather</ID>
-      </Dimension>
-      <Dimension>
-        <ID>Dim Date</ID>
-      </Dimension>
     </Dimensions>
+    <Cubes>
+      <Cube>
+        <ID>HBView</ID>
+        <MeasureGroups>
+          <MeasureGroup>
+            <ID>Fact HB Passage</ID>
+            <Partitions>
+              <Partition>
+                <ID>Fact HB Passage</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+        </MeasureGroups>
+      </Cube>
+    </Cubes>
     <DataSourceImpersonationInfo>
       <ImpersonationMode xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">Default</ImpersonationMode>
       <ImpersonationInfoSecurity xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">Unchanged</ImpersonationInfoSecurity>

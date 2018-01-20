@@ -11,8 +11,8 @@
   DTS:LocaleID="1029"
   DTS:ObjectName="LoadDimSite"
   DTS:PackageType="5"
-  DTS:VersionBuild="24"
-  DTS:VersionGUID="{D03FBE4D-D6C6-4813-9748-A3E692D43799}">
+  DTS:VersionBuild="25"
+  DTS:VersionGUID="{6BF94FC5-A78A-4826-99A2-9EB6A3DC84D9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -529,6 +529,188 @@ where [refTable].[id_systemType] = ?</property>
               </outputs>
             </component>
             <component
+              refId="Package\Data Flow Task\Lookup GPS"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup GPS"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT DISTINCT 
+      [TIS_site_ID]
+	        ,[GPS_latitude]
+      ,[GPS_longitude]
+  FROM [tryhards].[dbo].[weatherData]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT DISTINCT 
+      [TIS_site_ID]
+	        ,[GPS_latitude]
+      ,[GPS_longitude]
+  FROM [tryhards].[dbo].[weatherData]) [refTable]
+where [refTable].[TIS_site_ID] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="TIS_site_ID" dataType="DT_I8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="GPS_latitude" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="GPS_longitude" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_TIS]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Lookup GPS.Connections[OleDbConnection]"
+                  connectionManagerID="{F6BE3F8D-211D-4866-BBF1-1A7C5152E56D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[127.0.0.1.tryhards]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Lookup GPS.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Lookup GPS.Inputs[Lookup Input].Columns[id_TIS]"
+                      cachedDataType="i8"
+                      cachedName="id_TIS"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_TIS]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">TIS_site_ID</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Lookup GPS.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Data Flow Task\Lookup GPS.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Lookup GPS.Outputs[Lookup Match Output].Columns[GPS_latitude]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Copy Column"
+                      length="255"
+                      lineageId="Package\Data Flow Task\Lookup GPS.Outputs[Lookup Match Output].Columns[GPS_latitude]"
+                      name="GPS_latitude"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">GPS_latitude</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Lookup GPS.Outputs[Lookup Match Output].Columns[GPS_longitude]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Copy Column"
+                      length="255"
+                      lineageId="Package\Data Flow Task\Lookup GPS.Outputs[Lookup Match Output].Columns[GPS_longitude]"
+                      name="GPS_longitude"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">GPS_longitude</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Lookup GPS.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Data Flow Task\Lookup GPS.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Lookup GPS.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Data Flow Task\Lookup GPS.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Lookup GPS.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Lookup GPS.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Lookup GPS.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Lookup GPS.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Data Flow Task\Lookup Route"
               componentClassID="Microsoft.Lookup"
               contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
@@ -825,6 +1007,20 @@ where [refTable].[id_route] = ?</property>
                       cachedName="updatedConstrolRoomAdditionals"
                       externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ControlRoomAdditionals]"
                       lineageId="Package\Data Flow Task\Derived Column Control Room Additional.Outputs[Derived Column Output].Columns[updatedConstrolRoomAdditionals]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[GPS_latitude]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="GPS_latitude"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[GPS_latitude]"
+                      lineageId="Package\Data Flow Task\Lookup GPS.Outputs[Lookup Match Output].Columns[GPS_latitude]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[GPS_longitude]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="GPS_longitude"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[GPS_longitude]"
+                      lineageId="Package\Data Flow Task\Lookup GPS.Outputs[Lookup Match Output].Columns[GPS_longitude]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -875,6 +1071,16 @@ where [refTable].[id_route] = ?</property>
                       dataType="str"
                       length="40"
                       name="DiagnosticSystemType" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[GPS_latitude]"
+                      dataType="wstr"
+                      length="255"
+                      name="GPS_latitude" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[GPS_longitude]"
+                      dataType="wstr"
+                      length="255"
+                      name="GPS_longitude" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -1307,8 +1513,13 @@ where [refTable].[id_route] = ?</property>
               name="Lookup Match Output"
               startId="Package\Data Flow Task\Lookup Route.Outputs[Lookup Match Output]" />
             <path
-              refId="Package\Data Flow Task.Paths[OLE DB Source Output]"
+              refId="Package\Data Flow Task.Paths[Lookup Match Output3]"
               endId="Package\Data Flow Task\Derived Column Control Room Additional.Inputs[Derived Column Input]"
+              name="Lookup Match Output"
+              startId="Package\Data Flow Task\Lookup GPS.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[OLE DB Source Output]"
+              endId="Package\Data Flow Task\Lookup GPS.Inputs[Lookup Input]"
               name="OLE DB Source Output"
               startId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output]" />
           </paths>
@@ -1329,7 +1540,7 @@ where [refTable].[id_route] = ?</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="152,42.6666666666667"
+          Size="152,43"
           Id="Package\Data Flow Task"
           TopLeft="49.2499993480742,11.1333332326015" />
       </GraphLayout>
@@ -1341,80 +1552,36 @@ where [refTable].[id_route] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="150.666666666667,42.6666666666667"
-          Id="Package\Data Flow Task\OLE DB Source"
-          TopLeft="224.583329986781,14.2999997442961" />
-        <NodeLayout
-          Size="172,42.6666666666667"
-          Id="Package\Data Flow Task\OLE DB Destination"
-          TopLeft="229.444441025456,488.655546817713" />
-        <NodeLayout
-          Size="161.333333333334,42.6666666666667"
-          Id="Package\Data Flow Task\Lookup Company"
-          TopLeft="230.55555212001,152.96666393141" />
-        <NodeLayout
-          Size="144,42.6666666666667"
-          Id="Package\Data Flow Task\Lookup Route"
-          TopLeft="239.305551989625,239.59999755144" />
-        <NodeLayout
-          Size="202.666666666667,42.6666666666667"
+          Size="203,43"
           Id="Package\Data Flow Task\Lookup Diagnostic System"
-          TopLeft="208.888885776202,392.855550366574" />
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Lookup Match Output1]"
-          TopLeft="312.833330067496,435.522217033241">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,53.133329784472"
-              Start="0,0"
-              End="0,45.633329784472">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,45.633329784472" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,17.011977392236,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Lookup Match Output]"
-          TopLeft="311.263885388151,195.633330598076">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,43.966666953364"
-              Start="0,0"
-              End="0,36.466666953364">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,36.466666953364" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,12.428645976682,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="209.888885776202,505.855550366574" />
         <NodeLayout
-          Size="212,42.6666666666667"
+          Size="212,43"
           Id="Package\Data Flow Task\Derived Column RouteName"
-          TopLeft="215.833330117166,315.199996652603" />
+          TopLeft="216.833330117166,428.199996652603" />
+        <NodeLayout
+          Size="151,43"
+          Id="Package\Data Flow Task\OLE DB Source"
+          TopLeft="222.583329986781,0.299999744296102" />
+        <NodeLayout
+          Size="161,43"
+          Id="Package\Data Flow Task\Lookup Company"
+          TopLeft="231.55555212001,265.96666393141" />
+        <NodeLayout
+          Size="144,43"
+          Id="Package\Data Flow Task\Lookup Route"
+          TopLeft="240.305551989625,352.59999755144" />
+        <NodeLayout
+          Size="271,42"
+          Id="Package\Data Flow Task\Derived Column Control Room Additional"
+          TopLeft="163.499997578561,195.766665186683" />
+        <NodeLayout
+          Size="172,43"
+          Id="Package\Data Flow Task\OLE DB Destination"
+          TopLeft="230.444441025456,601.655546817713" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Lookup Match Output2]"
-          TopLeft="311.305551989625,282.266664218107">
+          TopLeft="312.305551989625,395.266664218107">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1449,8 +1616,90 @@ where [refTable].[id_route] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Lookup Match Output1]"
+          TopLeft="313.833330067496,548.522217033241">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,53.1333297844719"
+              Start="0,0"
+              End="0,45.6333297844719">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.6333297844719" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,17.011977392236,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Lookup Match Output]"
+          TopLeft="312.263885388151,308.633330598076">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43.966666953364"
+              Start="0,0"
+              End="0,36.466666953364">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.466666953364" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,12.428645976682,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Derived Column Output1]"
+          TopLeft="298.999997578561,237.766665186683">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="13.0555545414491,28.1999987447267"
+              Start="0,0"
+              End="13.0555545414491,20.6999987447267">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.0999993723633" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.0999993723633"
+                    Point2="0,14.0999993723633"
+                    Point3="4,14.0999993723633" />
+                  <mssgle:LineSegment
+                    End="9.05555454144906,14.0999993723633" />
+                  <mssgle:CubicBezierSegment
+                    Point1="9.05555454144906,14.0999993723633"
+                    Point2="13.0555545414491,14.0999993723633"
+                    Point3="13.0555545414491,18.0999993723633" />
+                  <mssgle:LineSegment
+                    End="13.0555545414491,20.6999987447267" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Data Flow Task.Paths[Derived Column Output]"
-          TopLeft="321.833330117166,357.86666331927">
+          TopLeft="322.833330117166,470.86666331927">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1467,9 +1716,9 @@ where [refTable].[id_route] = ?</property>
                     Point2="0,17.494443523652"
                     Point3="-4,17.494443523652" />
                   <mssgle:LineSegment
-                    End="-7.61111100763094,17.494443523652" />
+                    End="-7.61111100763088,17.494443523652" />
                   <mssgle:CubicBezierSegment
-                    Point1="-7.61111100763094,17.494443523652"
+                    Point1="-7.61111100763088,17.494443523652"
                     Point2="-11.6111110076309,17.494443523652"
                     Point3="-11.6111110076309,21.494443523652" />
                   <mssgle:LineSegment
@@ -1483,23 +1732,23 @@ where [refTable].[id_route] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="272,42.6666666666667"
-          Id="Package\Data Flow Task\Derived Column Control Room Additional"
-          TopLeft="162.499997578561,82.7666651866834" />
+          Size="135,42"
+          Id="Package\Data Flow Task\Lookup GPS"
+          TopLeft="233.499997578561,88.655546817713" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
-          TopLeft="299.208330449338,56.9666664109627">
+          TopLeft="299.541663782671,43.2999997442961">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,25.7999987757206"
+              EndConnector="0,45.3555470734169"
               Start="0,0"
-              End="0,18.2999987757206">
+              End="0,37.8555470734169">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,18.2999987757206" />
+                    End="0,37.8555470734169" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1509,37 +1758,27 @@ where [refTable].[id_route] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Derived Column Output1]"
-          TopLeft="298.499997578561,125.43333185335">
+          Id="Package\Data Flow Task.Paths[Lookup Match Output3]"
+          TopLeft="299.999997578561,130.655546817713">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="12.7222212081152,27.5333320780595"
+              EndConnector="0,65.1111183689704"
               Start="0,0"
-              End="12.7222212081152,20.0333320780595">
+              End="0,57.6111183689704">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,9.76666603902977" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,9.76666603902977"
-                    Point2="0,13.7666660390298"
-                    Point3="4,13.7666660390298" />
-                  <mssgle:LineSegment
-                    End="8.72222120811517,13.7666660390298" />
-                  <mssgle:CubicBezierSegment
-                    Point1="8.72222120811517,13.7666660390298"
-                    Point2="12.7222212081152,13.7666660390298"
-                    Point3="12.7222212081152,17.7666660390298" />
-                  <mssgle:LineSegment
-                    End="12.7222212081152,20.0333320780595" />
+                    End="0,57.6111183689704" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,23.0008716844852,96.3827734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -1582,22 +1821,22 @@ where [refTable].[id_route] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Lookup Route">
+    design-time-name="Package\Data Flow Task\Lookup Company">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[TIS].[DEF_route]</Value>
+          type="q3:string">[user].[DEF_company]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1605,17 +1844,17 @@ where [refTable].[id_route] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Lookup Company">
+    design-time-name="Package\Data Flow Task\Lookup Route">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[user].[DEF_company]</Value>
+          type="q3:string">[TIS].[DEF_route]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
@@ -1637,6 +1876,29 @@ where [refTable].[id_route] = ?</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Lookup GPS">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
