@@ -11,8 +11,8 @@
   DTS:LocaleID="1029"
   DTS:ObjectName="LoadFactWDDPassage"
   DTS:PackageType="5"
-  DTS:VersionBuild="53"
-  DTS:VersionGUID="{DAD4B8CB-AD7C-4E3B-9ECE-216924CD3C2B}">
+  DTS:VersionBuild="58"
+  DTS:VersionGUID="{D0637741-4200-4BE6-B3D9-3A442D3FBF19}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1648,7 +1648,7 @@ where [refTable].[TrainNumber] = ?</property>
                 <property
                   dataType="System.String"
                   description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                  name="FastLoadOptions">TABLOCK,ROWS_PER_BATCH = 50000000</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -1887,6 +1887,10 @@ where [refTable].[TrainNumber] = ?</property>
                       refId="Package\Data Flow Task | Create data\OLE DB Destination | FactHBPassage.Inputs[OLE DB Destination Input].ExternalColumns[CarrierID]"
                       dataType="i8"
                       name="CarrierID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task | Create data\OLE DB Destination | FactHBPassage.Inputs[OLE DB Destination Input].ExternalColumns[TimeID]"
+                      dataType="i8"
+                      name="TimeID" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -1940,7 +1944,7 @@ where [refTable].[TrainNumber] = ?</property>
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT  * FROM [CBI_DB_MENDEL].[detection].[passage_WDD_Axle]  tablesample(10 percent)</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT  * FROM [CBI_DB_MENDEL].[detection].[passage_WDD_Axle]</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -2362,6 +2366,23 @@ where [refTable].[TrainNumber] = ?</property>
           SQLTask:SqlStatementSource=" UPDATE [dbo].[FactWDDPassage]&#xA;   SET WeatherID = w.WeatherID&#xA; FROM [dbo].[FactWDDPassage] f&#xA; JOIN  [dbo].[DimWeather] w&#xA; ON&#xA;  w.date =  CAST(f.Timestamp AS DATE)&#xA; AND&#xA;  w.id_tis =  f.id_TIS" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task | DimWeather keys 1"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{816e4628-c33c-4675-9cf6-c065e84403dc}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task | DimWeather keys 1"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F6BE3F8D-211D-4866-BBF1-1A7C5152E56D}"
+          SQLTask:SqlStatementSource="&#xA; UPDATE [dbo].[FactWDDPassage]&#xA;   SET TimeID = t.TimeID&#xA; FROM [dbo].[FactWDDPassage] f&#xA; JOIN  [dbo].[DimTime] t&#xA; ON&#xA;  t.Hour30 =  DATEPART(HOUR,CAST(Timestamp AS DATETIME))&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
@@ -2388,6 +2409,14 @@ where [refTable].[TrainNumber] = ?</property>
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
       DTS:To="Package\Execute SQL Task | DimWeather keys" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{970770CB-D170-439E-A6DC-A8367F8D8AE3}"
+      DTS:From="Package\Execute SQL Task | DimWeather keys"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Execute SQL Task | DimWeather keys 1" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -2400,7 +2429,7 @@ where [refTable].[TrainNumber] = ?</property>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
         <NodeLayout
           Size="217,42"
           Id="Package\Data Flow Task | Create data"
@@ -2417,6 +2446,10 @@ where [refTable].[TrainNumber] = ?</property>
           Size="257,42"
           Id="Package\Execute SQL Task | DimWeather keys"
           TopLeft="300,568" />
+        <NodeLayout
+          Size="266,42"
+          Id="Package\Execute SQL Task | DimWeather keys 1"
+          TopLeft="292,665" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="426.958332510665,135">
@@ -2483,6 +2516,28 @@ where [refTable].[TrainNumber] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="426.75,610">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,55"
+              Start="0,0"
+              End="0,47.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <AnnotationLayout
           Text="---------------- WDD Passage -----------------"
           ParentId="Package"
@@ -2509,6 +2564,26 @@ where [refTable].[TrainNumber] = ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="183,43"
+          Id="Package\Data Flow Task | Create data\Lookup DimFaultLevel"
+          TopLeft="137.916663419455,574.133329629501" />
+        <NodeLayout
+          Size="220,42"
+          Id="Package\Data Flow Task | Create data\Derived Column | Cast Carrier"
+          TopLeft="125.499996609986,1131.0333293273" />
+        <NodeLayout
+          Size="254,42"
+          Id="Package\Data Flow Task | Create data\OLE DB Source | passage_WDD_Axle"
+          TopLeft="109.583330061287,4.5666664419572" />
+        <NodeLayout
+          Size="253,42"
+          Id="Package\Data Flow Task | Create data\OLE DB Destination | FactHBPassage"
+          TopLeft="106.499996609986,1264.46666125814" />
+        <NodeLayout
+          Size="179,42"
+          Id="Package\Data Flow Task | Create data\Lookup PassageWDD"
+          TopLeft="147.083330247551,213.699998783469" />
+        <NodeLayout
           Size="177,43"
           Id="Package\Data Flow Task | Create data\Lookup DimDirection"
           TopLeft="142.83333004266,839.199996807575" />
@@ -2521,25 +2596,85 @@ where [refTable].[TrainNumber] = ?</property>
           Id="Package\Data Flow Task | Create data\Lookup Passage"
           TopLeft="152.83333004266,116.666664884488" />
         <NodeLayout
-          Size="253,42"
-          Id="Package\Data Flow Task | Create data\OLE DB Destination | FactHBPassage"
-          TopLeft="106.499996609986,1264.46666125814" />
+          Size="189,42"
+          Id="Package\Data Flow Task | Create data\Lookup TDS_Passagess"
+          TopLeft="148.499996609986,1050.0333293273" />
         <NodeLayout
           Size="183,43"
           Id="Package\Data Flow Task | Create data\Lookup DimTrainType"
           TopLeft="144.166663326323,718.43332774659" />
         <NodeLayout
-          Size="254,42"
-          Id="Package\Data Flow Task | Create data\OLE DB Source | passage_WDD_Axle"
-          TopLeft="109.583330061287,4.5666664419572" />
-        <NodeLayout
-          Size="183,43"
-          Id="Package\Data Flow Task | Create data\Lookup DimFaultLevel"
-          TopLeft="137.916663419455,574.133329629501" />
-        <NodeLayout
-          Size="179,42"
-          Id="Package\Data Flow Task | Create data\Lookup PassageWDD"
-          TopLeft="147.083330247551,213.699998783469" />
+          Size="199,42"
+          Id="Package\Data Flow Task | Create data\Derived Column 1 | Casts"
+          TopLeft="139.999993219972,969.46666125814" />
+        <EdgeLayout
+          Id="Package\Data Flow Task | Create data.Paths[Lookup Match Output]"
+          TopLeft="233.458330145105,159.666664884488">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,54.033333898981"
+              Start="0,0"
+              End="0,46.533333898981">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.533333898981" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,17.4619794494905,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task | Create data.Paths[Derived Column Output1]"
+          TopLeft="234.249996609986,1173.0333293273">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,91.4333319308359"
+              Start="0,0"
+              End="0,83.9333319308359">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,83.9333319308359" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task | Create data.Paths[Derived Column Output]"
+          TopLeft="241.249994914979,1011.46666125814">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,38.5666680691641"
+              Start="0,0"
+              End="0,31.0666680691641">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.0666680691641" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task | Create data.Paths[OLE DB Source Output]"
           TopLeft="233.458330051974,46.5666664419572">
@@ -2560,6 +2695,66 @@ where [refTable].[TrainNumber] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task | Create data.Paths[Lookup Match Output6]"
+          TopLeft="231.33333004266,882.199996807575">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="8.16666317731188,87.266664450565"
+              Start="0,0"
+              End="8.16666317731188,79.766664450565">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.6333322252825" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,39.6333322252825"
+                    Point2="0,43.6333322252825"
+                    Point3="4,43.6333322252825" />
+                  <mssgle:LineSegment
+                    End="4.16666317731188,43.6333322252825" />
+                  <mssgle:CubicBezierSegment
+                    Point1="4.16666317731188,43.6333322252825"
+                    Point2="8.16666317731188,43.6333322252825"
+                    Point3="8.16666317731188,47.6333322252825" />
+                  <mssgle:LineSegment
+                    End="8.16666317731188,79.766664450565" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-44.1080551300941,48.6333322252825,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task | Create data.Paths[Lookup Match Output5]"
+          TopLeft="239.249996609986,1092.0333293273">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,39"
+              Start="0,0"
+              End="0,31.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,9.9453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2658,149 +2853,76 @@ where [refTable].[TrainNumber] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task | Create data.Paths[Lookup Match Output]"
-          TopLeft="233.458330145105,159.666664884488">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="0,54.033333898981"
-              Start="0,0"
-              End="0,46.533333898981">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,46.533333898981" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,17.4619794494905,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="199,42"
-          Id="Package\Data Flow Task | Create data\Derived Column 1 | Casts"
-          TopLeft="139.999993219972,969.46666125814" />
-        <NodeLayout
-          Size="189,42"
-          Id="Package\Data Flow Task | Create data\Lookup TDS_Passagess"
-          TopLeft="148.499996609986,1050.0333293273" />
-        <NodeLayout
-          Size="220,42"
-          Id="Package\Data Flow Task | Create data\Derived Column | Cast Carrier"
-          TopLeft="125.499996609986,1131.0333293273" />
-        <EdgeLayout
-          Id="Package\Data Flow Task | Create data.Paths[Derived Column Output]"
-          TopLeft="241.249994914979,1011.46666125814">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="0,38.5666680691641"
-              Start="0,0"
-              End="0,31.0666680691641">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.0666680691641" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task | Create data.Paths[Lookup Match Output5]"
-          TopLeft="239.249996609986,1092.0333293273">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="0,39"
-              Start="0,0"
-              End="0,31.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,9.9453125,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task | Create data.Paths[Lookup Match Output6]"
-          TopLeft="231.33333004266,882.199996807575">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="8.16666317731188,87.266664450565"
-              Start="0,0"
-              End="8.16666317731188,79.766664450565">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,39.6333322252825" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,39.6333322252825"
-                    Point2="0,43.6333322252825"
-                    Point3="4,43.6333322252825" />
-                  <mssgle:LineSegment
-                    End="4.16666317731188,43.6333322252825" />
-                  <mssgle:CubicBezierSegment
-                    Point1="4.16666317731188,43.6333322252825"
-                    Point2="8.16666317731188,43.6333322252825"
-                    Point3="8.16666317731188,47.6333322252825" />
-                  <mssgle:LineSegment
-                    End="8.16666317731188,79.766664450565" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-44.1080551300941,48.6333322252825,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task | Create data.Paths[Derived Column Output1]"
-          TopLeft="234.249996609986,1173.0333293273">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="0,91.4333319308359"
-              Start="0,0"
-              End="0,83.9333319308359">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,83.9333319308359" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task | Create data\Lookup DimFaultLevel">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimFaultLevel]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task | Create data\OLE DB Source | passage_WDD_Axle">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task | Create data\OLE DB Destination | FactHBPassage">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task | Create data\Lookup PassageWDD">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[detection].[passage_WDD]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Data Flow Task | Create data\Lookup DimDirection">
     <Properties>
@@ -2871,19 +2993,6 @@ where [refTable].[TrainNumber] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task | Create data\OLE DB Destination | FactHBPassage">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Data Flow Task | Create data\Lookup DimTrainType">
     <Properties>
       <Property>
@@ -2895,60 +3004,6 @@ where [refTable].[TrainNumber] = ?</property>
         <Name>UsedTableName</Name>
         <Value
           type="q3:string">[dbo].[DimTrainType]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task | Create data\OLE DB Source | passage_WDD_Axle">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task | Create data\Lookup DimFaultLevel">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimFaultLevel]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task | Create data\Lookup PassageWDD">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[detection].[passage_WDD]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
