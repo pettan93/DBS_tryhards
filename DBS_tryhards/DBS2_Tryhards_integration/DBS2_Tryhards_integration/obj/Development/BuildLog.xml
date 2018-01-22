@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>DBS2_Tryhards_integration</Name>
-    <LastWriteTime>2018-01-22T17:56:26.5697382Z</LastWriteTime>
+    <LastWriteTime>2018-01-22T22:43:47.3523399Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -13,12 +13,12 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>LoadDimWeather.dtsx</Name>
-      <LastWriteTime>2018-01-21T23:32:10.7309328Z</LastWriteTime>
+      <LastWriteTime>2018-01-22T22:43:47.2811447Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>LoadDimTrainType.dtsx</Name>
-      <LastWriteTime>2018-01-18T21:51:31.7058771Z</LastWriteTime>
+      <LastWriteTime>2018-01-22T22:43:47.2671059Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -38,22 +38,22 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>LoadDimSite.dtsx</Name>
-      <LastWriteTime>2018-01-22T20:03:14.7022731Z</LastWriteTime>
+      <LastWriteTime>2018-01-22T20:06:54.5786515Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>LoadFactHWPassage.dtsx</Name>
-      <LastWriteTime>2018-01-22T17:56:33.5875524Z</LastWriteTime>
+      <LastWriteTime>2018-01-22T22:43:47.2996953Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>LoadFactHBPassage.dtsx</Name>
-      <LastWriteTime>2018-01-22T20:00:57.9705901Z</LastWriteTime>
+      <LastWriteTime>2018-01-22T20:06:53.0576629Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>LoadFactWDDPassage.dtsx</Name>
-      <LastWriteTime>2018-01-22T17:56:33.5916054Z</LastWriteTime>
+      <LastWriteTime>2018-01-22T20:06:56.3425896Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -64,6 +64,16 @@
     <ProjectBuildItemInfo>
       <Name>LoadDimTime.dtsx</Name>
       <LastWriteTime>2018-01-21T23:32:10.7309328Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>MainPackage.dtsx</Name>
+      <LastWriteTime>2018-01-22T22:43:47.3182459Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>LoadFactHBPassage 1.dtsx</Name>
+      <LastWriteTime>2018-01-22T22:46:49.8339397Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

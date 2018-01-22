@@ -11,8 +11,8 @@
   DTS:LocaleID="1029"
   DTS:ObjectName="LoadFactWDDPassage"
   DTS:PackageType="5"
-  DTS:VersionBuild="61"
-  DTS:VersionGUID="{FEBDA6D3-0421-46F7-A7BA-B41AA6A3002F}">
+  DTS:VersionBuild="63"
+  DTS:VersionGUID="{75F6E806-C3CB-4327-BE9E-919DD0D3B97A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -2429,9 +2429,9 @@ where [refTable].[TrainNumber] = ?</property>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
         <NodeLayout
-          Size="217.333333333334,42"
+          Size="217,42"
           Id="Package\Data Flow Task | Create data"
           TopLeft="319.41666502133,281.433332395752" />
         <NodeLayout
@@ -2439,23 +2439,23 @@ where [refTable].[TrainNumber] = ?</property>
           Id="Package\Execute SQL Task | DELETE a RESEED factWDDPassage"
           TopLeft="254,93" />
         <NodeLayout
-          Size="238.666666666667,42"
+          Size="239,42"
           Id="Package\Execute SQL Task | DimDate keys"
           TopLeft="306,483" />
         <NodeLayout
-          Size="257.333333333334,42"
+          Size="241,43"
+          Id="Package\Execute SQL Task | DimTime keys"
+          TopLeft="307,664" />
+        <NodeLayout
+          Size="257,42"
           Id="Package\Execute SQL Task | DimWeather keys"
           TopLeft="300,568" />
-        <NodeLayout
-          Size="241.333333333334,42.6666666666667"
-          Id="Package\Execute SQL Task | DimTime keys"
-          TopLeft="292,665" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="426.958332510665,135">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,146.433332395752"
               Start="0,0"
               End="0,138.933332395752">
@@ -2477,7 +2477,7 @@ where [refTable].[TrainNumber] = ?</property>
           TopLeft="426.708332510665,323.433332395752">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,159.566667604248"
               Start="0,0"
               End="0,152.066667604248">
@@ -2499,7 +2499,7 @@ where [refTable].[TrainNumber] = ?</property>
           TopLeft="427,525">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,43"
               Start="0,0"
               End="0,35.5">
@@ -2518,30 +2518,18 @@ where [refTable].[TrainNumber] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="428.666666666667,610">
+          TopLeft="428,610">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-15.9999999999999,55"
+              StartConnector="{x:Null}"
+              EndConnector="0,54"
               Start="0,0"
-              End="-15.9999999999999,47.5">
+              End="0,46.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,23.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,23.5"
-                    Point2="0,27.5"
-                    Point3="-4,27.5" />
-                  <mssgle:LineSegment
-                    End="-11.9999999999999,27.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-11.9999999999999,27.5"
-                    Point2="-15.9999999999999,27.5"
-                    Point3="-15.9999999999999,31.5" />
-                  <mssgle:LineSegment
-                    End="-15.9999999999999,47.5" />
+                    End="0,46.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2553,7 +2541,7 @@ where [refTable].[TrainNumber] = ?</property>
         <AnnotationLayout
           Text="---------------- WDD Passage -----------------"
           ParentId="Package"
-          Size="409.333333333334,48.6666666666667"
+          Size="409,48"
           Id="b790dd7c-d1f9-45f1-8feb-7ff5a3c6bd22"
           TopLeft="227,35">
           <AnnotationLayout.FontInfo>
@@ -2576,7 +2564,7 @@ where [refTable].[TrainNumber] = ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="182.666666666667,42.6666666666667"
+          Size="183,43"
           Id="Package\Data Flow Task | Create data\Lookup DimFaultLevel"
           TopLeft="137.916663419455,574.133329629501" />
         <NodeLayout
@@ -2588,35 +2576,35 @@ where [refTable].[TrainNumber] = ?</property>
           Id="Package\Data Flow Task | Create data\OLE DB Source | passage_WDD_Axle"
           TopLeft="109.583330061287,4.5666664419572" />
         <NodeLayout
-          Size="253.333333333334,42"
+          Size="253,42"
           Id="Package\Data Flow Task | Create data\OLE DB Destination | FactHBPassage"
           TopLeft="106.499996609986,1264.46666125814" />
         <NodeLayout
-          Size="178.666666666667,42"
+          Size="179,42"
           Id="Package\Data Flow Task | Create data\Lookup PassageWDD"
           TopLeft="147.083330247551,213.699998783469" />
         <NodeLayout
-          Size="177.333333333334,42.6666666666667"
+          Size="177,43"
           Id="Package\Data Flow Task | Create data\Lookup DimDirection"
           TopLeft="142.83333004266,839.199996807575" />
         <NodeLayout
-          Size="153.333333333334,42"
+          Size="153,42"
           Id="Package\Data Flow Task | Create data\Lookup DimSite"
           TopLeft="157.249996703118,438.566662955085" />
         <NodeLayout
-          Size="154.666666666667,42.6666666666667"
+          Size="155,43"
           Id="Package\Data Flow Task | Create data\Lookup Passage"
           TopLeft="152.83333004266,116.666664884488" />
         <NodeLayout
-          Size="189.333333333334,42"
+          Size="189,42"
           Id="Package\Data Flow Task | Create data\Lookup TDS_Passagess"
           TopLeft="148.499996609986,1050.0333293273" />
         <NodeLayout
-          Size="182.666666666667,42.6666666666667"
+          Size="183,43"
           Id="Package\Data Flow Task | Create data\Lookup DimTrainType"
           TopLeft="144.166663326323,718.43332774659" />
         <NodeLayout
-          Size="198.666666666667,42"
+          Size="199,42"
           Id="Package\Data Flow Task | Create data\Derived Column 1 | Casts"
           TopLeft="139.999993219972,969.46666125814" />
         <EdgeLayout
