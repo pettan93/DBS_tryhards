@@ -11,8 +11,8 @@
   DTS:LocaleID="1029"
   DTS:ObjectName="LoadDimSite"
   DTS:PackageType="5"
-  DTS:VersionBuild="25"
-  DTS:VersionGUID="{6BF94FC5-A78A-4826-99A2-9EB6A3DC84D9}">
+  DTS:VersionBuild="31"
+  DTS:VersionGUID="{B571DC2C-BAC0-44A6-A623-9C1C30939705}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -30,13 +30,13 @@
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Data Flow Task"
+      DTS:refId="Package\Data Flow Task | Import data"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
       DTS:DTSID="{6512FCD1-EB7B-4256-B296-9D8A006D8C16}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Data Flow Task"
+      DTS:ObjectName="Data Flow Task | Import data"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -44,7 +44,7 @@
           version="1">
           <components>
             <component
-              refId="Package\Data Flow Task\Derived Column Control Room Additional"
+              refId="Package\Data Flow Task | Import data\Derived Column Control Room Additional"
               componentClassID="Microsoft.DerivedColumn"
               contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
@@ -52,35 +52,35 @@
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\Data Flow Task\Derived Column Control Room Additional.Inputs[Derived Column Input]"
+                  refId="Package\Data Flow Task | Import data\Derived Column Control Room Additional.Inputs[Derived Column Input]"
                   description="Input to the Derived Column Transformation"
                   name="Derived Column Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\Derived Column Control Room Additional.Inputs[Derived Column Input].Columns[controlRoomAddtionals]"
+                      refId="Package\Data Flow Task | Import data\Derived Column Control Room Additional.Inputs[Derived Column Input].Columns[controlRoomAddtionals]"
                       cachedCodepage="1250"
                       cachedDataType="text"
                       cachedName="controlRoomAddtionals"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[controlRoomAddtionals]" />
+                      lineageId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].Columns[controlRoomAddtionals]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\Derived Column Control Room Additional.Outputs[Derived Column Output]"
+                  refId="Package\Data Flow Task | Import data\Derived Column Control Room Additional.Outputs[Derived Column Output]"
                   description="Default Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   name="Derived Column Output"
-                  synchronousInputId="Package\Data Flow Task\Derived Column Control Room Additional.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\Data Flow Task | Import data\Derived Column Control Room Additional.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Derived Column Control Room Additional.Outputs[Derived Column Output].Columns[updatedConstrolRoomAdditionals]"
+                      refId="Package\Data Flow Task | Import data\Derived Column Control Room Additional.Outputs[Derived Column Output].Columns[updatedConstrolRoomAdditionals]"
                       codePage="1250"
                       dataType="text"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\Data Flow Task\Derived Column Control Room Additional.Outputs[Derived Column Output].Columns[updatedConstrolRoomAdditionals]"
+                      lineageId="Package\Data Flow Task | Import data\Derived Column Control Room Additional.Outputs[Derived Column Output].Columns[updatedConstrolRoomAdditionals]"
                       name="updatedConstrolRoomAdditionals"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -88,7 +88,7 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">([ISNULL](#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[controlRoomAddtionals]}) ? (DT_TEXT,1250)"Unknown" : (DT_TEXT,1250)#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[controlRoomAddtionals]})</property>
+                          name="Expression">([ISNULL](#{Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].Columns[controlRoomAddtionals]}) ? (DT_TEXT,1250)"Unknown" : (DT_TEXT,1250)#{Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].Columns[controlRoomAddtionals]})</property>
                         <property
                           containsID="true"
                           dataType="System.String"
@@ -101,23 +101,23 @@
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Data Flow Task\Derived Column Control Room Additional.Outputs[Derived Column Error Output]"
+                  refId="Package\Data Flow Task | Import data\Derived Column Control Room Additional.Outputs[Derived Column Error Output]"
                   description="Error Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Derived Column Error Output"
-                  synchronousInputId="Package\Data Flow Task\Derived Column Control Room Additional.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\Data Flow Task | Import data\Derived Column Control Room Additional.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Derived Column Control Room Additional.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      refId="Package\Data Flow Task | Import data\Derived Column Control Room Additional.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Derived Column Control Room Additional.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Data Flow Task | Import data\Derived Column Control Room Additional.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Derived Column Control Room Additional.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      refId="Package\Data Flow Task | Import data\Derived Column Control Room Additional.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Derived Column Control Room Additional.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Data Flow Task | Import data\Derived Column Control Room Additional.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -126,7 +126,7 @@
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\Derived Column RouteName"
+              refId="Package\Data Flow Task | Import data\Derived Column RouteName"
               componentClassID="Microsoft.DerivedColumn"
               contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
@@ -134,36 +134,36 @@
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\Data Flow Task\Derived Column RouteName.Inputs[Derived Column Input]"
+                  refId="Package\Data Flow Task | Import data\Derived Column RouteName.Inputs[Derived Column Input]"
                   description="Input to the Derived Column Transformation"
                   name="Derived Column Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\Derived Column RouteName.Inputs[Derived Column Input].Columns[routeName]"
+                      refId="Package\Data Flow Task | Import data\Derived Column RouteName.Inputs[Derived Column Input].Columns[routeName]"
                       cachedCodepage="1250"
                       cachedDataType="str"
                       cachedLength="256"
                       cachedName="routeName"
-                      lineageId="Package\Data Flow Task\Lookup Route.Outputs[Lookup Match Output].Columns[routeName]" />
+                      lineageId="Package\Data Flow Task | Import data\Lookup Route.Outputs[Lookup Match Output].Columns[routeName]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\Derived Column RouteName.Outputs[Derived Column Output]"
+                  refId="Package\Data Flow Task | Import data\Derived Column RouteName.Outputs[Derived Column Output]"
                   description="Default Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   name="Derived Column Output"
-                  synchronousInputId="Package\Data Flow Task\Derived Column RouteName.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\Data Flow Task | Import data\Derived Column RouteName.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Derived Column RouteName.Outputs[Derived Column Output].Columns[updatedRouteName]"
+                      refId="Package\Data Flow Task | Import data\Derived Column RouteName.Outputs[Derived Column Output].Columns[updatedRouteName]"
                       dataType="wstr"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
                       length="256"
-                      lineageId="Package\Data Flow Task\Derived Column RouteName.Outputs[Derived Column Output].Columns[updatedRouteName]"
+                      lineageId="Package\Data Flow Task | Import data\Derived Column RouteName.Outputs[Derived Column Output].Columns[updatedRouteName]"
                       name="updatedRouteName"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -171,7 +171,7 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">([ISNULL](#{Package\Data Flow Task\Lookup Route.Outputs[Lookup Match Output].Columns[routeName]}) ? "Unknown" : #{Package\Data Flow Task\Lookup Route.Outputs[Lookup Match Output].Columns[routeName]})</property>
+                          name="Expression">([ISNULL](#{Package\Data Flow Task | Import data\Lookup Route.Outputs[Lookup Match Output].Columns[routeName]}) ? "Unknown" : #{Package\Data Flow Task | Import data\Lookup Route.Outputs[Lookup Match Output].Columns[routeName]})</property>
                         <property
                           containsID="true"
                           dataType="System.String"
@@ -184,23 +184,23 @@
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Data Flow Task\Derived Column RouteName.Outputs[Derived Column Error Output]"
+                  refId="Package\Data Flow Task | Import data\Derived Column RouteName.Outputs[Derived Column Error Output]"
                   description="Error Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Derived Column Error Output"
-                  synchronousInputId="Package\Data Flow Task\Derived Column RouteName.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\Data Flow Task | Import data\Derived Column RouteName.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Derived Column RouteName.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      refId="Package\Data Flow Task | Import data\Derived Column RouteName.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Derived Column RouteName.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Data Flow Task | Import data\Derived Column RouteName.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Derived Column RouteName.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      refId="Package\Data Flow Task | Import data\Derived Column RouteName.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Derived Column RouteName.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Data Flow Task | Import data\Derived Column RouteName.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -209,7 +209,7 @@
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\Lookup Company"
+              refId="Package\Data Flow Task | Import data\Lookup Company"
               componentClassID="Microsoft.Lookup"
               contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
               description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
@@ -265,7 +265,7 @@ where [refTable].[id_company] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_owner]};</property>
+                  name="ParameterMap">#{Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_owner]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -277,7 +277,7 @@ where [refTable].[id_company] = ?</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task\Lookup Company.Connections[OleDbConnection]"
+                  refId="Package\Data Flow Task | Import data\Lookup Company.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[127.0.0.1.CBI_DB_MENDEL]"
                   connectionManagerRefId="Package.ConnectionManagers[127.0.0.1.CBI_DB_MENDEL]"
                   description="Connection manager used to access lookup data."
@@ -285,14 +285,14 @@ where [refTable].[id_company] = ?</property>
               </connections>
               <inputs>
                 <input
-                  refId="Package\Data Flow Task\Lookup Company.Inputs[Lookup Input]"
+                  refId="Package\Data Flow Task | Import data\Lookup Company.Inputs[Lookup Input]"
                   name="Lookup Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\Lookup Company.Inputs[Lookup Input].Columns[id_owner]"
+                      refId="Package\Data Flow Task | Import data\Lookup Company.Inputs[Lookup Input].Columns[id_owner]"
                       cachedDataType="i8"
                       cachedName="id_owner"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_owner]">
+                      lineageId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_owner]">
                       <properties>
                         <property
                           dataType="System.String"
@@ -310,20 +310,20 @@ where [refTable].[id_company] = ?</property>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\Lookup Company.Outputs[Lookup Match Output]"
+                  refId="Package\Data Flow Task | Import data\Lookup Company.Outputs[Lookup Match Output]"
                   errorOrTruncationOperation="Lookup"
                   errorRowDisposition="FailComponent"
                   exclusionGroup="1"
                   name="Lookup Match Output"
-                  synchronousInputId="Package\Data Flow Task\Lookup Company.Inputs[Lookup Input]">
+                  synchronousInputId="Package\Data Flow Task | Import data\Lookup Company.Inputs[Lookup Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Lookup Company.Outputs[Lookup Match Output].Columns[name]"
+                      refId="Package\Data Flow Task | Import data\Lookup Company.Outputs[Lookup Match Output].Columns[name]"
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Copy Column"
                       length="150"
-                      lineageId="Package\Data Flow Task\Lookup Company.Outputs[Lookup Match Output].Columns[name]"
+                      lineageId="Package\Data Flow Task | Import data\Lookup Company.Outputs[Lookup Match Output].Columns[name]"
                       name="name"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -337,30 +337,30 @@ where [refTable].[id_company] = ?</property>
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Data Flow Task\Lookup Company.Outputs[Lookup No Match Output]"
+                  refId="Package\Data Flow Task | Import data\Lookup Company.Outputs[Lookup No Match Output]"
                   description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
                   exclusionGroup="1"
                   name="Lookup No Match Output"
-                  synchronousInputId="Package\Data Flow Task\Lookup Company.Inputs[Lookup Input]">
+                  synchronousInputId="Package\Data Flow Task | Import data\Lookup Company.Inputs[Lookup Input]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Data Flow Task\Lookup Company.Outputs[Lookup Error Output]"
+                  refId="Package\Data Flow Task | Import data\Lookup Company.Outputs[Lookup Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Lookup Error Output"
-                  synchronousInputId="Package\Data Flow Task\Lookup Company.Inputs[Lookup Input]">
+                  synchronousInputId="Package\Data Flow Task | Import data\Lookup Company.Inputs[Lookup Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Lookup Company.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      refId="Package\Data Flow Task | Import data\Lookup Company.Outputs[Lookup Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Lookup Company.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Data Flow Task | Import data\Lookup Company.Outputs[Lookup Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Lookup Company.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      refId="Package\Data Flow Task | Import data\Lookup Company.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Lookup Company.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Data Flow Task | Import data\Lookup Company.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -369,7 +369,7 @@ where [refTable].[id_company] = ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\Lookup Diagnostic System"
+              refId="Package\Data Flow Task | Import data\Lookup Diagnostic System"
               componentClassID="Microsoft.Lookup"
               contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
               description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
@@ -425,7 +425,7 @@ where [refTable].[id_systemType] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_systemType]};</property>
+                  name="ParameterMap">#{Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_systemType]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -437,7 +437,7 @@ where [refTable].[id_systemType] = ?</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task\Lookup Diagnostic System.Connections[OleDbConnection]"
+                  refId="Package\Data Flow Task | Import data\Lookup Diagnostic System.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[127.0.0.1.CBI_DB_MENDEL]"
                   connectionManagerRefId="Package.ConnectionManagers[127.0.0.1.CBI_DB_MENDEL]"
                   description="Connection manager used to access lookup data."
@@ -445,14 +445,14 @@ where [refTable].[id_systemType] = ?</property>
               </connections>
               <inputs>
                 <input
-                  refId="Package\Data Flow Task\Lookup Diagnostic System.Inputs[Lookup Input]"
+                  refId="Package\Data Flow Task | Import data\Lookup Diagnostic System.Inputs[Lookup Input]"
                   name="Lookup Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\Lookup Diagnostic System.Inputs[Lookup Input].Columns[id_systemType]"
+                      refId="Package\Data Flow Task | Import data\Lookup Diagnostic System.Inputs[Lookup Input].Columns[id_systemType]"
                       cachedDataType="i8"
                       cachedName="id_systemType"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_systemType]">
+                      lineageId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_systemType]">
                       <properties>
                         <property
                           dataType="System.String"
@@ -470,20 +470,20 @@ where [refTable].[id_systemType] = ?</property>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\Lookup Diagnostic System.Outputs[Lookup Match Output]"
+                  refId="Package\Data Flow Task | Import data\Lookup Diagnostic System.Outputs[Lookup Match Output]"
                   errorOrTruncationOperation="Lookup"
                   errorRowDisposition="FailComponent"
                   exclusionGroup="1"
                   name="Lookup Match Output"
-                  synchronousInputId="Package\Data Flow Task\Lookup Diagnostic System.Inputs[Lookup Input]">
+                  synchronousInputId="Package\Data Flow Task | Import data\Lookup Diagnostic System.Inputs[Lookup Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Lookup Diagnostic System.Outputs[Lookup Match Output].Columns[acronym]"
+                      refId="Package\Data Flow Task | Import data\Lookup Diagnostic System.Outputs[Lookup Match Output].Columns[acronym]"
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Copy Column"
                       length="50"
-                      lineageId="Package\Data Flow Task\Lookup Diagnostic System.Outputs[Lookup Match Output].Columns[acronym]"
+                      lineageId="Package\Data Flow Task | Import data\Lookup Diagnostic System.Outputs[Lookup Match Output].Columns[acronym]"
                       name="acronym"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -497,30 +497,30 @@ where [refTable].[id_systemType] = ?</property>
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Data Flow Task\Lookup Diagnostic System.Outputs[Lookup No Match Output]"
+                  refId="Package\Data Flow Task | Import data\Lookup Diagnostic System.Outputs[Lookup No Match Output]"
                   description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
                   exclusionGroup="1"
                   name="Lookup No Match Output"
-                  synchronousInputId="Package\Data Flow Task\Lookup Diagnostic System.Inputs[Lookup Input]">
+                  synchronousInputId="Package\Data Flow Task | Import data\Lookup Diagnostic System.Inputs[Lookup Input]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Data Flow Task\Lookup Diagnostic System.Outputs[Lookup Error Output]"
+                  refId="Package\Data Flow Task | Import data\Lookup Diagnostic System.Outputs[Lookup Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Lookup Error Output"
-                  synchronousInputId="Package\Data Flow Task\Lookup Diagnostic System.Inputs[Lookup Input]">
+                  synchronousInputId="Package\Data Flow Task | Import data\Lookup Diagnostic System.Inputs[Lookup Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Lookup Diagnostic System.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      refId="Package\Data Flow Task | Import data\Lookup Diagnostic System.Outputs[Lookup Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Lookup Diagnostic System.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Data Flow Task | Import data\Lookup Diagnostic System.Outputs[Lookup Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Lookup Diagnostic System.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      refId="Package\Data Flow Task | Import data\Lookup Diagnostic System.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Lookup Diagnostic System.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Data Flow Task | Import data\Lookup Diagnostic System.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -529,7 +529,7 @@ where [refTable].[id_systemType] = ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\Lookup GPS"
+              refId="Package\Data Flow Task | Import data\Lookup GPS"
               componentClassID="Microsoft.Lookup"
               contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
               description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
@@ -542,22 +542,24 @@ where [refTable].[id_systemType] = ?</property>
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT DISTINCT 
-      [TIS_site_ID]
-	        ,[GPS_latitude]
-      ,[GPS_longitude]
-  FROM [tryhards].[dbo].[weatherData]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT DISTINCT tdsl.IDLocation AS TDS_ID, CAST(tdslf.FunctionLink AS bigint) AS TIS_ID, tdsl.GPSLatitude, tdsl.GPSLongitude
+FROM TDS.TDS_Locations tdsl
+JOIN TDS.TDS_LocationsFunctions tdslf
+ON tdsl.IDLocation = tdslf.IDLocation
+JOIN TIS.site ts
+ON tdslf.FunctionLink = ts.id_TIS</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT DISTINCT 
-      [TIS_site_ID]
-	        ,[GPS_latitude]
-      ,[GPS_longitude]
-  FROM [tryhards].[dbo].[weatherData]) [refTable]
-where [refTable].[TIS_site_ID] = ?</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT DISTINCT tdsl.IDLocation AS TDS_ID, CAST(tdslf.FunctionLink AS bigint) AS TIS_ID, tdsl.GPSLatitude, tdsl.GPSLongitude
+FROM TDS.TDS_Locations tdsl
+JOIN TDS.TDS_LocationsFunctions tdslf
+ON tdsl.IDLocation = tdslf.IDLocation
+JOIN TIS.site ts
+ON tdslf.FunctionLink = ts.id_TIS) [refTable]
+where [refTable].[TIS_ID] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the type of connection used to access the reference dataset."
@@ -588,12 +590,12 @@ where [refTable].[TIS_site_ID] = ?</property>
                 <property
                   dataType="System.String"
                   description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="TIS_site_ID" dataType="DT_I8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="GPS_latitude" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="GPS_longitude" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="TDS_ID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TIS_ID" dataType="DT_I8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="GPSLatitude" dataType="DT_R4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="GPSLongitude" dataType="DT_R4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                 <property
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_TIS]};</property>
+                  name="ParameterMap">#{Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_TIS]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -605,27 +607,27 @@ where [refTable].[TIS_site_ID] = ?</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task\Lookup GPS.Connections[OleDbConnection]"
-                  connectionManagerID="{F6BE3F8D-211D-4866-BBF1-1A7C5152E56D}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[127.0.0.1.tryhards]"
+                  refId="Package\Data Flow Task | Import data\Lookup GPS.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[127.0.0.1.CBI_DB_MENDEL]"
+                  connectionManagerRefId="Package.ConnectionManagers[127.0.0.1.CBI_DB_MENDEL]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
               <inputs>
                 <input
-                  refId="Package\Data Flow Task\Lookup GPS.Inputs[Lookup Input]"
+                  refId="Package\Data Flow Task | Import data\Lookup GPS.Inputs[Lookup Input]"
                   name="Lookup Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\Lookup GPS.Inputs[Lookup Input].Columns[id_TIS]"
+                      refId="Package\Data Flow Task | Import data\Lookup GPS.Inputs[Lookup Input].Columns[id_TIS]"
                       cachedDataType="i8"
                       cachedName="id_TIS"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_TIS]">
+                      lineageId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_TIS]">
                       <properties>
                         <property
                           dataType="System.String"
                           description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">TIS_site_ID</property>
+                          name="JoinToReferenceColumn">TIS_ID</property>
                         <property
                           dataType="System.Null"
                           description="Specifies the column in the reference table from which a column is copied."
@@ -638,71 +640,69 @@ where [refTable].[TIS_site_ID] = ?</property>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\Lookup GPS.Outputs[Lookup Match Output]"
+                  refId="Package\Data Flow Task | Import data\Lookup GPS.Outputs[Lookup Match Output]"
                   errorOrTruncationOperation="Lookup"
                   errorRowDisposition="FailComponent"
                   exclusionGroup="1"
                   name="Lookup Match Output"
-                  synchronousInputId="Package\Data Flow Task\Lookup GPS.Inputs[Lookup Input]">
+                  synchronousInputId="Package\Data Flow Task | Import data\Lookup GPS.Inputs[Lookup Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Lookup GPS.Outputs[Lookup Match Output].Columns[GPS_latitude]"
-                      dataType="wstr"
+                      refId="Package\Data Flow Task | Import data\Lookup GPS.Outputs[Lookup Match Output].Columns[GPSLatitude]"
+                      dataType="r4"
                       errorOrTruncationOperation="Copy Column"
-                      length="255"
-                      lineageId="Package\Data Flow Task\Lookup GPS.Outputs[Lookup Match Output].Columns[GPS_latitude]"
-                      name="GPS_latitude"
+                      lineageId="Package\Data Flow Task | Import data\Lookup GPS.Outputs[Lookup Match Output].Columns[GPSLatitude]"
+                      name="GPSLatitude"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           dataType="System.String"
                           description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn">GPS_latitude</property>
+                          name="CopyFromReferenceColumn">GPSLatitude</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Lookup GPS.Outputs[Lookup Match Output].Columns[GPS_longitude]"
-                      dataType="wstr"
+                      refId="Package\Data Flow Task | Import data\Lookup GPS.Outputs[Lookup Match Output].Columns[GPSLongitude]"
+                      dataType="r4"
                       errorOrTruncationOperation="Copy Column"
-                      length="255"
-                      lineageId="Package\Data Flow Task\Lookup GPS.Outputs[Lookup Match Output].Columns[GPS_longitude]"
-                      name="GPS_longitude"
+                      lineageId="Package\Data Flow Task | Import data\Lookup GPS.Outputs[Lookup Match Output].Columns[GPSLongitude]"
+                      name="GPSLongitude"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           dataType="System.String"
                           description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn">GPS_longitude</property>
+                          name="CopyFromReferenceColumn">GPSLongitude</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Data Flow Task\Lookup GPS.Outputs[Lookup No Match Output]"
+                  refId="Package\Data Flow Task | Import data\Lookup GPS.Outputs[Lookup No Match Output]"
                   description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
                   exclusionGroup="1"
                   name="Lookup No Match Output"
-                  synchronousInputId="Package\Data Flow Task\Lookup GPS.Inputs[Lookup Input]">
+                  synchronousInputId="Package\Data Flow Task | Import data\Lookup GPS.Inputs[Lookup Input]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Data Flow Task\Lookup GPS.Outputs[Lookup Error Output]"
+                  refId="Package\Data Flow Task | Import data\Lookup GPS.Outputs[Lookup Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Lookup Error Output"
-                  synchronousInputId="Package\Data Flow Task\Lookup GPS.Inputs[Lookup Input]">
+                  synchronousInputId="Package\Data Flow Task | Import data\Lookup GPS.Inputs[Lookup Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Lookup GPS.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      refId="Package\Data Flow Task | Import data\Lookup GPS.Outputs[Lookup Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Lookup GPS.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Data Flow Task | Import data\Lookup GPS.Outputs[Lookup Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Lookup GPS.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      refId="Package\Data Flow Task | Import data\Lookup GPS.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Lookup GPS.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Data Flow Task | Import data\Lookup GPS.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -711,7 +711,7 @@ where [refTable].[TIS_site_ID] = ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\Lookup Route"
+              refId="Package\Data Flow Task | Import data\Lookup Route"
               componentClassID="Microsoft.Lookup"
               contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
               description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
@@ -767,7 +767,7 @@ where [refTable].[id_route] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_route]};</property>
+                  name="ParameterMap">#{Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_route]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -779,7 +779,7 @@ where [refTable].[id_route] = ?</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task\Lookup Route.Connections[OleDbConnection]"
+                  refId="Package\Data Flow Task | Import data\Lookup Route.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[127.0.0.1.CBI_DB_MENDEL]"
                   connectionManagerRefId="Package.ConnectionManagers[127.0.0.1.CBI_DB_MENDEL]"
                   description="Connection manager used to access lookup data."
@@ -787,14 +787,14 @@ where [refTable].[id_route] = ?</property>
               </connections>
               <inputs>
                 <input
-                  refId="Package\Data Flow Task\Lookup Route.Inputs[Lookup Input]"
+                  refId="Package\Data Flow Task | Import data\Lookup Route.Inputs[Lookup Input]"
                   name="Lookup Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\Lookup Route.Inputs[Lookup Input].Columns[id_route]"
+                      refId="Package\Data Flow Task | Import data\Lookup Route.Inputs[Lookup Input].Columns[id_route]"
                       cachedDataType="i8"
                       cachedName="id_route"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_route]">
+                      lineageId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_route]">
                       <properties>
                         <property
                           dataType="System.String"
@@ -812,20 +812,20 @@ where [refTable].[id_route] = ?</property>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\Lookup Route.Outputs[Lookup Match Output]"
+                  refId="Package\Data Flow Task | Import data\Lookup Route.Outputs[Lookup Match Output]"
                   errorOrTruncationOperation="Lookup"
                   errorRowDisposition="IgnoreFailure"
                   exclusionGroup="1"
                   name="Lookup Match Output"
-                  synchronousInputId="Package\Data Flow Task\Lookup Route.Inputs[Lookup Input]">
+                  synchronousInputId="Package\Data Flow Task | Import data\Lookup Route.Inputs[Lookup Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Lookup Route.Outputs[Lookup Match Output].Columns[routeName]"
+                      refId="Package\Data Flow Task | Import data\Lookup Route.Outputs[Lookup Match Output].Columns[routeName]"
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Copy Column"
                       length="256"
-                      lineageId="Package\Data Flow Task\Lookup Route.Outputs[Lookup Match Output].Columns[routeName]"
+                      lineageId="Package\Data Flow Task | Import data\Lookup Route.Outputs[Lookup Match Output].Columns[routeName]"
                       name="routeName"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -839,30 +839,30 @@ where [refTable].[id_route] = ?</property>
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Data Flow Task\Lookup Route.Outputs[Lookup No Match Output]"
+                  refId="Package\Data Flow Task | Import data\Lookup Route.Outputs[Lookup No Match Output]"
                   description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
                   exclusionGroup="1"
                   name="Lookup No Match Output"
-                  synchronousInputId="Package\Data Flow Task\Lookup Route.Inputs[Lookup Input]">
+                  synchronousInputId="Package\Data Flow Task | Import data\Lookup Route.Inputs[Lookup Input]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Data Flow Task\Lookup Route.Outputs[Lookup Error Output]"
+                  refId="Package\Data Flow Task | Import data\Lookup Route.Outputs[Lookup Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Lookup Error Output"
-                  synchronousInputId="Package\Data Flow Task\Lookup Route.Inputs[Lookup Input]">
+                  synchronousInputId="Package\Data Flow Task | Import data\Lookup Route.Inputs[Lookup Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Lookup Route.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      refId="Package\Data Flow Task | Import data\Lookup Route.Outputs[Lookup Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Lookup Route.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Data Flow Task | Import data\Lookup Route.Outputs[Lookup Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Lookup Route.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      refId="Package\Data Flow Task | Import data\Lookup Route.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Lookup Route.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Data Flow Task | Import data\Lookup Route.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -871,7 +871,7 @@ where [refTable].[id_route] = ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\OLE DB Destination"
+              refId="Package\Data Flow Task | Import data\OLE DB Destination"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
@@ -928,7 +928,7 @@ where [refTable].[id_route] = ?</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
+                  refId="Package\Data Flow Task | Import data\OLE DB Destination.Connections[OleDbConnection]"
                   connectionManagerID="{F6BE3F8D-211D-4866-BBF1-1A7C5152E56D}:external"
                   connectionManagerRefId="Project.ConnectionManagers[127.0.0.1.tryhards]"
                   description="The OLE DB runtime connection used to access the database."
@@ -936,148 +936,146 @@ where [refTable].[id_route] = ?</property>
               </connections>
               <inputs>
                 <input
-                  refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  refId="Package\Data Flow Task | Import data\OLE DB Destination.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[id_TIS]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[id_TIS]"
                       cachedDataType="i8"
                       cachedName="id_TIS"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SiteID]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_TIS]" />
+                      externalMetadataColumnId="Package\Data Flow Task | Import data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SiteID]"
+                      lineageId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_TIS]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[updatedRouteName]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[updatedRouteName]"
                       cachedDataType="wstr"
                       cachedLength="256"
                       cachedName="updatedRouteName"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RouteName]"
-                      lineageId="Package\Data Flow Task\Derived Column RouteName.Outputs[Derived Column Output].Columns[updatedRouteName]" />
+                      externalMetadataColumnId="Package\Data Flow Task | Import data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RouteName]"
+                      lineageId="Package\Data Flow Task | Import data\Derived Column RouteName.Outputs[Derived Column Output].Columns[updatedRouteName]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[controlRoom]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[controlRoom]"
                       cachedCodepage="1250"
                       cachedDataType="text"
                       cachedName="controlRoom"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ControlRoom]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[controlRoom]" />
+                      externalMetadataColumnId="Package\Data Flow Task | Import data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ControlRoom]"
+                      lineageId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].Columns[controlRoom]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[section]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[section]"
                       cachedCodepage="1250"
                       cachedDataType="str"
                       cachedLength="250"
                       cachedName="section"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Section]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[section]" />
+                      externalMetadataColumnId="Package\Data Flow Task | Import data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Section]"
+                      lineageId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].Columns[section]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[trackKm]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[trackKm]"
                       cachedDataType="r4"
                       cachedName="trackKm"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TrackKm]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[trackKm]" />
+                      externalMetadataColumnId="Package\Data Flow Task | Import data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TrackKm]"
+                      lineageId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].Columns[trackKm]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[siteName]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[siteName]"
                       cachedCodepage="1250"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="siteName"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SiteName]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[siteName]" />
+                      externalMetadataColumnId="Package\Data Flow Task | Import data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SiteName]"
+                      lineageId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].Columns[siteName]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[name]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[name]"
                       cachedCodepage="1250"
                       cachedDataType="str"
                       cachedLength="150"
                       cachedName="name"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CompanyName]"
-                      lineageId="Package\Data Flow Task\Lookup Company.Outputs[Lookup Match Output].Columns[name]" />
+                      externalMetadataColumnId="Package\Data Flow Task | Import data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CompanyName]"
+                      lineageId="Package\Data Flow Task | Import data\Lookup Company.Outputs[Lookup Match Output].Columns[name]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[acronym]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[acronym]"
                       cachedCodepage="1250"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="acronym"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DiagnosticSystemType]"
-                      lineageId="Package\Data Flow Task\Lookup Diagnostic System.Outputs[Lookup Match Output].Columns[acronym]" />
+                      externalMetadataColumnId="Package\Data Flow Task | Import data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DiagnosticSystemType]"
+                      lineageId="Package\Data Flow Task | Import data\Lookup Diagnostic System.Outputs[Lookup Match Output].Columns[acronym]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[updatedConstrolRoomAdditionals]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[updatedConstrolRoomAdditionals]"
                       cachedCodepage="1250"
                       cachedDataType="text"
                       cachedName="updatedConstrolRoomAdditionals"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ControlRoomAdditionals]"
-                      lineageId="Package\Data Flow Task\Derived Column Control Room Additional.Outputs[Derived Column Output].Columns[updatedConstrolRoomAdditionals]" />
+                      externalMetadataColumnId="Package\Data Flow Task | Import data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ControlRoomAdditionals]"
+                      lineageId="Package\Data Flow Task | Import data\Derived Column Control Room Additional.Outputs[Derived Column Output].Columns[updatedConstrolRoomAdditionals]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[GPS_latitude]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="GPS_latitude"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[GPS_latitude]"
-                      lineageId="Package\Data Flow Task\Lookup GPS.Outputs[Lookup Match Output].Columns[GPS_latitude]" />
+                      refId="Package\Data Flow Task | Import data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[GPSLongitude]"
+                      cachedDataType="r4"
+                      cachedName="GPSLongitude"
+                      externalMetadataColumnId="Package\Data Flow Task | Import data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[GPS_longitude]"
+                      lineageId="Package\Data Flow Task | Import data\Lookup GPS.Outputs[Lookup Match Output].Columns[GPSLongitude]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[GPS_longitude]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="GPS_longitude"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[GPS_longitude]"
-                      lineageId="Package\Data Flow Task\Lookup GPS.Outputs[Lookup Match Output].Columns[GPS_longitude]" />
+                      refId="Package\Data Flow Task | Import data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[GPSLatitude]"
+                      cachedDataType="r4"
+                      cachedName="GPSLatitude"
+                      externalMetadataColumnId="Package\Data Flow Task | Import data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[GPS_latitude]"
+                      lineageId="Package\Data Flow Task | Import data\Lookup GPS.Outputs[Lookup Match Output].Columns[GPSLatitude]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RouteName]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RouteName]"
                       dataType="wstr"
                       length="256"
                       name="RouteName" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SiteID]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SiteID]"
                       dataType="i8"
                       name="SiteID" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SiteName]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SiteName]"
                       codePage="1250"
                       dataType="str"
                       length="50"
                       name="SiteName" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ControlRoom]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ControlRoom]"
                       codePage="1250"
                       dataType="text"
                       name="ControlRoom" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ControlRoomAdditionals]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ControlRoomAdditionals]"
                       codePage="1250"
                       dataType="text"
                       name="ControlRoomAdditionals" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Section]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Section]"
                       codePage="1250"
                       dataType="str"
                       length="250"
                       name="Section" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TrackKm]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TrackKm]"
                       dataType="r4"
                       name="TrackKm" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CompanyName]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CompanyName]"
                       codePage="1250"
                       dataType="str"
                       length="150"
                       name="CompanyName" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DiagnosticSystemType]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DiagnosticSystemType]"
                       codePage="1250"
                       dataType="str"
                       length="40"
                       name="DiagnosticSystemType" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[GPS_latitude]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[GPS_latitude]"
                       dataType="wstr"
                       length="255"
                       name="GPS_latitude" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[GPS_longitude]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[GPS_longitude]"
                       dataType="wstr"
                       length="255"
                       name="GPS_longitude" />
@@ -1086,22 +1084,22 @@ where [refTable].[id_route] = ?</property>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\Data Flow Task | Import data\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\Data Flow Task | Import data\OLE DB Destination.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Data Flow Task | Import data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Data Flow Task | Import data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1110,7 +1108,7 @@ where [refTable].[id_route] = ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\OLE DB Source"
+              refId="Package\Data Flow Task | Import data\OLE DB Source"
               componentClassID="Microsoft.OLEDBSource"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
@@ -1159,7 +1157,7 @@ where [refTable].[id_route] = ?</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task\OLE DB Source.Connections[OleDbConnection]"
+                  refId="Package\Data Flow Task | Import data\OLE DB Source.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[127.0.0.1.CBI_DB_MENDEL]"
                   connectionManagerRefId="Package.ConnectionManagers[127.0.0.1.CBI_DB_MENDEL]"
                   description="The OLE DB runtime connection used to access the database."
@@ -1167,318 +1165,318 @@ where [refTable].[id_route] = ?</property>
               </connections>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output]"
+                  refId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output]"
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[controlRoom]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].Columns[controlRoom]"
                       codePage="1250"
                       dataType="text"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[controlRoom]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[controlRoom]"
+                      externalMetadataColumnId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[controlRoom]"
+                      lineageId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].Columns[controlRoom]"
                       name="controlRoom"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[controlRoomAddtionals]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].Columns[controlRoomAddtionals]"
                       codePage="1250"
                       dataType="text"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[controlRoomAddtionals]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[controlRoomAddtionals]"
+                      externalMetadataColumnId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[controlRoomAddtionals]"
+                      lineageId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].Columns[controlRoomAddtionals]"
                       name="controlRoomAddtionals"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[section]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].Columns[section]"
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[section]"
+                      externalMetadataColumnId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[section]"
                       length="250"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[section]"
+                      lineageId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].Columns[section]"
                       name="section"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_route]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_route]"
                       dataType="i8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_route]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_route]"
+                      externalMetadataColumnId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_route]"
+                      lineageId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_route]"
                       name="id_route"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[trackKm]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].Columns[trackKm]"
                       dataType="r4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[trackKm]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[trackKm]"
+                      externalMetadataColumnId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[trackKm]"
+                      lineageId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].Columns[trackKm]"
                       name="trackKm"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_systemType]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_systemType]"
                       dataType="i8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_systemType]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_systemType]"
+                      externalMetadataColumnId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_systemType]"
+                      lineageId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_systemType]"
                       name="id_systemType"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_owner]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_owner]"
                       dataType="i8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_owner]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_owner]"
+                      externalMetadataColumnId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_owner]"
+                      lineageId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_owner]"
                       name="id_owner"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_TIS]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_TIS]"
                       dataType="i8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_TIS]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_TIS]"
+                      externalMetadataColumnId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_TIS]"
+                      lineageId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_TIS]"
                       name="id_TIS"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[siteName]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].Columns[siteName]"
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[siteName]"
+                      externalMetadataColumnId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[siteName]"
                       length="50"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[siteName]"
+                      lineageId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].Columns[siteName]"
                       name="siteName"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_TIS]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_TIS]"
                       dataType="i8"
                       name="id_TIS" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[siteName]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[siteName]"
                       codePage="1250"
                       dataType="str"
                       length="50"
                       name="siteName" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_workshop]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_workshop]"
                       dataType="i8"
                       name="id_workshop" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[controlRoom]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[controlRoom]"
                       codePage="1250"
                       dataType="text"
                       name="controlRoom" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[controlRoomAddtionals]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[controlRoomAddtionals]"
                       codePage="1250"
                       dataType="text"
                       name="controlRoomAddtionals" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_route]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_route]"
                       dataType="i8"
                       name="id_route" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[section]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[section]"
                       codePage="1250"
                       dataType="str"
                       length="250"
                       name="section" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[trackNo]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[trackNo]"
                       dataType="i4"
                       name="trackNo" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[trackKm]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[trackKm]"
                       dataType="r4"
                       name="trackKm" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[trackKmBegin]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[trackKmBegin]"
                       dataType="r4"
                       name="trackKmBegin" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[trackKmEnd]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[trackKmEnd]"
                       dataType="r4"
                       name="trackKmEnd" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_systemType]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_systemType]"
                       dataType="i8"
                       name="id_systemType" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[inventoryNo]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[inventoryNo]"
                       codePage="1250"
                       dataType="str"
                       length="250"
                       name="inventoryNo" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ipInternal]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ipInternal]"
                       codePage="1250"
                       dataType="str"
                       length="30"
                       name="ipInternal" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[buildDate]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[buildDate]"
                       dataType="dbTimeStamp"
                       name="buildDate" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[addDate]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[addDate]"
                       dataType="dbTimeStamp"
                       name="addDate" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_owner]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_owner]"
                       dataType="i8"
                       name="id_owner" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_producer]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_producer]"
                       dataType="i8"
                       name="id_producer" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[burglarAlarm]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[burglarAlarm]"
                       dataType="bool"
                       name="burglarAlarm" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[fireAlarm]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[fireAlarm]"
                       dataType="bool"
                       name="fireAlarm" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[latencyGPS]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[latencyGPS]"
                       dataType="r4"
                       name="latencyGPS" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[longitudeGPS]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[longitudeGPS]"
                       dataType="r4"
                       name="longitudeGPS" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[lastContact]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[lastContact]"
                       dataType="dbTimeStamp"
                       name="lastContact" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[map_x_position]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[map_x_position]"
                       dataType="i2"
                       name="map_x_position" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[map_y_position]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[map_y_position]"
                       dataType="i2"
                       name="map_y_position" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[communicationOK]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[communicationOK]"
                       dataType="bool"
                       name="communicationOK" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[isActive]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[isActive]"
                       dataType="bool"
                       name="isActive" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ipCommunication]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ipCommunication]"
                       codePage="1250"
                       dataType="str"
                       length="50"
                       name="ipCommunication" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[map_x2_position]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[map_x2_position]"
                       dataType="i2"
                       name="map_x2_position" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[map_y2_position]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[map_y2_position]"
                       dataType="i2"
                       name="map_y2_position" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[directionImage]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[directionImage]"
                       dataType="ui1"
                       name="directionImage" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_userAssigment]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_userAssigment]"
                       dataType="i8"
                       name="id_userAssigment" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[exclusionPoint]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[exclusionPoint]"
                       codePage="1250"
                       dataType="str"
                       length="250"
                       name="exclusionPoint" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[uncommitedMessages]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[uncommitedMessages]"
                       dataType="i4"
                       name="uncommitedMessages" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  refId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Error Output]"
                   isErrorOut="true"
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[controlRoom]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[controlRoom]"
                       codePage="1250"
                       dataType="text"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[controlRoom]"
+                      lineageId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[controlRoom]"
                       name="controlRoom" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[controlRoomAddtionals]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[controlRoomAddtionals]"
                       codePage="1250"
                       dataType="text"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[controlRoomAddtionals]"
+                      lineageId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[controlRoomAddtionals]"
                       name="controlRoomAddtionals" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[section]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[section]"
                       codePage="1250"
                       dataType="str"
                       length="250"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[section]"
+                      lineageId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[section]"
                       name="section" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_route]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_route]"
                       dataType="i8"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_route]"
+                      lineageId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_route]"
                       name="id_route" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[trackKm]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[trackKm]"
                       dataType="r4"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[trackKm]"
+                      lineageId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[trackKm]"
                       name="trackKm" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_systemType]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_systemType]"
                       dataType="i8"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_systemType]"
+                      lineageId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_systemType]"
                       name="id_systemType" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_owner]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_owner]"
                       dataType="i8"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_owner]"
+                      lineageId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_owner]"
                       name="id_owner" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_TIS]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_TIS]"
                       dataType="i8"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_TIS]"
+                      lineageId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_TIS]"
                       name="id_TIS" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[siteName]"
+                      refId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[siteName]"
                       codePage="1250"
                       dataType="str"
                       length="50"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[siteName]"
+                      lineageId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[siteName]"
                       name="siteName" />
                   </outputColumns>
                   <externalMetadataColumns />
@@ -1488,45 +1486,72 @@ where [refTable].[id_route] = ?</property>
           </components>
           <paths>
             <path
-              refId="Package\Data Flow Task.Paths[Derived Column Output]"
-              endId="Package\Data Flow Task\Lookup Diagnostic System.Inputs[Lookup Input]"
+              refId="Package\Data Flow Task | Import data.Paths[Derived Column Output]"
+              endId="Package\Data Flow Task | Import data\Lookup Diagnostic System.Inputs[Lookup Input]"
               name="Derived Column Output"
-              startId="Package\Data Flow Task\Derived Column RouteName.Outputs[Derived Column Output]" />
+              startId="Package\Data Flow Task | Import data\Derived Column RouteName.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Data Flow Task.Paths[Derived Column Output1]"
-              endId="Package\Data Flow Task\Lookup Company.Inputs[Lookup Input]"
+              refId="Package\Data Flow Task | Import data.Paths[Derived Column Output1]"
+              endId="Package\Data Flow Task | Import data\Lookup Company.Inputs[Lookup Input]"
               name="Derived Column Output"
-              startId="Package\Data Flow Task\Derived Column Control Room Additional.Outputs[Derived Column Output]" />
+              startId="Package\Data Flow Task | Import data\Derived Column Control Room Additional.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Data Flow Task.Paths[Lookup Match Output]"
-              endId="Package\Data Flow Task\Lookup Route.Inputs[Lookup Input]"
+              refId="Package\Data Flow Task | Import data.Paths[Lookup Match Output]"
+              endId="Package\Data Flow Task | Import data\Lookup Route.Inputs[Lookup Input]"
               name="Lookup Match Output"
-              startId="Package\Data Flow Task\Lookup Company.Outputs[Lookup Match Output]" />
+              startId="Package\Data Flow Task | Import data\Lookup Company.Outputs[Lookup Match Output]" />
             <path
-              refId="Package\Data Flow Task.Paths[Lookup Match Output1]"
-              endId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              refId="Package\Data Flow Task | Import data.Paths[Lookup Match Output1]"
+              endId="Package\Data Flow Task | Import data\OLE DB Destination.Inputs[OLE DB Destination Input]"
               name="Lookup Match Output"
-              startId="Package\Data Flow Task\Lookup Diagnostic System.Outputs[Lookup Match Output]" />
+              startId="Package\Data Flow Task | Import data\Lookup Diagnostic System.Outputs[Lookup Match Output]" />
             <path
-              refId="Package\Data Flow Task.Paths[Lookup Match Output2]"
-              endId="Package\Data Flow Task\Derived Column RouteName.Inputs[Derived Column Input]"
+              refId="Package\Data Flow Task | Import data.Paths[Lookup Match Output2]"
+              endId="Package\Data Flow Task | Import data\Derived Column RouteName.Inputs[Derived Column Input]"
               name="Lookup Match Output"
-              startId="Package\Data Flow Task\Lookup Route.Outputs[Lookup Match Output]" />
+              startId="Package\Data Flow Task | Import data\Lookup Route.Outputs[Lookup Match Output]" />
             <path
-              refId="Package\Data Flow Task.Paths[Lookup Match Output3]"
-              endId="Package\Data Flow Task\Derived Column Control Room Additional.Inputs[Derived Column Input]"
+              refId="Package\Data Flow Task | Import data.Paths[Lookup Match Output3]"
+              endId="Package\Data Flow Task | Import data\Derived Column Control Room Additional.Inputs[Derived Column Input]"
               name="Lookup Match Output"
-              startId="Package\Data Flow Task\Lookup GPS.Outputs[Lookup Match Output]" />
+              startId="Package\Data Flow Task | Import data\Lookup GPS.Outputs[Lookup Match Output]" />
             <path
-              refId="Package\Data Flow Task.Paths[OLE DB Source Output]"
-              endId="Package\Data Flow Task\Lookup GPS.Inputs[Lookup Input]"
+              refId="Package\Data Flow Task | Import data.Paths[OLE DB Source Output]"
+              endId="Package\Data Flow Task | Import data\Lookup GPS.Inputs[Lookup Input]"
               name="OLE DB Source Output"
-              startId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output]" />
+              startId="Package\Data Flow Task | Import data\OLE DB Source.Outputs[OLE DB Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task | Remove table rows"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{B33E2E2D-D7C2-44AE-8FB0-7F6CEFAFBF3A}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task | Remove table rows"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F6BE3F8D-211D-4866-BBF1-1A7C5152E56D}"
+          SQLTask:SqlStatementSource="DELETE FROM [tryhards].[dbo].[DimSite];&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
   </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{8D2E6AB5-FD37-4B1C-AFD0-4EDF51823FEA}"
+      DTS:From="Package\Execute SQL Task | Remove table rows"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Data Flow Task | Import data" />
+  </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -1538,53 +1563,129 @@ where [refTable].[id_route] = ?</property>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="152,43"
-          Id="Package\Data Flow Task"
-          TopLeft="49.2499993480742,11.1333332326015" />
+          Size="218,42"
+          Id="Package\Data Flow Task | Import data"
+          TopLeft="248.249999348074,221.133333232602" />
+        <NodeLayout
+          Size="264,42"
+          Id="Package\Execute SQL Task | Remove table rows"
+          TopLeft="223,81" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="356.124999674037,123">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,98.1333332326015"
+              Start="0,0"
+              End="0,90.6333332326015">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,90.6333332326015" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\Data Flow Task">
+    design-time-name="Package\Data Flow Task | Import data">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="144,43"
+          Id="Package\Data Flow Task | Import data\Lookup Route"
+          TopLeft="240.305551989625,352.59999755144" />
         <NodeLayout
           Size="203,43"
-          Id="Package\Data Flow Task\Lookup Diagnostic System"
+          Id="Package\Data Flow Task | Import data\Lookup Diagnostic System"
           TopLeft="209.888885776202,505.855550366574" />
         <NodeLayout
           Size="212,43"
-          Id="Package\Data Flow Task\Derived Column RouteName"
+          Id="Package\Data Flow Task | Import data\Derived Column RouteName"
           TopLeft="216.833330117166,428.199996652603" />
         <NodeLayout
           Size="151,43"
-          Id="Package\Data Flow Task\OLE DB Source"
+          Id="Package\Data Flow Task | Import data\OLE DB Source"
           TopLeft="222.583329986781,0.299999744296102" />
         <NodeLayout
           Size="161,43"
-          Id="Package\Data Flow Task\Lookup Company"
+          Id="Package\Data Flow Task | Import data\Lookup Company"
           TopLeft="231.55555212001,265.96666393141" />
         <NodeLayout
-          Size="144,43"
-          Id="Package\Data Flow Task\Lookup Route"
-          TopLeft="240.305551989625,352.59999755144" />
+          Size="135,42"
+          Id="Package\Data Flow Task | Import data\Lookup GPS"
+          TopLeft="233.499997578561,88.655546817713" />
         <NodeLayout
           Size="271,42"
-          Id="Package\Data Flow Task\Derived Column Control Room Additional"
+          Id="Package\Data Flow Task | Import data\Derived Column Control Room Additional"
           TopLeft="163.499997578561,195.766665186683" />
         <NodeLayout
           Size="172,43"
-          Id="Package\Data Flow Task\OLE DB Destination"
+          Id="Package\Data Flow Task | Import data\OLE DB Destination"
           TopLeft="230.444441025456,601.655546817713" />
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Lookup Match Output2]"
+          Id="Package\Data Flow Task | Import data.Paths[OLE DB Source Output]"
+          TopLeft="299.541663782671,43.2999997442961">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,45.3555470734169"
+              Start="0,0"
+              End="0,37.8555470734169">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.8555470734169" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task | Import data.Paths[Lookup Match Output3]"
+          TopLeft="299.999997578561,130.655546817713">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,65.1111183689704"
+              Start="0,0"
+              End="0,57.6111183689704">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,57.6111183689704" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,23.0008716844852,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task | Import data.Paths[Lookup Match Output2]"
           TopLeft="312.305551989625,395.266664218107">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="10.5277781275407,32.9333324344963"
               Start="0,0"
               End="10.5277781275407,25.4333324344963">
@@ -1616,11 +1717,11 @@ where [refTable].[id_route] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Lookup Match Output1]"
+          Id="Package\Data Flow Task | Import data.Paths[Lookup Match Output1]"
           TopLeft="313.833330067496,548.522217033241">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,53.1333297844719"
               Start="0,0"
               End="0,45.6333297844719">
@@ -1635,16 +1736,16 @@ where [refTable].[id_route] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,17.011977392236,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,17.0119773922359,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Lookup Match Output]"
+          Id="Package\Data Flow Task | Import data.Paths[Lookup Match Output]"
           TopLeft="312.263885388151,308.633330598076">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,43.966666953364"
               Start="0,0"
               End="0,36.466666953364">
@@ -1664,11 +1765,11 @@ where [refTable].[id_route] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Derived Column Output1]"
+          Id="Package\Data Flow Task | Import data.Paths[Derived Column Output1]"
           TopLeft="298.999997578561,237.766665186683">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="13.0555545414491,28.1999987447267"
               Start="0,0"
               End="13.0555545414491,20.6999987447267">
@@ -1698,11 +1799,11 @@ where [refTable].[id_route] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Derived Column Output]"
+          Id="Package\Data Flow Task | Import data.Paths[Derived Column Output]"
           TopLeft="322.833330117166,470.86666331927">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="-11.6111110076309,34.988887047304"
               Start="0,0"
               End="-11.6111110076309,27.488887047304">
@@ -1731,120 +1832,11 @@ where [refTable].[id_route] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="135,42"
-          Id="Package\Data Flow Task\Lookup GPS"
-          TopLeft="233.499997578561,88.655546817713" />
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
-          TopLeft="299.541663782671,43.2999997442961">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,45.3555470734169"
-              Start="0,0"
-              End="0,37.8555470734169">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,37.8555470734169" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Lookup Match Output3]"
-          TopLeft="299.999997578561,130.655546817713">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,65.1111183689704"
-              Start="0,0"
-              End="0,57.6111183689704">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,57.6111183689704" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,23.0008716844852,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Lookup Diagnostic System">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[TIS].[DEF_systemType]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Lookup Company">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[user].[DEF_company]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Lookup Route">
+    design-time-name="Package\Data Flow Task | Import data\Lookup Route">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -1867,7 +1859,30 @@ where [refTable].[id_route] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\OLE DB Destination">
+    design-time-name="Package\Data Flow Task | Import data\Lookup Diagnostic System">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[TIS].[DEF_systemType]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task | Import data\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1880,7 +1895,30 @@ where [refTable].[id_route] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Lookup GPS">
+    design-time-name="Package\Data Flow Task | Import data\Lookup Company">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[user].[DEF_company]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task | Import data\Lookup GPS">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -1899,6 +1937,19 @@ where [refTable].[id_route] = ?</property>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task | Import data\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

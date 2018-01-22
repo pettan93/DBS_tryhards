@@ -11,8 +11,8 @@
   DTS:LocaleID="1029"
   DTS:ObjectName="LoadFactHBPassage"
   DTS:PackageType="5"
-  DTS:VersionBuild="71"
-  DTS:VersionGUID="{D30ADFDA-35A9-4F0D-B9F9-5F8FDB49E9B1}">
+  DTS:VersionBuild="72"
+  DTS:VersionGUID="{15A5260E-B97A-48CE-B649-F7AE722BB654}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -2447,33 +2447,33 @@ where [refTable].[TrainNumber] = ?</property>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
         <NodeLayout
-          Size="217.333333333334,42"
+          Size="217,42"
           Id="Package\Data Flow Task | Create data"
           TopLeft="319.41666502133,281.433332395752" />
         <NodeLayout
-          Size="333.333333333334,42"
+          Size="333,42"
           Id="Package\Execute SQL Task | DELETE a RESEED factHBPassage"
           TopLeft="254,93" />
         <NodeLayout
-          Size="238.666666666667,42"
+          Size="239,42"
           Id="Package\Execute SQL Task | DimDate keys"
           TopLeft="306,483" />
         <NodeLayout
-          Size="257.333333333334,42"
-          Id="Package\Execute SQL Task | DimWeather keys"
-          TopLeft="301,567" />
-        <NodeLayout
-          Size="241.333333333334,42.6666666666667"
+          Size="241,43"
           Id="Package\Execute SQL Task | DimTime keys"
           TopLeft="301,652" />
+        <NodeLayout
+          Size="257,42"
+          Id="Package\Execute SQL Task | DimWeather keys"
+          TopLeft="301,567" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="424.208332510665,135">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,146.433332395752"
               Start="0,0"
               End="0,138.933332395752">
@@ -2495,7 +2495,7 @@ where [refTable].[TrainNumber] = ?</property>
           TopLeft="426.708332510665,323.433332395752">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,159.566667604248"
               Start="0,0"
               End="0,152.066667604248">
@@ -2517,7 +2517,7 @@ where [refTable].[TrainNumber] = ?</property>
           TopLeft="427.5,525">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,42"
               Start="0,0"
               End="0,34.5">
@@ -2539,7 +2539,7 @@ where [refTable].[TrainNumber] = ?</property>
           TopLeft="425.666666666667,609">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,43"
               Start="0,0"
               End="0,35.5">
@@ -2559,7 +2559,7 @@ where [refTable].[TrainNumber] = ?</property>
         <AnnotationLayout
           Text="---------------- HB Passage -----------------"
           ParentId="Package"
-          Size="389.333333333334,48.6666666666667"
+          Size="389,48"
           Id="b790dd7c-d1f9-45f1-8feb-7ff5a3c6bd22"
           TopLeft="234,41">
           <AnnotationLayout.FontInfo>
