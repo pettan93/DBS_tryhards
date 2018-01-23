@@ -6,114 +6,25 @@
         <ConnectionString>Provider=SQLNCLI11.1;Data Source=127.0.0.1;Integrated Security=SSPI;Initial Catalog=tryhards</ConnectionString>
         <ImpersonationInfo>
           <ImpersonationMode xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">ImpersonateAccount</ImpersonationMode>
-          <Account xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">AD\xkalas1</Account>
-          <ImpersonationInfoSecurity xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">Unchanged</ImpersonationInfoSecurity>
+          <Account xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">AD/xslegl</Account>
+          <ImpersonationInfoSecurity xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">PasswordRemoved</ImpersonationInfoSecurity>
         </ImpersonationInfo>
       </DataSource>
     </DataSources>
     <Dimensions>
       <Dimension>
-        <ID>Dim Date</ID>
-      </Dimension>
-      <Dimension>
         <ID>Dim Site</ID>
-      </Dimension>
-      <Dimension>
-        <ID>Dim Direction</ID>
-      </Dimension>
-      <Dimension>
-        <ID>Dim Fault Level</ID>
-      </Dimension>
-      <Dimension>
-        <ID>Dim Integrity</ID>
-      </Dimension>
-      <Dimension>
-        <ID>Dim Train Type</ID>
-      </Dimension>
-      <Dimension>
-        <ID>Dim Weather</ID>
-      </Dimension>
-      <Dimension>
-        <ID>Dim Date 1</ID>
-      </Dimension>
-      <Dimension>
-        <ID>Dim Weather 1</ID>
-      </Dimension>
-      <Dimension>
-        <ID>Dim Site 1</ID>
-      </Dimension>
-      <Dimension>
-        <ID>Dim Fault Level 1</ID>
-      </Dimension>
-      <Dimension>
-        <ID>Dim Train Type 1</ID>
-      </Dimension>
-      <Dimension>
-        <ID>Dim Direction 1</ID>
-      </Dimension>
-      <Dimension>
-        <ID>Dim Integrity 1</ID>
-      </Dimension>
-      <Dimension>
-        <ID>Fact HW Passage</ID>
-      </Dimension>
-      <Dimension>
-        <ID>Dim Date 2</ID>
-      </Dimension>
-      <Dimension>
-        <ID>Dim Weather 2</ID>
-      </Dimension>
-      <Dimension>
-        <ID>Dim Site 2</ID>
-      </Dimension>
-      <Dimension>
-        <ID>Dim Fault Level 2</ID>
-      </Dimension>
-      <Dimension>
-        <ID>Dim Train Type 2</ID>
-      </Dimension>
-      <Dimension>
-        <ID>Dim Direction 2</ID>
-      </Dimension>
-      <Dimension>
-        <ID>Dim Integrity 2</ID>
       </Dimension>
     </Dimensions>
     <Cubes>
       <Cube>
-        <ID>HB_cube</ID>
+        <ID>Tryhards</ID>
         <MeasureGroups>
           <MeasureGroup>
             <ID>Fact HB Passage</ID>
             <Partitions>
               <Partition>
                 <ID>Fact HB Passage</ID>
-              </Partition>
-            </Partitions>
-          </MeasureGroup>
-        </MeasureGroups>
-      </Cube>
-      <Cube>
-        <ID>HW_cube</ID>
-        <MeasureGroups>
-          <MeasureGroup>
-            <ID>Fact HW Passage</ID>
-            <Partitions>
-              <Partition>
-                <ID>Fact HW Passage</ID>
-              </Partition>
-            </Partitions>
-          </MeasureGroup>
-        </MeasureGroups>
-      </Cube>
-      <Cube>
-        <ID>WDD_cube</ID>
-        <MeasureGroups>
-          <MeasureGroup>
-            <ID>Fact WDD Passage</ID>
-            <Partitions>
-              <Partition>
-                <ID>Fact WDD Passage</ID>
               </Partition>
             </Partitions>
           </MeasureGroup>

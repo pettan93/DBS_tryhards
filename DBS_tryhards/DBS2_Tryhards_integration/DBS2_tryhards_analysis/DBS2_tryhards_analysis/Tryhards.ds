@@ -7,8 +7,8 @@
   <ConnectionStringSecurity>Unchanged</ConnectionStringSecurity>
   <ImpersonationInfo>
     <ImpersonationMode>ImpersonateAccount</ImpersonationMode>
-    <Account>AD\xkalas1</Account>
-    <ImpersonationInfoSecurity>Unchanged</ImpersonationInfoSecurity>
+    <Account>AD/xslegl</Account>
+    <ImpersonationInfoSecurity>PasswordRemoved</ImpersonationInfoSecurity>
   </ImpersonationInfo>
   <Timeout>PT0S</Timeout>
 </DataSource>

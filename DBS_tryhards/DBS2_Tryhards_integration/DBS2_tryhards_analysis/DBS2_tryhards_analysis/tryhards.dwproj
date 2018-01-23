@@ -8,124 +8,20 @@
   </Database>
   <Cubes>
     <ProjectItem>
-      <Name>HB_cube.cube</Name>
-      <FullPath>HB_cube.cube</FullPath>
+      <Name>Tryhards.cube</Name>
+      <FullPath>Tryhards.cube</FullPath>
       <Dependencies>
         <ProjectItem>
-          <Name>HB_cube.partitions</Name>
-          <FullPath>HB_cube.partitions</FullPath>
-        </ProjectItem>
-      </Dependencies>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>HW_cube.cube</Name>
-      <FullPath>HW_cube.cube</FullPath>
-      <Dependencies>
-        <ProjectItem>
-          <Name>HW_cube.partitions</Name>
-          <FullPath>HW_cube.partitions</FullPath>
-        </ProjectItem>
-      </Dependencies>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>WDD_cube.cube</Name>
-      <FullPath>WDD_cube.cube</FullPath>
-      <Dependencies>
-        <ProjectItem>
-          <Name>WDD_cube.partitions</Name>
-          <FullPath>WDD_cube.partitions</FullPath>
+          <Name>Tryhards.partitions</Name>
+          <FullPath>Tryhards.partitions</FullPath>
         </ProjectItem>
       </Dependencies>
     </ProjectItem>
   </Cubes>
   <Dimensions>
     <ProjectItem>
-      <Name>Dim Date.dim</Name>
-      <FullPath>Dim Date.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
       <Name>Dim Site.dim</Name>
       <FullPath>Dim Site.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Dim Direction.dim</Name>
-      <FullPath>Dim Direction.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Dim Fault Level.dim</Name>
-      <FullPath>Dim Fault Level.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Dim Integrity.dim</Name>
-      <FullPath>Dim Integrity.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Dim Train Type.dim</Name>
-      <FullPath>Dim Train Type.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Dim Weather.dim</Name>
-      <FullPath>Dim Weather.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Dim Date 1.dim</Name>
-      <FullPath>Dim Date 1.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Dim Weather 1.dim</Name>
-      <FullPath>Dim Weather 1.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Dim Site 1.dim</Name>
-      <FullPath>Dim Site 1.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Dim Fault Level 1.dim</Name>
-      <FullPath>Dim Fault Level 1.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Dim Train Type 1.dim</Name>
-      <FullPath>Dim Train Type 1.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Dim Direction 1.dim</Name>
-      <FullPath>Dim Direction 1.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Dim Integrity 1.dim</Name>
-      <FullPath>Dim Integrity 1.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Fact HW Passage.dim</Name>
-      <FullPath>Fact HW Passage.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Dim Date 2.dim</Name>
-      <FullPath>Dim Date 2.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Dim Weather 2.dim</Name>
-      <FullPath>Dim Weather 2.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Dim Site 2.dim</Name>
-      <FullPath>Dim Site 2.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Dim Fault Level 2.dim</Name>
-      <FullPath>Dim Fault Level 2.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Dim Train Type 2.dim</Name>
-      <FullPath>Dim Train Type 2.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Dim Direction 2.dim</Name>
-      <FullPath>Dim Direction 2.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Dim Integrity 2.dim</Name>
-      <FullPath>Dim Integrity 2.dim</FullPath>
     </ProjectItem>
   </Dimensions>
   <DataSources>
@@ -136,16 +32,8 @@
   </DataSources>
   <DataSourceViews>
     <ProjectItem>
-      <Name>HBView.dsv</Name>
-      <FullPath>HBView.dsv</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>HWView.dsv</Name>
-      <FullPath>HWView.dsv</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>WDDView.dsv</Name>
-      <FullPath>WDDView.dsv</FullPath>
+      <Name>Tryhards.dsv</Name>
+      <FullPath>Tryhards.dsv</FullPath>
     </ProjectItem>
   </DataSourceViews>
   <Configurations>

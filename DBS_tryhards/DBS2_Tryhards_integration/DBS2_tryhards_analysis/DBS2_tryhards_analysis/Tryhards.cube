@@ -1,0 +1,237 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="8a6560b8-f8b3-45fc-b767-e68208107bfe" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Tryhards</ID>
+  <Name>Tryhards</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Dimensions>
+    <Dimension dwd:design-time-name="953ae7cd-bd4d-4fcd-8521-c2a799e693d1">
+      <ID>Dim Site</ID>
+      <Name>Dim Site</Name>
+      <DimensionID>Dim Site</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="c4579510-8588-4620-80b3-d846473484bc">
+          <AttributeID>Site ID</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="68de5466-423c-42f9-a953-84c8b347dafa">
+          <AttributeID>Site Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="bd7a281e-26b6-4e8f-97d8-47cb500430c8">
+          <AttributeID>Control Room</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="444ad16e-5939-446c-98a8-1b495b9351f7">
+          <AttributeID>Control Room Additionals</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="47c41719-e558-423e-aad5-124c7f909703">
+          <AttributeID>Section</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="b1777fc5-d4d7-4459-a3c5-0cea92b6f997">
+          <AttributeID>Track Km</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="b062a1e3-d4bd-4a07-b8d8-360b18d68583">
+          <AttributeID>Company Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="43ec7cf9-ba55-4d68-8654-12cb84396298">
+          <AttributeID>Route Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="dc9d9250-0a4d-4f37-af66-ee26c29b3cfe">
+          <AttributeID>Diagnostic System Type</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="774a5c10-43b2-4c35-8871-c41d66c306dd">
+          <AttributeID>GPS Latitude</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="eacf0a42-31e7-447a-ac13-7605e098b864">
+          <AttributeID>GPS Longitude</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+  </Dimensions>
+  <MeasureGroups>
+    <MeasureGroup dwd:design-time-name="098bd96d-bfb9-4224-b70a-1bb806a4f993">
+      <ID>Fact HB Passage</ID>
+      <Name>Fact HB Passage</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="5c5e4524-f453-4916-9f2b-7b8cdba9e7cb">
+          <ID>Id TIS</ID>
+          <Name>Id TIS</Name>
+          <Source dwd:design-time-name="288faa35-11c1-4019-b279-aae550673e7e">
+            <DataType>BigInt</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="bdbbb129-27b0-465c-bc05-c2cba82a6473">
+              <TableID>dbo_FactHBPassage</TableID>
+              <ColumnID>id_TIS</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="07d65ec2-1963-443c-ba18-87b96bee5bfd">
+          <ID>Velocity</ID>
+          <Name>Velocity</Name>
+          <Source dwd:design-time-name="8be2cf7f-367a-4ff1-8616-76abebb860eb">
+            <DataType>Single</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="802957c7-dafb-4dc7-9580-f14928cf8e64">
+              <TableID>dbo_FactHBPassage</TableID>
+              <ColumnID>Velocity</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="7491deaf-bbe7-4680-8539-8a822d4698bc">
+          <ID>Length</ID>
+          <Name>Length</Name>
+          <Source dwd:design-time-name="fcac1a0e-607e-488b-aa94-826227efe07c">
+            <DataType>Single</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="b83977b0-798f-413c-9670-7be1ff533fdc">
+              <TableID>dbo_FactHBPassage</TableID>
+              <ColumnID>Length</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="b9640559-5756-423f-af58-1be912ab203d">
+          <ID>Axle Count</ID>
+          <Name>Axle Count</Name>
+          <Source dwd:design-time-name="22991b3b-2447-465e-b432-e0b3a003708a">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="17a9af29-3b8c-4e84-a6bd-8e5c9e0cc51b">
+              <TableID>dbo_FactHBPassage</TableID>
+              <ColumnID>AxleCount</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="3b9edbc5-a918-4ec8-be89-1184ca682425">
+          <ID>Vehicle Count</ID>
+          <Name>Vehicle Count</Name>
+          <Source dwd:design-time-name="b9902e43-45e1-4dc7-9d70-fbefe487f958">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="40a9f26b-3f8f-4f88-bcb8-36d50f85e2c3">
+              <TableID>dbo_FactHBPassage</TableID>
+              <ColumnID>VehicleCount</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="2fb08fc8-73b5-42c3-85dd-5602864a5aed">
+          <ID>Loco Count</ID>
+          <Name>Loco Count</Name>
+          <Source dwd:design-time-name="3ca42bd1-1fdd-4e78-9892-b8085e9e7aa2">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="b38c752f-6373-45c6-85d8-9f7d1a3bf193">
+              <TableID>dbo_FactHBPassage</TableID>
+              <ColumnID>LocoCount</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="eff05e3a-6474-4852-ab85-eaf05117e97a">
+          <ID>Temperature Left</ID>
+          <Name>Temperature Left</Name>
+          <Source dwd:design-time-name="b33bbb38-9cc5-4387-9322-a81375fb6c18">
+            <DataType>Single</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="f0da5b93-e90b-43a5-be81-1a79b0a4380f">
+              <TableID>dbo_FactHBPassage</TableID>
+              <ColumnID>TemperatureLeft</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="9b40a917-cf9e-4d22-8b1c-b4ea87288bf3">
+          <ID>Temperature Right</ID>
+          <Name>Temperature Right</Name>
+          <Source dwd:design-time-name="9c42f9f8-0846-4b9c-9a5b-2df72d3156d4">
+            <DataType>Single</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="c44a2ade-210a-4d48-873a-86ffb29c3088">
+              <TableID>dbo_FactHBPassage</TableID>
+              <ColumnID>TemperatureRight</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="3b9b3deb-cb7f-4e1a-b5e0-1f05114ddafb">
+          <ID>Axle Distance</ID>
+          <Name>Axle Distance</Name>
+          <Source dwd:design-time-name="8a2f0dd2-c162-4432-93e2-25fe1a683447">
+            <DataType>Single</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="9ec36afa-844a-4223-9075-6328de5260b2">
+              <TableID>dbo_FactHBPassage</TableID>
+              <ColumnID>AxleDistance</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="b8615ba9-4eae-4873-acd5-ebb409467bad">
+          <ID>Fact HB Passage Count</ID>
+          <Name>Fact HB Passage Count</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="e11b2256-a77f-466e-9597-a5d51ff666be">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="a74a505d-7ba9-4e78-b6b6-81e4d4e997e7">
+              <TableID>dbo_FactHBPassage</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="4fc92102-7206-4124-b387-7978c7d979be">
+          <CubeDimensionID>Dim Site</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="72947e09-b651-49bb-b761-d5e56e5d298f">
+              <AttributeID>Site ID</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="42f347ae-f832-449e-ac21-52d3f4a97abe">
+                  <DataType>BigInt</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="f24aa7c5-1842-4423-abd6-807a2794071a">
+                    <TableID>dbo_FactHBPassage</TableID>
+                    <ColumnID>SiteID</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+  </MeasureGroups>
+  <Source dwd:design-time-name="71e9101d-6880-4ec3-b05c-5c655d9be7fe">
+    <DataSourceViewID>Tryhards</DataSourceViewID>
+  </Source>
+</Cube>

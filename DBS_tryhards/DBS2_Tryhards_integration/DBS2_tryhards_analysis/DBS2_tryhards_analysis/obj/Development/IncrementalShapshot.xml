@@ -8,7 +8,7 @@
     <TransactionalDeployment>false</TransactionalDeployment>
     <PartitionDeployment>DeployPartitions</PartitionDeployment>
     <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
-    <ProcessingOption>DoNotProcess</ProcessingOption>
+    <ProcessingOption>Default</ProcessingOption>
     <OutputScript></OutputScript>
     <ImpactAnalysisFile></ImpactAnalysisFile>
     <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
@@ -19,57 +19,36 @@
     <ObjectSnapshots>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
-        <TimeStamp>R2XOjM3CyONWU0q/PhXxycNZIzs=20/01/2018 15:56:3620/01/2018 10:08:36</TimeStamp>
+        <TimeStamp>a8KtFu7mC+iao2iBitty4xRo2Tg=23.01.2018 12:50:0919.01.2018 14:20:26</TimeStamp>
         <ID>
           <String>Tryhards</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.DataSourceView</Type>
-        <TimeStamp>teVC4dXv47DrK+xjpK7P9dZgee0=20/01/2018 15:40:3320/01/2018 15:40:33</TimeStamp>
+        <TimeStamp>vzk/0GqT2KJ+fy5fFnQf4WCqrDQ=23.01.2018 12:50:1023.01.2018 12:40:31</TimeStamp>
         <ID>
-          <String>HBView</String>
-        </ID>
-      </ObjectSnapshot>
-      <ObjectSnapshot>
-        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
-        <TimeStamp>nMr4mB5Rv3cDKg8adf87rhEfcIo=20/01/2018 15:41:0420/01/2018 15:41:04</TimeStamp>
-        <ID>
-          <String>HWView</String>
-        </ID>
-      </ObjectSnapshot>
-      <ObjectSnapshot>
-        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
-        <TimeStamp>7Z1KshoREFIgj+6wfv5ihB2rSnA=20/01/2018 15:41:3920/01/2018 15:41:39</TimeStamp>
-        <ID>
-          <String>WDDView</String>
+          <String>Tryhards</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>O6S6Xw99pQk7CIq5MpnPsSDLRU4=20/01/2018 15:50:4220/01/2018 15:50:42</TimeStamp>
-        <ID>
-          <String>Dim Date</String>
-        </ID>
-      </ObjectSnapshot>
-      <ObjectSnapshot>
-        <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>syRJeUNVsy4lNrXlzzYS7PPs2WI=20/01/2018 15:51:2720/01/2018 15:51:27</TimeStamp>
+        <TimeStamp>ki/t6mAp5zMEnJ9ZpSOJlssW7I4=23.01.2018 12:52:0723.01.2018 12:52:07</TimeStamp>
         <ID>
           <String>Dim Site</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Cube</Type>
-        <TimeStamp>kKsI3pjNhmMIBhjACne3DyJeJpY=20/01/2018 18:03:1520/01/2018 17:55:06R9vl29SlI7BoAHxFnT3SLdm/Rd4=20/01/2018 17:56:0220/01/2018 17:55:06</TimeStamp>
+        <TimeStamp>48Iuhq7FDzuXKSlxOvy1LD8rHKs=23.01.2018 12:52:2923.01.2018 12:51:23TEyhih1VjxrIRhNgjCcbE6Oddfg=23.01.2018 12:52:2723.01.2018 12:51:23</TimeStamp>
         <ID>
-          <String>HBView</String>
+          <String>Tryhards</String>
         </ID>
       </ObjectSnapshot>
     </ObjectSnapshots>
     <DatabaseSnapshot>
       <Type>Microsoft.AnalysisServices.Database</Type>
-      <TimeStamp>e6JBag04UGdwZ0j5RZBYZCJiO7o=20/01/2018 10:08:3620/01/2018 10:08:36</TimeStamp>
+      <TimeStamp>aTPUlfbBTxfSjWbu0P1qJ7iZByw=19.01.2018 14:18:2619.01.2018 14:18:26</TimeStamp>
       <ID>
         <String>tryhards</String>
       </ID>
@@ -77,6 +56,6 @@
     <Granularity>Coarse</Granularity>
   </Snapshot>
   <AssemblyLocations />
-  <ProcessingComplete>true</ProcessingComplete>
-  <LastDeployed>2018-01-20T17:03:16.643333Z</LastDeployed>
+  <ProcessingComplete>false</ProcessingComplete>
+  <LastDeployed>2018-01-23T11:52:30.406667Z</LastDeployed>
 </DeploymentSnapshot>
