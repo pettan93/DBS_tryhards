@@ -11,27 +11,27 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="MainPackage"
   DTS:PackageType="5"
-  DTS:VersionBuild="3"
-  DTS:VersionGUID="{A42644E7-3135-47C9-87BE-72C82071D3A0}">
+  DTS:VersionBuild="10"
+  DTS:VersionGUID="{1D7DAF7A-AF7B-4214-857A-D95F0A6715B7}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Execute DimTime Package 5 2"
-      DTS:CreationName="Microsoft.ExecutePackageTask"
-      DTS:Description="Execute Package Task"
-      DTS:DTSID="{0eb6df11-93e5-4ff5-b064-c24b321ccf07}"
-      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:refId="Package\Execute SQL Task | Delete and Reseed dimension"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{737f08bd-b64a-4319-9666-727f4d9061e2}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Execute DimTime Package 5 2"
-      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      DTS:ObjectName="Execute SQL Task | Delete and Reseed dimension"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
-        <ExecutePackageTask>
-          <UseProjectReference>True</UseProjectReference>
-          <PackageName>LoadDimTime.dtsx</PackageName>
-        </ExecutePackageTask>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F6BE3F8D-211D-4866-BBF1-1A7C5152E56D}"
+          SQLTask:SqlStatementSource="DELETE FROM [tryhards].[dbo].[DimCarrier]&#xA;DBCC CHECKIDENT ('[tryhards].[dbo].[DimCarrier]', RESEED, 1);&#xA;GO&#xA;&#xA;DELETE FROM [tryhards].[dbo].[DimDate]&#xA;DBCC CHECKIDENT ('[tryhards].[dbo].[DimDate]', RESEED, 1);&#xA;GO&#xA;&#xA;DELETE FROM [tryhards].[dbo].[DimDirection]&#xA;&#xA;DELETE FROM [tryhards].[dbo].[DimFaultLevel]&#xA;&#xA;DELETE FROM [tryhards].[dbo].[DimIntegrity]&#xA;&#xA;DELETE FROM [tryhards].[dbo].[DimSite]&#xA;&#xA;DELETE FROM [tryhards].[dbo].[DimTime]&#xA;&#xA;DELETE FROM [tryhards].[dbo].[DimTrainType]&#xA;&#xA;DELETE FROM [tryhards].[dbo].[DimWeather]&#xA;DBCC CHECKIDENT ('[tryhards].[dbo].[DimWeather]', RESEED, 1);&#xA;GO&#xA;&#xA;DBCC CHECKIDENT ('[tryhards].[dbo].[FactHBPassage]', RESEED, 1);&#xA;GO&#xA;&#xA;DBCC CHECKIDENT ('[tryhards].[dbo].[FactHWPassage]', RESEED, 1);&#xA;GO&#xA;&#xA;DBCC CHECKIDENT ('[tryhards].[dbo].[FactWDDPassage]', RESEED, 1);&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -125,7 +125,7 @@
           <DTS:ObjectData>
             <ExecutePackageTask>
               <UseProjectReference>True</UseProjectReference>
-              <PackageName>LoadDimTime.dtsx</PackageName>
+              <PackageName>LoadDimIntegrity.dtsx</PackageName>
             </ExecutePackageTask>
           </DTS:ObjectData>
         </DTS:Executable>
@@ -272,6 +272,14 @@
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
       DTS:To="Package\Process Fact Tables Packages" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{2BE5B5E6-67E5-4740-A479-03C6114B5BFB}"
+      DTS:From="Package\Execute SQL Task | Delete and Reseed dimension"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Process Dimensional Packages" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -284,11 +292,11 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="202.666666666667,42"
-          Id="Package\Execute DimTime Package 5 2"
-          TopLeft="149,1167" />
+          Size="212,42.6666666666667"
+          Id="Package\Process Dimensional Packages\Execute DimCarrier Package"
+          TopLeft="523.124992502853,154.333336510261" />
         <NodeLayout
           Size="202,42"
           Id="Package\Process Dimensional Packages\Execute DimDate Package"
@@ -302,7 +310,7 @@
           Id="Package\Process Dimensional Packages\Execute DimFaultLevel Package"
           TopLeft="265.625000512227,158.50000127852" />
         <NodeLayout
-          Size="209.333333333334,42"
+          Size="221.333333333334,42.6666666666667"
           Id="Package\Process Dimensional Packages\Execute DimIntegrity Package"
           TopLeft="20,152" />
         <NodeLayout
@@ -321,15 +329,11 @@
           Size="217.333333333334,42"
           Id="Package\Process Dimensional Packages\Execute DimWeather Package"
           TopLeft="262.083334047347,85.3333330233892" />
-        <NodeLayout
-          Size="212,42.6666666666667"
-          Id="Package\Process Dimensional Packages\Execute DimCarrier Package"
-          TopLeft="523.124992502853,154.333336510261" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="778,225.333333333334"
-          Size="778,268.666666666667"
+          PanelSize="778,255.333333333334"
+          Size="778,298.666666666667"
           Id="Package\Process Dimensional Packages"
           TopLeft="152.833334885538,237" />
         <NodeLayout
@@ -347,7 +351,7 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="778,109.333333333334"
+          PanelSize="778,110"
           Size="778,152.666666666667"
           Id="Package\Process Fact Tables Packages"
           TopLeft="155.458333162591,613.666667441527" />
@@ -365,6 +369,32 @@
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,100.50000077486" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="314.666666666667,42.6666666666667"
+          Id="Package\Execute SQL Task | Delete and Reseed dimension"
+          TopLeft="386.166664741934,121.4444578237" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="542.666666480402,164.111124490367">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,72.8888755096333"
+              Start="0,0"
+              End="0,65.3888755096333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,65.3888755096333" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

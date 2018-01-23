@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="LoadDimDate"
   DTS:PackageType="5"
-  DTS:VersionBuild="19"
-  DTS:VersionGUID="{FBC19AB5-39A5-4225-8984-8724C23F0536}">
+  DTS:VersionBuild="21"
+  DTS:VersionGUID="{DC6D6621-9FC4-4DC8-8F0B-EC81B0B0A8C4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -778,7 +778,7 @@ SELECT * FROM [dbo].[DimDate]</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="165,42"
+          Size="165.333333333334,42.6666666666667"
           Id="Package\Creates Date Data"
           TopLeft="286.833335146308,105.466666720907" />
       </GraphLayout>
@@ -804,7 +804,7 @@ SELECT * FROM [dbo].[DimDate]</property>
           Text="Zatím to není napojený do ničeho, ale mělo by to ve FactPassage udělat indexy"
           ParentId="Package\Creates Date Data"
           FontInfo="{x:Null}"
-          Size="445,40"
+          Size="445.333333333334,40"
           Id="6a0c9a05-87fe-4a43-9b44-387229a6b4fd"
           TopLeft="329,316" />
       </GraphLayout>
