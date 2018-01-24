@@ -1,14 +1,14 @@
 ﻿<DeploymentSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
   <Target>
     <Database>tryhards</Database>
-    <Server>treeman</Server>
-    <ConnectionString>Data Source=treeman;Timeout=0</ConnectionString>
+    <Server>127.0.0.1</Server>
+    <ConnectionString>Data Source=127.0.0.1;Timeout=0</ConnectionString>
   </Target>
   <Options>
     <TransactionalDeployment>false</TransactionalDeployment>
     <PartitionDeployment>DeployPartitions</PartitionDeployment>
     <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
-    <ProcessingOption>DoNotProcess</ProcessingOption>
+    <ProcessingOption>Default</ProcessingOption>
     <OutputScript></OutputScript>
     <ImpactAnalysisFile></ImpactAnalysisFile>
     <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
@@ -19,92 +19,106 @@
     <ObjectSnapshots>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
-        <TimeStamp>Opd0O0ms8P9oUQp+5mTLJsMsNuY=1/23/2018 4:57:51 PM1/23/2018 2:49:46 PM</TimeStamp>
+        <TimeStamp>3/DOFdXvB6JnLl70KQzXgJCyi34=23.01.2018 22:19:4524.01.2018 9:43:31</TimeStamp>
         <ID>
           <String>Tryhards</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.DataSourceView</Type>
-        <TimeStamp>QtLuOjbD3zBD4WDLHyFJ919wqio=1/23/2018 4:47:19 PM1/23/2018 4:22:52 PM</TimeStamp>
+        <TimeStamp>QtLuOjbD3zBD4WDLHyFJ919wqio=23.01.2018 21:55:5124.01.2018 9:43:31</TimeStamp>
         <ID>
           <String>Tryhards</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>evzuQe/dAOde5+ug+mhEetujNmM=1/23/2018 5:29:56 PM1/23/2018 4:48:23 PM</TimeStamp>
+        <TimeStamp>evzuQe/dAOde5+ug+mhEetujNmM=23.01.2018 22:20:2824.01.2018 9:43:31</TimeStamp>
         <ID>
           <String>Dim Date</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>/PBAxoE5+igy0WDxGqbb0V26GLA=1/23/2018 4:48:23 PM1/23/2018 4:48:23 PM</TimeStamp>
+        <TimeStamp>/PBAxoE5+igy0WDxGqbb0V26GLA=23.01.2018 21:55:5124.01.2018 9:43:31</TimeStamp>
         <ID>
           <String>Dim Weather</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>oFq6/B8BoUhSLvJrmbWAJgJ6Olc=1/23/2018 5:46:16 PM1/23/2018 4:48:23 PM</TimeStamp>
+        <TimeStamp>/0anZHWkWs7CLRGxXr2ycdMOLcs=24.01.2018 9:50:4024.01.2018 9:43:31</TimeStamp>
         <ID>
           <String>Dim Site</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>TItUr1q+S4XCxGZS2bCQPLTUnWs=1/23/2018 4:48:23 PM1/23/2018 4:48:23 PM</TimeStamp>
+        <TimeStamp>TItUr1q+S4XCxGZS2bCQPLTUnWs=23.01.2018 21:55:5124.01.2018 9:43:31</TimeStamp>
         <ID>
           <String>Dim Fault Level</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>6kY+i0LNi+lcgA+4mgPBcOd4SHg=1/23/2018 4:48:23 PM1/23/2018 4:48:23 PM</TimeStamp>
+        <TimeStamp>6kY+i0LNi+lcgA+4mgPBcOd4SHg=23.01.2018 21:55:5124.01.2018 9:43:31</TimeStamp>
         <ID>
           <String>Dim Train Type</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>0zkGEMGbPLtiBvnacZbYRxSXTJ8=1/23/2018 4:48:23 PM1/23/2018 4:48:23 PM</TimeStamp>
+        <TimeStamp>0zkGEMGbPLtiBvnacZbYRxSXTJ8=23.01.2018 21:55:5124.01.2018 9:43:31</TimeStamp>
         <ID>
           <String>Dim Carrier</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>VI5AnoKDXNvxNnvlq38tBbK66K0=1/23/2018 4:48:23 PM1/23/2018 4:48:23 PM</TimeStamp>
+        <TimeStamp>VI5AnoKDXNvxNnvlq38tBbK66K0=23.01.2018 21:55:5124.01.2018 9:43:31</TimeStamp>
         <ID>
           <String>Dim Direction</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>CQGaanwI6Iz7J65TvHBgEj+ozj4=1/23/2018 5:35:57 PM1/23/2018 4:48:23 PM</TimeStamp>
+        <TimeStamp>CQGaanwI6Iz7J65TvHBgEj+ozj4=23.01.2018 21:55:5124.01.2018 9:43:31</TimeStamp>
         <ID>
           <String>Dim Time</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>aFCIZl7AP7GplsbmLBj6ftbkH9A=1/23/2018 4:48:23 PM1/23/2018 4:48:23 PM</TimeStamp>
+        <TimeStamp>aFCIZl7AP7GplsbmLBj6ftbkH9A=23.01.2018 22:36:0724.01.2018 9:43:31</TimeStamp>
         <ID>
           <String>Dim Integrity</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Cube</Type>
-        <TimeStamp>766NCM1Xv9oYMDanSwqviQWxelw=1/23/2018 5:44:48 PM1/23/2018 4:48:23 PMk1V0+wjtSnPeAJGztXld8sLgvfE=1/23/2018 4:48:23 PM1/23/2018 4:48:23 PM</TimeStamp>
+        <TimeStamp>766NCM1Xv9oYMDanSwqviQWxelw=23.01.2018 21:55:5124.01.2018 9:43:31k1V0+wjtSnPeAJGztXld8sLgvfE=23.01.2018 21:55:5124.01.2018 9:43:31</TimeStamp>
         <ID>
           <String>HB_Cube</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>ZgJI79OIurx+4cKM3W7jT1yit1Y=23.01.2018 22:40:4924.01.2018 9:49:04gP8BuDcyFhwjmLbRGBVgT6Nyrw4=23.01.2018 22:40:4924.01.2018 9:49:04</TimeStamp>
+        <ID>
+          <String>HW_Cube</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>E0+f7/iTyEHumWxI4WUe1o7owBI=23.01.2018 22:55:4024.01.2018 9:49:04/U42+IWnt9n4zlZ/U9UZ2X4C9oE=23.01.2018 22:43:2924.01.2018 9:49:04</TimeStamp>
+        <ID>
+          <String>WDD_Cube</String>
         </ID>
       </ObjectSnapshot>
     </ObjectSnapshots>
     <DatabaseSnapshot>
       <Type>Microsoft.AnalysisServices.Database</Type>
-      <TimeStamp>aTPUlfbBTxfSjWbu0P1qJ7iZByw=1/23/2018 2:49:46 PM1/23/2018 2:49:46 PM</TimeStamp>
+      <TimeStamp>aTPUlfbBTxfSjWbu0P1qJ7iZByw=23.01.2018 21:55:5124.01.2018 9:43:30</TimeStamp>
       <ID>
         <String>tryhards</String>
       </ID>
@@ -113,5 +127,5 @@
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>true</ProcessingComplete>
-  <LastDeployed>2018-01-23T16:45:19.553333Z</LastDeployed>
+  <LastDeployed>2018-01-24T08:51:03.743333Z</LastDeployed>
 </DeploymentSnapshot>

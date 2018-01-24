@@ -3,7 +3,7 @@
     <Configuration>
       <Name>Development</Name>
       <Options>
-        <TargetServer>treeman</TargetServer>
+        <TargetServer>127.0.0.1</TargetServer>
         <TargetDatabase>tryhards</TargetDatabase>
         <StartObject>
           <ObjectId></ObjectId>

@@ -1,0 +1,498 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="2c4cf2f1-e6e3-4572-b746-980b4c3ad1ba" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>HW_Cube</ID>
+  <Name>HW_Cube</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Dimensions>
+    <Dimension dwd:design-time-name="eb9e4075-7c0c-4bcc-9be3-813cedc53e72">
+      <ID>Dim Date</ID>
+      <Name>Dim Date</Name>
+      <DimensionID>Dim Date</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="2b2bad5a-c421-48e8-8042-17b2159bb3b2">
+          <AttributeID>Date ID</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="b943ede2-2b55-490d-818d-9e8af4f9745a">
+          <AttributeID>Month Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="6797cb2e-2104-466f-86c8-f4c20a9f57f3">
+          <AttributeID>Year</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="035fe3a1-17bb-4302-bf97-d3f95c1982ac">
+          <AttributeID>Quarter Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="15f1bbfb-b715-46d5-85cf-dad1042495cd">
+          <AttributeID>Day Of Month</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="4d41c743-20c2-45f0-aab6-127d9eda8965">
+          <AttributeID>Season</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="8cfee557-58fb-43b0-a9f1-03e6b4cf2d75">
+          <HierarchyID>Hierarchy</HierarchyID>
+        </Hierarchy>
+        <Hierarchy dwd:design-time-name="f1f63701-5ce3-43be-9eb3-0c1b3dfe990c">
+          <HierarchyID>Hierarchy 1</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+    <Dimension dwd:design-time-name="bfa5202a-9bf6-4219-bf3d-cb081c75661e">
+      <ID>Dim Weather</ID>
+      <Name>Dim Weather</Name>
+      <DimensionID>Dim Weather</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="e4e5ca50-4550-489e-8932-44596c25649b">
+          <AttributeID>Weather ID</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="47f3c771-02b7-4780-b004-c6ebdbfc1c45">
+      <ID>Dim Site</ID>
+      <Name>Dim Site</Name>
+      <DimensionID>Dim Site</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="113fe6a8-fc24-46dc-9d5b-10162a689116">
+          <AttributeID>Site ID</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="e5f7be34-4430-4180-acd4-0c017dd27caa">
+          <AttributeID>Company Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="64487229-af63-4462-9d49-fae232a8d3bb">
+          <AttributeID>Control Room</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="2465c55e-50bd-40fa-baec-70d6de28a8e8">
+          <AttributeID>Site Name</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="3807455e-fb36-45c4-8adc-8361f6f281d9">
+          <HierarchyID>Hierarchy</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+    <Dimension dwd:design-time-name="0bda2cc6-60a7-47e9-b75b-658622127811">
+      <ID>Dim Fault Level</ID>
+      <Name>Dim Fault Level</Name>
+      <DimensionID>Dim Fault Level</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="a9b65eb2-219f-453c-94bf-e3d2ec3abdff">
+          <AttributeID>Fault Level ID</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="2d2416d0-c0a0-45fa-b5af-0bc661229fd8">
+      <ID>Dim Train Type</ID>
+      <Name>Dim Train Type</Name>
+      <DimensionID>Dim Train Type</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="15317574-7397-4d66-b8ba-c2664dbf1fd0">
+          <AttributeID>Train Type ID</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="905a4a41-f24f-4973-8d82-41947908a93c">
+      <ID>Dim Direction</ID>
+      <Name>Dim Direction</Name>
+      <DimensionID>Dim Direction</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="8f6ecc14-c048-43fe-adaa-943f751e55b1">
+          <AttributeID>Direction ID</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="0634711a-74d6-4dda-b5ce-72082de498a8">
+      <ID>Dim Integrity</ID>
+      <Name>Dim Integrity</Name>
+      <DimensionID>Dim Integrity</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="f0dd80c0-dbf9-40ab-9983-f15ebbfed35c">
+          <AttributeID>Integrity ID</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="8b4145c3-098e-48f6-a12b-4d9e0d9b853c">
+      <ID>Dim Carrier</ID>
+      <Name>Dim Carrier</Name>
+      <DimensionID>Dim Carrier</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="be398307-a0e6-4365-947a-28b76b1bb56b">
+          <AttributeID>Carrier ID</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="d23d3e90-89ef-4004-9a7f-d9001921e3eb">
+      <ID>Dim Time</ID>
+      <Name>Dim Time</Name>
+      <DimensionID>Dim Time</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="3eb5b283-a461-48f0-b8e8-813ceeeeeada">
+          <AttributeID>Time ID</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="5a276b0d-9df4-483e-9832-aa6cf29da5d1">
+          <AttributeID>Day Time Bucket</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="58f8243b-653d-4512-909b-a691b12b4167">
+          <AttributeID>Time30</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="ce8007d3-d214-40fe-aeae-980e6b7aff80">
+          <HierarchyID>Hierarchy</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+  </Dimensions>
+  <MeasureGroups>
+    <MeasureGroup dwd:design-time-name="fbf2728c-8d58-4593-8104-b2d4ae8d2906">
+      <ID>Fact HW Passage</ID>
+      <Name>Fact HW Passage</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="f7b74d9c-1579-4199-99b2-238563f664d0">
+          <ID>Id TIS</ID>
+          <Name>Id TIS</Name>
+          <Source dwd:design-time-name="b1281cb7-335b-4ce4-80d7-2e5faa166c7e">
+            <DataType>BigInt</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="b463e694-c439-427a-a87c-dc144c9199c3">
+              <TableID>dbo_FactHWPassage</TableID>
+              <ColumnID>id_TIS</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="36632e49-6a1c-48ea-a5f6-4b0c1f526500">
+          <ID>Id Passage</ID>
+          <Name>Id Passage</Name>
+          <Source dwd:design-time-name="732ca9ed-d6ed-4f7d-8067-bdc35fb31855">
+            <DataType>BigInt</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="12b9336c-bef4-496e-a884-59d5cb903786">
+              <TableID>dbo_FactHWPassage</TableID>
+              <ColumnID>id_passage</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="f7fc101b-0a2e-4c17-aeee-750df9ec2dc9">
+          <ID>Velocity</ID>
+          <Name>Velocity</Name>
+          <Source dwd:design-time-name="0dc08101-2376-40a3-a26e-403bff9d07a3">
+            <DataType>Single</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="4f4a3f70-37f1-4b46-93f6-b527bdd687c6">
+              <TableID>dbo_FactHWPassage</TableID>
+              <ColumnID>Velocity</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="fe68a918-d817-4560-b145-e2f9b1fa2a1b">
+          <ID>Length</ID>
+          <Name>Length</Name>
+          <Source dwd:design-time-name="9d571149-44d0-4d60-a3de-6fe61139aebf">
+            <DataType>Single</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="6d4cd560-9603-49fe-b2a7-ce954acd652c">
+              <TableID>dbo_FactHWPassage</TableID>
+              <ColumnID>Length</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="3d8a98f1-5412-4f43-be55-b1c3b5a04397">
+          <ID>Axle Count</ID>
+          <Name>Axle Count</Name>
+          <Source dwd:design-time-name="36268a4f-a233-42a9-93f1-bf8a5488417b">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="c1002cb1-9f1d-4e0d-b65e-b4227f7e8ff0">
+              <TableID>dbo_FactHWPassage</TableID>
+              <ColumnID>AxleCount</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="c6f766a9-d302-4b0f-a759-54a45d81ca8f">
+          <ID>Vehicle Count</ID>
+          <Name>Vehicle Count</Name>
+          <Source dwd:design-time-name="b86c87c9-8a88-4b6a-80dd-0882f607cecf">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="20a8f8ed-1926-47d2-9395-854c3c2a09dc">
+              <TableID>dbo_FactHWPassage</TableID>
+              <ColumnID>VehicleCount</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="9d328d14-5e3c-41e3-b80b-28e77697f94b">
+          <ID>Loco Count</ID>
+          <Name>Loco Count</Name>
+          <Source dwd:design-time-name="e4062dfb-aaf8-48ee-a252-1dcd50aa6281">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="e4aade73-82a9-4ecc-b2ea-ed2a45f4b6cd">
+              <TableID>dbo_FactHWPassage</TableID>
+              <ColumnID>LocoCount</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="c992225e-687c-4565-9a60-73a5c5bf47a7">
+          <ID>Temperature Left</ID>
+          <Name>Temperature Left</Name>
+          <Source dwd:design-time-name="b9c3a24e-9b7e-4eef-b900-d1b0944a119d">
+            <DataType>Single</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="c7e4a049-15fe-4599-b1b6-a1fbfae867a5">
+              <TableID>dbo_FactHWPassage</TableID>
+              <ColumnID>TemperatureLeft</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="c3579bc6-5cf0-4bc3-b64a-cd888a87180a">
+          <ID>Temperature Right</ID>
+          <Name>Temperature Right</Name>
+          <Source dwd:design-time-name="5445d571-16e8-4eab-8dd9-edf993876628">
+            <DataType>Single</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="3503c70e-a23d-42d9-b8a2-f48535b59c8a">
+              <TableID>dbo_FactHWPassage</TableID>
+              <ColumnID>TemperatureRight</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="cd6cd52a-62d2-47b1-b4b5-f0b2eeda50d7">
+          <ID>Axle Distance</ID>
+          <Name>Axle Distance</Name>
+          <Source dwd:design-time-name="14a2542b-81c4-4950-baaa-44f14b4b8c6c">
+            <DataType>Single</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="08f13a64-d252-4c8c-b83f-c662b2bdc366">
+              <TableID>dbo_FactHWPassage</TableID>
+              <ColumnID>AxleDistance</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="0df9426b-3e59-4826-8161-8d7ff76f4a7e">
+          <ID>Fact HW Passage Count</ID>
+          <Name>Fact HW Passage Count</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="5bbcae15-5748-4eac-8676-c8123b3381ec">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="dc21a362-3400-4317-ad04-8ccd4bc8323a">
+              <TableID>dbo_FactHWPassage</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="8f5ea1fa-3522-4885-85c5-9eb1f9bcb1a5">
+          <CubeDimensionID>Dim Date</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="81245d13-6edd-446b-b2de-9734a450368a">
+              <AttributeID>Date ID</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="6d3d5483-2197-44fd-84ab-5a2c82e28cab">
+                  <DataType>BigInt</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="bf22d62c-fdcd-4c65-a168-25ee2b1ebbd3">
+                    <TableID>dbo_FactHWPassage</TableID>
+                    <ColumnID>DateID</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="691abd82-d9b8-4011-9cc2-cd279c1e7c2d">
+          <CubeDimensionID>Dim Weather</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="8f7eafd7-bc59-4bde-88eb-f117898fbbd7">
+              <AttributeID>Weather ID</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="ac14d953-5838-48c3-99d4-dbbbcd5c54a9">
+                  <DataType>BigInt</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="b4cb736b-b4c1-4de2-82dc-fdf450b92ebc">
+                    <TableID>dbo_FactHWPassage</TableID>
+                    <ColumnID>WeatherID</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="39a477da-0371-4b15-b30e-4dfbaac31005">
+          <CubeDimensionID>Dim Site</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="6ce58692-ee94-4fd8-a1da-9496764b0171">
+              <AttributeID>Site ID</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="1b80a61a-61d4-43cd-a634-c44f23dbf88f">
+                  <DataType>BigInt</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="81410de8-e100-4280-ab29-7186943127e3">
+                    <TableID>dbo_FactHWPassage</TableID>
+                    <ColumnID>SiteID</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="30ecb21d-93b0-4ad3-b38a-d5ab0ee1985c">
+          <CubeDimensionID>Dim Fault Level</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="1c53cb1b-1786-44e6-bd8e-2085e09bb6b7">
+              <AttributeID>Fault Level ID</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="3eef2ac0-bfde-46d3-b238-a2392c0f5ed5">
+                  <DataType>BigInt</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="a33f7098-cc3a-4a16-866a-fd222d9e13ac">
+                    <TableID>dbo_FactHWPassage</TableID>
+                    <ColumnID>FaultLevelID</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="95f20812-6a93-408c-847c-7e3ca272892f">
+          <CubeDimensionID>Dim Train Type</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="13341316-3bfa-4f17-8231-808989c8f4e1">
+              <AttributeID>Train Type ID</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="db937d48-7968-49fa-81f5-3017c86448ca">
+                  <DataType>BigInt</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="c5ed60ae-8718-46ed-9bf9-724264abaa98">
+                    <TableID>dbo_FactHWPassage</TableID>
+                    <ColumnID>TrainTypeID</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="4825be6f-b946-4b2e-a501-95ea414b8b5d">
+          <CubeDimensionID>Dim Direction</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="a8bd59ed-626b-4cea-9cad-ca01fbf599aa">
+              <AttributeID>Direction ID</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="0f17c952-c50a-4f0d-bde2-31c25e1a0ce6">
+                  <DataType>UnsignedTinyInt</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="e173dca6-3ce4-435e-8798-3f0bb56c1e34">
+                    <TableID>dbo_FactHWPassage</TableID>
+                    <ColumnID>DirectionID</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="e0b5f580-afe9-4673-89ae-053aa6feba7b">
+          <CubeDimensionID>Dim Integrity</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="d0f42f12-0bcf-4c2a-9881-756467e6c404">
+              <AttributeID>Integrity ID</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="6b91a513-fa63-42b2-9877-30a778aef642">
+                  <DataType>BigInt</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="69cfe367-615a-42a8-98ff-3417e14d5403">
+                    <TableID>dbo_FactHWPassage</TableID>
+                    <ColumnID>IntegrityID</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="55ea342a-b31f-429e-8f71-98cb80f41be8">
+          <CubeDimensionID>Dim Carrier</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="0ea80866-3ab0-42d4-acb3-f6ab1ea12f65">
+              <AttributeID>Carrier ID</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="161a70ce-7bfd-43fc-a743-b3bd4dc7e4fe">
+                  <DataType>BigInt</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="560ab95d-e15b-4272-ad5b-0b14876f5f3b">
+                    <TableID>dbo_FactHWPassage</TableID>
+                    <ColumnID>CarrierID</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="4b6883c4-1ae5-4326-af81-6d4933e52a0a">
+          <CubeDimensionID>Dim Time</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="2c0f42ea-7688-439b-886b-4376924bf6d5">
+              <AttributeID>Time ID</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="e67cf9cd-d592-46cd-9792-1af6a6b982ef">
+                  <DataType>BigInt</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="f389e15a-2cd1-4e7a-a374-0d2550cba180">
+                    <TableID>dbo_FactHWPassage</TableID>
+                    <ColumnID>TimeID</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+  </MeasureGroups>
+  <Source dwd:design-time-name="7b50d3bc-6584-448e-ae21-c95d0b85a022">
+    <DataSourceViewID>Tryhards</DataSourceViewID>
+  </Source>
+</Cube>
