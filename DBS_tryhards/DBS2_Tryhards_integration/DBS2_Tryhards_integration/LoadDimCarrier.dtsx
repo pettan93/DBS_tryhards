@@ -7,12 +7,12 @@
   DTS:CreatorName="R16\Pettan-Desktop"
   DTS:DTSID="{C112A07A-5561-43CD-B504-4D17D507DE16}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="14.0.3008.28"
+  DTS:LastModifiedProductVersion="14.0.0600.250"
   DTS:LocaleID="1033"
   DTS:ObjectName="LoadDimCarrier"
   DTS:PackageType="5"
-  DTS:VersionBuild="4"
-  DTS:VersionGUID="{CFCFF58E-5886-40A0-99C7-3939FB5ADF1F}">
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{0E1CF177-E4BD-4F4B-9297-53C968C43A93}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -23,27 +23,27 @@
       DTS:ObjectName="127.0.0.1.CBI_DB_MENDEL">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=127.0.0.1;Initial Catalog=CBI_DB_MENDEL;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=treeman;Initial Catalog=CBI_DB_MENDEL;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Data Flow Task"
+      DTS:refId="Package\Data Flow Task | Carrier"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
       DTS:DTSID="{A9D7A1BF-1C1B-4F26-B680-0874848CC22F}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Data Flow Task">
+      DTS:ObjectName="Data Flow Task | Carrier">
       <DTS:Variables />
       <DTS:ObjectData>
         <pipeline
           version="1">
           <components>
             <component
-              refId="Package\Data Flow Task\Derived Column"
+              refId="Package\Data Flow Task | Carrier\Derived Column"
               componentClassID="Microsoft.DerivedColumn"
               contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
@@ -51,35 +51,35 @@
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]"
+                  refId="Package\Data Flow Task | Carrier\Derived Column.Inputs[Derived Column Input]"
                   description="Input to the Derived Column Transformation"
                   name="Derived Column Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input].Columns[BussinesName]"
+                      refId="Package\Data Flow Task | Carrier\Derived Column.Inputs[Derived Column Input].Columns[BussinesName]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="BussinesName"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[BussinesName]" />
+                      lineageId="Package\Data Flow Task | Carrier\OLE DB Source.Outputs[OLE DB Source Output].Columns[BussinesName]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output]"
+                  refId="Package\Data Flow Task | Carrier\Derived Column.Outputs[Derived Column Output]"
                   description="Default Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   name="Derived Column Output"
-                  synchronousInputId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\Data Flow Task | Carrier\Derived Column.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[CarrierPseudoName]"
+                      refId="Package\Data Flow Task | Carrier\Derived Column.Outputs[Derived Column Output].Columns[CarrierPseudoName]"
                       dataType="wstr"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
                       length="263"
-                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[CarrierPseudoName]"
+                      lineageId="Package\Data Flow Task | Carrier\Derived Column.Outputs[Derived Column Output].Columns[CarrierPseudoName]"
                       name="CarrierPseudoName"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -87,7 +87,7 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">"Company " + #{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[BussinesName]}</property>
+                          name="Expression">"Company " + #{Package\Data Flow Task | Carrier\OLE DB Source.Outputs[OLE DB Source Output].Columns[BussinesName]}</property>
                         <property
                           containsID="true"
                           dataType="System.String"
@@ -100,23 +100,23 @@
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output]"
+                  refId="Package\Data Flow Task | Carrier\Derived Column.Outputs[Derived Column Error Output]"
                   description="Error Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Derived Column Error Output"
-                  synchronousInputId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\Data Flow Task | Carrier\Derived Column.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      refId="Package\Data Flow Task | Carrier\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Data Flow Task | Carrier\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      refId="Package\Data Flow Task | Carrier\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Data Flow Task | Carrier\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -125,7 +125,7 @@
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\OLE DB Destination"
+              refId="Package\Data Flow Task | Carrier\OLE DB Destination"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
@@ -182,7 +182,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
+                  refId="Package\Data Flow Task | Carrier\OLE DB Destination.Connections[OleDbConnection]"
                   connectionManagerID="{F6BE3F8D-211D-4866-BBF1-1A7C5152E56D}:external"
                   connectionManagerRefId="Project.ConnectionManagers[127.0.0.1.tryhards]"
                   description="The OLE DB runtime connection used to access the database."
@@ -190,28 +190,28 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  refId="Package\Data Flow Task | Carrier\OLE DB Destination.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CarrierPseudoName]"
+                      refId="Package\Data Flow Task | Carrier\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CarrierPseudoName]"
                       cachedDataType="wstr"
                       cachedLength="263"
                       cachedName="CarrierPseudoName"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CarrierName]"
-                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[CarrierPseudoName]" />
+                      externalMetadataColumnId="Package\Data Flow Task | Carrier\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CarrierName]"
+                      lineageId="Package\Data Flow Task | Carrier\Derived Column.Outputs[Derived Column Output].Columns[CarrierPseudoName]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CarrierID]"
+                      refId="Package\Data Flow Task | Carrier\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CarrierID]"
                       dataType="i8"
                       name="CarrierID" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CarrierName]"
+                      refId="Package\Data Flow Task | Carrier\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CarrierName]"
                       dataType="wstr"
                       length="250"
                       name="CarrierName" />
@@ -220,22 +220,22 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\Data Flow Task | Carrier\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\Data Flow Task | Carrier\OLE DB Destination.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Data Flow Task | Carrier\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Data Flow Task | Carrier\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Data Flow Task | Carrier\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Data Flow Task | Carrier\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -244,7 +244,7 @@
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\OLE DB Source"
+              refId="Package\Data Flow Task | Carrier\OLE DB Source"
               componentClassID="Microsoft.OLEDBSource"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
@@ -293,7 +293,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task\OLE DB Source.Connections[OleDbConnection]"
+                  refId="Package\Data Flow Task | Carrier\OLE DB Source.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[127.0.0.1.CBI_DB_MENDEL]"
                   connectionManagerRefId="Package.ConnectionManagers[127.0.0.1.CBI_DB_MENDEL]"
                   description="The OLE DB runtime connection used to access the database."
@@ -301,83 +301,83 @@
               </connections>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output]"
+                  refId="Package\Data Flow Task | Carrier\OLE DB Source.Outputs[OLE DB Source Output]"
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDCarrier]"
+                      refId="Package\Data Flow Task | Carrier\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDCarrier]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDCarrier]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDCarrier]"
+                      externalMetadataColumnId="Package\Data Flow Task | Carrier\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDCarrier]"
+                      lineageId="Package\Data Flow Task | Carrier\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDCarrier]"
                       name="IDCarrier"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[BussinesName]"
+                      refId="Package\Data Flow Task | Carrier\OLE DB Source.Outputs[OLE DB Source Output].Columns[BussinesName]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[BussinesName]"
+                      externalMetadataColumnId="Package\Data Flow Task | Carrier\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[BussinesName]"
                       length="255"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[BussinesName]"
+                      lineageId="Package\Data Flow Task | Carrier\OLE DB Source.Outputs[OLE DB Source Output].Columns[BussinesName]"
                       name="BussinesName"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDCarrier]"
+                      refId="Package\Data Flow Task | Carrier\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDCarrier]"
                       dataType="i4"
                       name="IDCarrier" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[RICS]"
+                      refId="Package\Data Flow Task | Carrier\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[RICS]"
                       dataType="wstr"
                       length="37"
                       name="RICS" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[RegistrationNumberSZDC]"
+                      refId="Package\Data Flow Task | Carrier\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[RegistrationNumberSZDC]"
                       dataType="wstr"
                       length="6"
                       name="RegistrationNumberSZDC" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[BussinesName]"
+                      refId="Package\Data Flow Task | Carrier\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[BussinesName]"
                       dataType="wstr"
                       length="255"
                       name="BussinesName" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[BussinesNameAbbr]"
+                      refId="Package\Data Flow Task | Carrier\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[BussinesNameAbbr]"
                       dataType="wstr"
                       length="50"
                       name="BussinesNameAbbr" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  refId="Package\Data Flow Task | Carrier\OLE DB Source.Outputs[OLE DB Source Error Output]"
                   isErrorOut="true"
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDCarrier]"
+                      refId="Package\Data Flow Task | Carrier\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDCarrier]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDCarrier]"
+                      lineageId="Package\Data Flow Task | Carrier\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDCarrier]"
                       name="IDCarrier" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[BussinesName]"
+                      refId="Package\Data Flow Task | Carrier\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[BussinesName]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[BussinesName]"
+                      lineageId="Package\Data Flow Task | Carrier\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[BussinesName]"
                       name="BussinesName" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Data Flow Task | Carrier\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Data Flow Task | Carrier\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Data Flow Task | Carrier\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Data Flow Task | Carrier\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -388,15 +388,15 @@
           </components>
           <paths>
             <path
-              refId="Package\Data Flow Task.Paths[Derived Column Output]"
-              endId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              refId="Package\Data Flow Task | Carrier.Paths[Derived Column Output]"
+              endId="Package\Data Flow Task | Carrier\OLE DB Destination.Inputs[OLE DB Destination Input]"
               name="Derived Column Output"
-              startId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output]" />
+              startId="Package\Data Flow Task | Carrier\Derived Column.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Data Flow Task.Paths[OLE DB Source Output]"
-              endId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]"
+              refId="Package\Data Flow Task | Carrier.Paths[OLE DB Source Output]"
+              endId="Package\Data Flow Task | Carrier\Derived Column.Inputs[Derived Column Input]"
               name="OLE DB Source Output"
-              startId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output]" />
+              startId="Package\Data Flow Task | Carrier\OLE DB Source.Outputs[OLE DB Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -415,31 +415,31 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="152,42.6666666666667"
-          Id="Package\Data Flow Task"
+          Size="194,42"
+          Id="Package\Data Flow Task | Carrier"
           TopLeft="87.9999987706542,109.06666481475" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\Data Flow Task">
+    design-time-name="Package\Data Flow Task | Carrier">
     <LayoutInfo>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="170.666666666667,42"
-          Id="Package\Data Flow Task\OLE DB Destination"
+          Id="Package\Data Flow Task | Carrier\OLE DB Destination"
           TopLeft="383,318" />
         <NodeLayout
           Size="150,42"
-          Id="Package\Data Flow Task\OLE DB Source"
+          Id="Package\Data Flow Task | Carrier\OLE DB Source"
           TopLeft="399,129" />
         <NodeLayout
           Size="154,42"
-          Id="Package\Data Flow Task\Derived Column"
+          Id="Package\Data Flow Task | Carrier\Derived Column"
           TopLeft="414,210" />
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
+          Id="Package\Data Flow Task | Carrier.Paths[OLE DB Source Output]"
           TopLeft="474,171">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -473,7 +473,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Derived Column Output]"
+          Id="Package\Data Flow Task | Carrier.Paths[Derived Column Output]"
           TopLeft="491,252">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -510,7 +510,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\OLE DB Destination">
+    design-time-name="Package\Data Flow Task | Carrier\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -523,7 +523,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\OLE DB Source">
+    design-time-name="Package\Data Flow Task | Carrier\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

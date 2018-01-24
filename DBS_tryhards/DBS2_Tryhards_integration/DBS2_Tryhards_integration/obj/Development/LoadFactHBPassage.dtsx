@@ -7,12 +7,12 @@
   DTS:CreatorName="DESKTOP-BIQUVHG\Martin"
   DTS:DTSID="{7D8A3E97-FBF9-4912-B312-158FA74FC552}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="14.0.3008.28"
+  DTS:LastModifiedProductVersion="14.0.0600.250"
   DTS:LocaleID="1029"
   DTS:ObjectName="LoadFactHBPassage"
   DTS:PackageType="5"
-  DTS:VersionBuild="100"
-  DTS:VersionGUID="{817578FD-48E1-4F4B-8CA2-269986415718}">
+  DTS:VersionBuild="102"
+  DTS:VersionGUID="{714DB7B7-55B3-41A2-93B3-F47C6ACD5EF1}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -23,7 +23,7 @@
       DTS:ObjectName="127.0.0.1.CBI_DB_MENDEL">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=127.0.0.1;Initial Catalog=CBI_DB_MENDEL;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=treeman;Initial Catalog=CBI_DB_MENDEL;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -1581,7 +1581,7 @@ where [refTable].[id_passage] = ?</property>
                   dataType="System.Int32"
                   description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
                   name="NoMatchBehavior"
-                  typeConverter="LookupNoMatchBehavior">0</property>
+                  typeConverter="LookupNoMatchBehavior">1</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
@@ -1649,7 +1649,6 @@ where [refTable].[id_passage] = ?</property>
                 <output
                   refId="Package\Data Flow Task | Create data\Lookup PassageHB.Outputs[Lookup Match Output]"
                   errorOrTruncationOperation="Lookup"
-                  errorRowDisposition="FailComponent"
                   exclusionGroup="1"
                   name="Lookup Match Output"
                   synchronousInputId="Package\Data Flow Task | Create data\Lookup PassageHB.Inputs[Lookup Input]">
@@ -3224,13 +3223,13 @@ where [refTable].[id_tis] = ? and [refTable].[date] = ?</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
         <NodeLayout
-          Size="216.8,43.2"
+          Size="217,43"
           Id="Package\Data Flow Task | Create data"
           TopLeft="321.202379280435,118.623811497489" />
         <AnnotationLayout
           Text="---------------- HB Passage -----------------"
           ParentId="Package"
-          Size="388.8,48.8"
+          Size="389,48"
           Id="b790dd7c-d1f9-45f1-8feb-7ff5a3c6bd22"
           TopLeft="234,41">
           <AnnotationLayout.FontInfo>
@@ -3253,71 +3252,71 @@ where [refTable].[id_tis] = ? and [refTable].[date] = ?</property>
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="164.8,43.2"
+          Size="165,43"
           Id="Package\Data Flow Task | Create data\Lookup | DimDate"
           TopLeft="140.972220121572,1295.11110873487" />
         <NodeLayout
-          Size="152.8,41.6"
+          Size="153,42"
           Id="Package\Data Flow Task | Create data\Lookup DimSite"
           TopLeft="157.249996703118,438.566662955085" />
         <NodeLayout
-          Size="155.2,43.2"
+          Size="154,42"
           Id="Package\Data Flow Task | Create data\Lookup Passage"
           TopLeft="152.83333004266,116.666664884488" />
         <NodeLayout
-          Size="167.2,43.2"
+          Size="167,43"
           Id="Package\Data Flow Task | Create data\Lookup | DimTime"
           TopLeft="146.527775594344,1484.61110838619" />
         <NodeLayout
-          Size="215.2,41.6"
+          Size="215,42"
           Id="Package\Data Flow Task | Create data\Derived Column | Type casts"
           TopLeft="119.444442664583,1204.38888755871" />
         <NodeLayout
-          Size="183.2,43.2"
+          Size="183,43"
           Id="Package\Data Flow Task | Create data\Lookup DimTrainType"
           TopLeft="144.166663326323,718.43332774659" />
         <NodeLayout
-          Size="176.8,43.2"
+          Size="177,43"
           Id="Package\Data Flow Task | Create data\Lookup DimDirection"
           TopLeft="142.83333004266,839.199996807575" />
         <NodeLayout
-          Size="207.2,43.2"
+          Size="207,43"
           Id="Package\Data Flow Task | Create data\Derived Column HWL HWR"
           TopLeft="131.749996740371,324.499997791648" />
         <NodeLayout
-          Size="183.2,43.2"
+          Size="183,43"
           Id="Package\Data Flow Task | Create data\Lookup | DimWeather"
           TopLeft="136.111109082897,1401.27777350313" />
         <NodeLayout
-          Size="188.8,41.6"
+          Size="189,42"
           Id="Package\Data Flow Task | Create data\Lookup TDS_Passagess"
           TopLeft="138,1036" />
         <NodeLayout
-          Size="244,41.6"
+          Size="244,42"
           Id="Package\Data Flow Task | Create data\OLE DB Source | passage_HB_Axle"
           TopLeft="109.583330061287,4.5666664419572" />
         <NodeLayout
-          Size="220,41.6"
+          Size="220,42"
           Id="Package\Data Flow Task | Create data\Derived Column | Cast Carrier"
           TopLeft="115,1117" />
         <NodeLayout
-          Size="252,43.2"
+          Size="252,43"
           Id="Package\Data Flow Task | Create data\Lookup FactHBPassage duplicity skip"
           TopLeft="472.619040576475,118.857140731812" />
         <NodeLayout
-          Size="183.2,43.2"
+          Size="183,43"
           Id="Package\Data Flow Task | Create data\Lookup DimFaultLevel"
           TopLeft="137.916663419455,574.133329629501" />
         <NodeLayout
-          Size="168,41.6"
+          Size="168,42"
           Id="Package\Data Flow Task | Create data\Lookup PassageHB"
           TopLeft="147.083330247551,213.699998783469" />
         <NodeLayout
-          Size="199.2,41.6"
+          Size="199,42"
           Id="Package\Data Flow Task | Create data\Derived Column 1 | Casts"
           TopLeft="129.499996609986,955.433331930836" />
         <NodeLayout
-          Size="252.8,43.2"
+          Size="253,43"
           Id="Package\Data Flow Task | Create data\OLE DB Destination | FactHBPassage"
           TopLeft="98.1944410440824,1599.41110153125" />
         <EdgeLayout
@@ -3516,49 +3515,49 @@ where [refTable].[id_tis] = ? and [refTable].[date] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task | Create data.Paths[Lookup No Match Output]"
-          TopLeft="472.619040576475,139.26190280815">
+          TopLeft="472.619040576475,139.01190280815">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
-              EndConnector="-164.785710533815,0"
+              EndConnector="-165.785710533815,0"
               Start="0,0"
-              End="-157.285710533815,0">
+              End="-158.285710533815,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-157.285710533815,0" />
+                    End="-158.285710533815,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-134.449241985657,5,111.6127734375,11.609375"
+              BoundingBox="-134.949241985658,5,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task | Create data.Paths[Lookup Match Output9]"
-          TopLeft="230.708330145105,159.666664884488">
+          TopLeft="230.458330145105,158.666664884488">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
-              EndConnector="0,54.033333898981"
+              EndConnector="0,55.033333898981"
               Start="0,0"
-              End="0,46.533333898981">
+              End="0,47.533333898981">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,46.533333898981" />
+                    End="0,47.533333898981" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,17.4619794494905,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,17.9619794494905,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -3715,7 +3714,7 @@ where [refTable].[id_tis] = ? and [refTable].[date] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -3725,7 +3724,7 @@ where [refTable].[id_tis] = ? and [refTable].[date] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -3761,7 +3760,7 @@ where [refTable].[id_tis] = ? and [refTable].[date] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -3771,7 +3770,7 @@ where [refTable].[id_tis] = ? and [refTable].[date] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -3784,7 +3783,7 @@ where [refTable].[id_tis] = ? and [refTable].[date] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -3953,7 +3952,7 @@ where [refTable].[id_tis] = ? and [refTable].[date] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>

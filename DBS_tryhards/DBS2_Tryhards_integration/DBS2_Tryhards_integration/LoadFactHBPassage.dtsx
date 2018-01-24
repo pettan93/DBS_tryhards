@@ -7,12 +7,12 @@
   DTS:CreatorName="DESKTOP-BIQUVHG\Martin"
   DTS:DTSID="{7D8A3E97-FBF9-4912-B312-158FA74FC552}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="14.0.3008.28"
+  DTS:LastModifiedProductVersion="14.0.0600.250"
   DTS:LocaleID="1029"
   DTS:ObjectName="LoadFactHBPassage"
   DTS:PackageType="5"
-  DTS:VersionBuild="100"
-  DTS:VersionGUID="{817578FD-48E1-4F4B-8CA2-269986415718}">
+  DTS:VersionBuild="106"
+  DTS:VersionGUID="{BD583414-F1ED-40EE-9DD7-2E72D6C53414}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -23,7 +23,7 @@
       DTS:ObjectName="127.0.0.1.CBI_DB_MENDEL">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=127.0.0.1;Initial Catalog=CBI_DB_MENDEL;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=treeman;Initial Catalog=CBI_DB_MENDEL;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -44,20 +44,20 @@
           version="1">
           <components>
             <component
-              refId="Package\Data Flow Task | Create data\Derived Column 1 | Casts"
+              refId="Package\Data Flow Task | Create data\Derived Column 1 | Train No Cast"
               componentClassID="Microsoft.DerivedColumn"
               contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
-              name="Derived Column 1 | Casts"
+              name="Derived Column 1 | Train No Cast"
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\Data Flow Task | Create data\Derived Column 1 | Casts.Inputs[Derived Column Input]"
+                  refId="Package\Data Flow Task | Create data\Derived Column 1 | Train No Cast.Inputs[Derived Column Input]"
                   description="Input to the Derived Column Transformation"
                   name="Derived Column Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task | Create data\Derived Column 1 | Casts.Inputs[Derived Column Input].Columns[trainNo]"
+                      refId="Package\Data Flow Task | Create data\Derived Column 1 | Train No Cast.Inputs[Derived Column Input].Columns[trainNo]"
                       cachedCodepage="1250"
                       cachedDataType="str"
                       cachedLength="50"
@@ -69,19 +69,19 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task | Create data\Derived Column 1 | Casts.Outputs[Derived Column Output]"
+                  refId="Package\Data Flow Task | Create data\Derived Column 1 | Train No Cast.Outputs[Derived Column Output]"
                   description="Default Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   name="Derived Column Output"
-                  synchronousInputId="Package\Data Flow Task | Create data\Derived Column 1 | Casts.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\Data Flow Task | Create data\Derived Column 1 | Train No Cast.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task | Create data\Derived Column 1 | Casts.Outputs[Derived Column Output].Columns[updatedTrainNumber]"
+                      refId="Package\Data Flow Task | Create data\Derived Column 1 | Train No Cast.Outputs[Derived Column Output].Columns[updatedTrainNumber]"
                       dataType="wstr"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
                       length="50"
-                      lineageId="Package\Data Flow Task | Create data\Derived Column 1 | Casts.Outputs[Derived Column Output].Columns[updatedTrainNumber]"
+                      lineageId="Package\Data Flow Task | Create data\Derived Column 1 | Train No Cast.Outputs[Derived Column Output].Columns[updatedTrainNumber]"
                       name="updatedTrainNumber"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -99,11 +99,11 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task | Create data\Derived Column 1 | Casts.Outputs[Derived Column Output].Columns[trainNumberInt]"
+                      refId="Package\Data Flow Task | Create data\Derived Column 1 | Train No Cast.Outputs[Derived Column Output].Columns[trainNumberInt]"
                       dataType="i4"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\Data Flow Task | Create data\Derived Column 1 | Casts.Outputs[Derived Column Output].Columns[trainNumberInt]"
+                      lineageId="Package\Data Flow Task | Create data\Derived Column 1 | Train No Cast.Outputs[Derived Column Output].Columns[trainNumberInt]"
                       name="trainNumberInt"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -124,23 +124,23 @@
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Data Flow Task | Create data\Derived Column 1 | Casts.Outputs[Derived Column Error Output]"
+                  refId="Package\Data Flow Task | Create data\Derived Column 1 | Train No Cast.Outputs[Derived Column Error Output]"
                   description="Error Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Derived Column Error Output"
-                  synchronousInputId="Package\Data Flow Task | Create data\Derived Column 1 | Casts.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\Data Flow Task | Create data\Derived Column 1 | Train No Cast.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task | Create data\Derived Column 1 | Casts.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      refId="Package\Data Flow Task | Create data\Derived Column 1 | Train No Cast.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task | Create data\Derived Column 1 | Casts.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Data Flow Task | Create data\Derived Column 1 | Train No Cast.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task | Create data\Derived Column 1 | Casts.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      refId="Package\Data Flow Task | Create data\Derived Column 1 | Train No Cast.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task | Create data\Derived Column 1 | Casts.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Data Flow Task | Create data\Derived Column 1 | Train No Cast.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -274,7 +274,7 @@
                       refId="Package\Data Flow Task | Create data\Derived Column | Cast Carrier.Inputs[Derived Column Input].Columns[TDS_Carriers_IDCarrier]"
                       cachedDataType="i4"
                       cachedName="TDS_Carriers_IDCarrier"
-                      lineageId="Package\Data Flow Task | Create data\Lookup TDS_Passagess.Outputs[Lookup Match Output].Columns[TDS_Carriers_IDCarrier]" />
+                      lineageId="Package\Data Flow Task | Create data\Lookup  | Carrier - TDS_Passagess.Outputs[Lookup Match Output].Columns[TDS_Carriers_IDCarrier]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -300,7 +300,7 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">(DT_I4)#{Package\Data Flow Task | Create data\Lookup TDS_Passagess.Outputs[Lookup Match Output].Columns[TDS_Carriers_IDCarrier]}</property>
+                          name="Expression">(DT_I4)#{Package\Data Flow Task | Create data\Lookup  | Carrier - TDS_Passagess.Outputs[Lookup Match Output].Columns[TDS_Carriers_IDCarrier]}</property>
                         <property
                           containsID="true"
                           dataType="System.String"
@@ -338,25 +338,25 @@
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task | Create data\Derived Column | Type casts"
+              refId="Package\Data Flow Task | Create data\Derived Column | Date Type cast"
               componentClassID="Microsoft.DerivedColumn"
               contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
-              name="Derived Column | Type casts"
+              name="Derived Column | Date Type cast"
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\Data Flow Task | Create data\Derived Column | Type casts.Inputs[Derived Column Input]"
+                  refId="Package\Data Flow Task | Create data\Derived Column | Date Type cast.Inputs[Derived Column Input]"
                   description="Input to the Derived Column Transformation"
                   name="Derived Column Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task | Create data\Derived Column | Type casts.Inputs[Derived Column Input].Columns[timestamp]"
+                      refId="Package\Data Flow Task | Create data\Derived Column | Date Type cast.Inputs[Derived Column Input].Columns[timestamp]"
                       cachedDataType="dbTimeStamp"
                       cachedName="timestamp"
                       lineageId="Package\Data Flow Task | Create data\Lookup PassageHB.Outputs[Lookup Match Output].Columns[timestamp]" />
                     <inputColumn
-                      refId="Package\Data Flow Task | Create data\Derived Column | Type casts.Inputs[Derived Column Input].Columns[timestamp1]"
+                      refId="Package\Data Flow Task | Create data\Derived Column | Date Type cast.Inputs[Derived Column Input].Columns[timestamp1]"
                       cachedDataType="dbTimeStamp"
                       cachedName="timestamp"
                       lineageId="Package\Data Flow Task | Create data\Lookup Passage.Outputs[Lookup Match Output].Columns[timestamp]" />
@@ -366,18 +366,18 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task | Create data\Derived Column | Type casts.Outputs[Derived Column Output]"
+                  refId="Package\Data Flow Task | Create data\Derived Column | Date Type cast.Outputs[Derived Column Output]"
                   description="Default Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   name="Derived Column Output"
-                  synchronousInputId="Package\Data Flow Task | Create data\Derived Column | Type casts.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\Data Flow Task | Create data\Derived Column | Date Type cast.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task | Create data\Derived Column | Type casts.Outputs[Derived Column Output].Columns[Date_Hourpart]"
+                      refId="Package\Data Flow Task | Create data\Derived Column | Date Type cast.Outputs[Derived Column Output].Columns[Date_Hourpart]"
                       dataType="ui1"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\Data Flow Task | Create data\Derived Column | Type casts.Outputs[Derived Column Output].Columns[Date_Hourpart]"
+                      lineageId="Package\Data Flow Task | Create data\Derived Column | Date Type cast.Outputs[Derived Column Output].Columns[Date_Hourpart]"
                       name="Date_Hourpart"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -395,11 +395,11 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task | Create data\Derived Column | Type casts.Outputs[Derived Column Output].Columns[Date_Timestamp_Source]"
+                      refId="Package\Data Flow Task | Create data\Derived Column | Date Type cast.Outputs[Derived Column Output].Columns[Date_Timestamp_Source]"
                       dataType="dbDate"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\Data Flow Task | Create data\Derived Column | Type casts.Outputs[Derived Column Output].Columns[Date_Timestamp_Source]"
+                      lineageId="Package\Data Flow Task | Create data\Derived Column | Date Type cast.Outputs[Derived Column Output].Columns[Date_Timestamp_Source]"
                       name="Date_Timestamp_Source"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -420,23 +420,181 @@
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Data Flow Task | Create data\Derived Column | Type casts.Outputs[Derived Column Error Output]"
+                  refId="Package\Data Flow Task | Create data\Derived Column | Date Type cast.Outputs[Derived Column Error Output]"
                   description="Error Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Derived Column Error Output"
-                  synchronousInputId="Package\Data Flow Task | Create data\Derived Column | Type casts.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\Data Flow Task | Create data\Derived Column | Date Type cast.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task | Create data\Derived Column | Type casts.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      refId="Package\Data Flow Task | Create data\Derived Column | Date Type cast.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task | Create data\Derived Column | Type casts.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Data Flow Task | Create data\Derived Column | Date Type cast.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task | Create data\Derived Column | Type casts.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      refId="Package\Data Flow Task | Create data\Derived Column | Date Type cast.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task | Create data\Derived Column | Type casts.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Data Flow Task | Create data\Derived Column | Date Type cast.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task | Create data\Lookup  | Carrier - TDS_Passagess"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup  | Carrier - TDS_Passagess"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [TDS].[TDS_Passages]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [TDS].[TDS_Passages]) [refTable]
+where [refTable].[TrainNumber] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="IDPassage" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TrainNumber" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TRID" dataType="DT_WSTR" length="37" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PAID" dataType="DT_WSTR" length="37" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TDS_Carriers_IDCarrier" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TDS_Trains_IDTrain" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TDS_CarriersForeign_IDCarrier" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Data Flow Task | Create data\Derived Column 1 | Train No Cast.Outputs[Derived Column Output].Columns[trainNumberInt]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task | Create data\Lookup  | Carrier - TDS_Passagess.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[127.0.0.1.CBI_DB_MENDEL]"
+                  connectionManagerRefId="Package.ConnectionManagers[127.0.0.1.CBI_DB_MENDEL]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task | Create data\Lookup  | Carrier - TDS_Passagess.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task | Create data\Lookup  | Carrier - TDS_Passagess.Inputs[Lookup Input].Columns[trainNumberInt]"
+                      cachedDataType="i4"
+                      cachedName="trainNumberInt"
+                      lineageId="Package\Data Flow Task | Create data\Derived Column 1 | Train No Cast.Outputs[Derived Column Output].Columns[trainNumberInt]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">TrainNumber</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task | Create data\Lookup  | Carrier - TDS_Passagess.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="IgnoreFailure"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Data Flow Task | Create data\Lookup  | Carrier - TDS_Passagess.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task | Create data\Lookup  | Carrier - TDS_Passagess.Outputs[Lookup Match Output].Columns[TDS_Carriers_IDCarrier]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Data Flow Task | Create data\Lookup  | Carrier - TDS_Passagess.Outputs[Lookup Match Output].Columns[TDS_Carriers_IDCarrier]"
+                      name="TDS_Carriers_IDCarrier"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">TDS_Carriers_IDCarrier</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task | Create data\Lookup  | Carrier - TDS_Passagess.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Data Flow Task | Create data\Lookup  | Carrier - TDS_Passagess.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task | Create data\Lookup  | Carrier - TDS_Passagess.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Data Flow Task | Create data\Lookup  | Carrier - TDS_Passagess.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task | Create data\Lookup  | Carrier - TDS_Passagess.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task | Create data\Lookup  | Carrier - TDS_Passagess.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task | Create data\Lookup  | Carrier - TDS_Passagess.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task | Create data\Lookup  | Carrier - TDS_Passagess.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1581,7 +1739,7 @@ where [refTable].[id_passage] = ?</property>
                   dataType="System.Int32"
                   description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
                   name="NoMatchBehavior"
-                  typeConverter="LookupNoMatchBehavior">0</property>
+                  typeConverter="LookupNoMatchBehavior">1</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
@@ -1649,7 +1807,6 @@ where [refTable].[id_passage] = ?</property>
                 <output
                   refId="Package\Data Flow Task | Create data\Lookup PassageHB.Outputs[Lookup Match Output]"
                   errorOrTruncationOperation="Lookup"
-                  errorRowDisposition="FailComponent"
                   exclusionGroup="1"
                   name="Lookup Match Output"
                   synchronousInputId="Package\Data Flow Task | Create data\Lookup PassageHB.Inputs[Lookup Input]">
@@ -1830,164 +1987,6 @@ where [refTable].[id_passage] = ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task | Create data\Lookup TDS_Passagess"
-              componentClassID="Microsoft.Lookup"
-              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
-              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
-              name="Lookup TDS_Passagess"
-              usesDispositions="true"
-              version="6">
-              <properties>
-                <property
-                  dataType="System.String"
-                  description="Specifies the SQL statement that generates the lookup table."
-                  expressionType="Notify"
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [TDS].[TDS_Passages]</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
-                  expressionType="Notify"
-                  name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [TDS].[TDS_Passages]) [refTable]
-where [refTable].[TrainNumber] = ?</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the type of connection used to access the reference dataset."
-                  name="ConnectionType"
-                  typeConverter="LookupConnectionType">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the cache type of the lookup table."
-                  name="CacheType"
-                  typeConverter="CacheType">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
-                  name="NoMatchBehavior"
-                  typeConverter="LookupNoMatchBehavior">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
-                  name="NoMatchCachePercentage">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
-                  name="MaxMemoryUsage">25</property>
-                <property
-                  dataType="System.Int64"
-                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
-                  name="MaxMemoryUsage64">25</property>
-                <property
-                  dataType="System.String"
-                  description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="IDPassage" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TrainNumber" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TRID" dataType="DT_WSTR" length="37" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PAID" dataType="DT_WSTR" length="37" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TDS_Carriers_IDCarrier" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TDS_Trains_IDTrain" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TDS_CarriersForeign_IDCarrier" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
-                <property
-                  containsID="true"
-                  dataType="System.String"
-                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Data Flow Task | Create data\Derived Column 1 | Casts.Outputs[Derived Column Output].Columns[trainNumberInt]};</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1250</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
-                  name="TreatDuplicateKeysAsError">false</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Data Flow Task | Create data\Lookup TDS_Passagess.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[127.0.0.1.CBI_DB_MENDEL]"
-                  connectionManagerRefId="Package.ConnectionManagers[127.0.0.1.CBI_DB_MENDEL]"
-                  description="Connection manager used to access lookup data."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Data Flow Task | Create data\Lookup TDS_Passagess.Inputs[Lookup Input]"
-                  name="Lookup Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Data Flow Task | Create data\Lookup TDS_Passagess.Inputs[Lookup Input].Columns[trainNumberInt]"
-                      cachedDataType="i4"
-                      cachedName="trainNumberInt"
-                      lineageId="Package\Data Flow Task | Create data\Derived Column 1 | Casts.Outputs[Derived Column Output].Columns[trainNumberInt]">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">TrainNumber</property>
-                        <property
-                          dataType="System.Null"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn" />
-                      </properties>
-                    </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Data Flow Task | Create data\Lookup TDS_Passagess.Outputs[Lookup Match Output]"
-                  errorOrTruncationOperation="Lookup"
-                  errorRowDisposition="IgnoreFailure"
-                  exclusionGroup="1"
-                  name="Lookup Match Output"
-                  synchronousInputId="Package\Data Flow Task | Create data\Lookup TDS_Passagess.Inputs[Lookup Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Data Flow Task | Create data\Lookup TDS_Passagess.Outputs[Lookup Match Output].Columns[TDS_Carriers_IDCarrier]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Copy Column"
-                      lineageId="Package\Data Flow Task | Create data\Lookup TDS_Passagess.Outputs[Lookup Match Output].Columns[TDS_Carriers_IDCarrier]"
-                      name="TDS_Carriers_IDCarrier"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn">TDS_Carriers_IDCarrier</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Data Flow Task | Create data\Lookup TDS_Passagess.Outputs[Lookup No Match Output]"
-                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
-                  exclusionGroup="1"
-                  name="Lookup No Match Output"
-                  synchronousInputId="Package\Data Flow Task | Create data\Lookup TDS_Passagess.Inputs[Lookup Input]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Data Flow Task | Create data\Lookup TDS_Passagess.Outputs[Lookup Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Lookup Error Output"
-                  synchronousInputId="Package\Data Flow Task | Create data\Lookup TDS_Passagess.Inputs[Lookup Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Data Flow Task | Create data\Lookup TDS_Passagess.Outputs[Lookup Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Task | Create data\Lookup TDS_Passagess.Outputs[Lookup Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Data Flow Task | Create data\Lookup TDS_Passagess.Outputs[Lookup Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Task | Create data\Lookup TDS_Passagess.Outputs[Lookup Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
               refId="Package\Data Flow Task | Create data\Lookup | DimDate"
               componentClassID="Microsoft.Lookup"
               contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
@@ -2086,7 +2085,7 @@ where [refTable].[DimDateDate] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Data Flow Task | Create data\Derived Column | Type casts.Outputs[Derived Column Output].Columns[Date_Timestamp_Source]};</property>
+                  name="ParameterMap">#{Package\Data Flow Task | Create data\Derived Column | Date Type cast.Outputs[Derived Column Output].Columns[Date_Timestamp_Source]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -2113,7 +2112,7 @@ where [refTable].[DimDateDate] = ?</property>
                       refId="Package\Data Flow Task | Create data\Lookup | DimDate.Inputs[Lookup Input].Columns[Date_Timestamp_Source]"
                       cachedDataType="dbDate"
                       cachedName="Date_Timestamp_Source"
-                      lineageId="Package\Data Flow Task | Create data\Derived Column | Type casts.Outputs[Derived Column Output].Columns[Date_Timestamp_Source]">
+                      lineageId="Package\Data Flow Task | Create data\Derived Column | Date Type cast.Outputs[Derived Column Output].Columns[Date_Timestamp_Source]">
                       <properties>
                         <property
                           dataType="System.String"
@@ -2244,7 +2243,7 @@ where [refTable].[Hour30] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Data Flow Task | Create data\Derived Column | Type casts.Outputs[Derived Column Output].Columns[Date_Hourpart]};</property>
+                  name="ParameterMap">#{Package\Data Flow Task | Create data\Derived Column | Date Type cast.Outputs[Derived Column Output].Columns[Date_Hourpart]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -2271,7 +2270,7 @@ where [refTable].[Hour30] = ?</property>
                       refId="Package\Data Flow Task | Create data\Lookup | DimTime.Inputs[Lookup Input].Columns[Date_Hourpart]"
                       cachedDataType="ui1"
                       cachedName="Date_Hourpart"
-                      lineageId="Package\Data Flow Task | Create data\Derived Column | Type casts.Outputs[Derived Column Output].Columns[Date_Hourpart]">
+                      lineageId="Package\Data Flow Task | Create data\Derived Column | Date Type cast.Outputs[Derived Column Output].Columns[Date_Hourpart]">
                       <properties>
                         <property
                           dataType="System.String"
@@ -2432,7 +2431,7 @@ where [refTable].[id_tis] = ? and [refTable].[date] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Data Flow Task | Create data\Lookup Passage.Outputs[Lookup Match Output].Columns[id_TIS]};#{Package\Data Flow Task | Create data\Derived Column | Type casts.Outputs[Derived Column Output].Columns[Date_Timestamp_Source]};</property>
+                  name="ParameterMap">#{Package\Data Flow Task | Create data\Lookup Passage.Outputs[Lookup Match Output].Columns[id_TIS]};#{Package\Data Flow Task | Create data\Derived Column | Date Type cast.Outputs[Derived Column Output].Columns[Date_Timestamp_Source]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -2459,7 +2458,7 @@ where [refTable].[id_tis] = ? and [refTable].[date] = ?</property>
                       refId="Package\Data Flow Task | Create data\Lookup | DimWeather.Inputs[Lookup Input].Columns[Date_Timestamp_Source]"
                       cachedDataType="dbDate"
                       cachedName="Date_Timestamp_Source"
-                      lineageId="Package\Data Flow Task | Create data\Derived Column | Type casts.Outputs[Derived Column Output].Columns[Date_Timestamp_Source]">
+                      lineageId="Package\Data Flow Task | Create data\Derived Column | Date Type cast.Outputs[Derived Column Output].Columns[Date_Timestamp_Source]">
                       <properties>
                         <property
                           dataType="System.String"
@@ -2675,7 +2674,7 @@ where [refTable].[id_tis] = ? and [refTable].[date] = ?</property>
                       cachedLength="50"
                       cachedName="updatedTrainNumber"
                       externalMetadataColumnId="Package\Data Flow Task | Create data\OLE DB Destination | FactHBPassage.Inputs[OLE DB Destination Input].ExternalColumns[TrainNumber]"
-                      lineageId="Package\Data Flow Task | Create data\Derived Column 1 | Casts.Outputs[Derived Column Output].Columns[updatedTrainNumber]" />
+                      lineageId="Package\Data Flow Task | Create data\Derived Column 1 | Train No Cast.Outputs[Derived Column Output].Columns[updatedTrainNumber]" />
                     <inputColumn
                       refId="Package\Data Flow Task | Create data\OLE DB Destination | FactHBPassage.Inputs[OLE DB Destination Input].Columns[dist]"
                       cachedDataType="r4"
@@ -3133,19 +3132,19 @@ where [refTable].[id_tis] = ? and [refTable].[date] = ?</property>
               startId="Package\Data Flow Task | Create data\Derived Column HWL HWR.Outputs[Derived Column Output]" />
             <path
               refId="Package\Data Flow Task | Create data.Paths[Derived Column Output1]"
-              endId="Package\Data Flow Task | Create data\Lookup TDS_Passagess.Inputs[Lookup Input]"
+              endId="Package\Data Flow Task | Create data\Lookup  | Carrier - TDS_Passagess.Inputs[Lookup Input]"
               name="Derived Column Output"
-              startId="Package\Data Flow Task | Create data\Derived Column 1 | Casts.Outputs[Derived Column Output]" />
+              startId="Package\Data Flow Task | Create data\Derived Column 1 | Train No Cast.Outputs[Derived Column Output]" />
             <path
               refId="Package\Data Flow Task | Create data.Paths[Derived Column Output2]"
-              endId="Package\Data Flow Task | Create data\Derived Column | Type casts.Inputs[Derived Column Input]"
+              endId="Package\Data Flow Task | Create data\Derived Column | Date Type cast.Inputs[Derived Column Input]"
               name="Derived Column Output"
               startId="Package\Data Flow Task | Create data\Derived Column | Cast Carrier.Outputs[Derived Column Output]" />
             <path
               refId="Package\Data Flow Task | Create data.Paths[Derived Column Output3]"
               endId="Package\Data Flow Task | Create data\Lookup | DimDate.Inputs[Lookup Input]"
               name="Derived Column Output"
-              startId="Package\Data Flow Task | Create data\Derived Column | Type casts.Outputs[Derived Column Output]" />
+              startId="Package\Data Flow Task | Create data\Derived Column | Date Type cast.Outputs[Derived Column Output]" />
             <path
               refId="Package\Data Flow Task | Create data.Paths[Lookup Match Output]"
               endId="Package\Data Flow Task | Create data\Derived Column HWL HWR.Inputs[Derived Column Input]"
@@ -3168,14 +3167,14 @@ where [refTable].[id_tis] = ? and [refTable].[date] = ?</property>
               startId="Package\Data Flow Task | Create data\Lookup DimTrainType.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Data Flow Task | Create data.Paths[Lookup Match Output4]"
-              endId="Package\Data Flow Task | Create data\Derived Column 1 | Casts.Inputs[Derived Column Input]"
+              endId="Package\Data Flow Task | Create data\Derived Column 1 | Train No Cast.Inputs[Derived Column Input]"
               name="Lookup Match Output"
               startId="Package\Data Flow Task | Create data\Lookup DimDirection.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Data Flow Task | Create data.Paths[Lookup Match Output5]"
               endId="Package\Data Flow Task | Create data\Derived Column | Cast Carrier.Inputs[Derived Column Input]"
               name="Lookup Match Output"
-              startId="Package\Data Flow Task | Create data\Lookup TDS_Passagess.Outputs[Lookup Match Output]" />
+              startId="Package\Data Flow Task | Create data\Lookup  | Carrier - TDS_Passagess.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Data Flow Task | Create data.Paths[Lookup Match Output6]"
               endId="Package\Data Flow Task | Create data\Lookup | DimWeather.Inputs[Lookup Input]"
@@ -3224,13 +3223,13 @@ where [refTable].[id_tis] = ? and [refTable].[date] = ?</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
         <NodeLayout
-          Size="216.8,43.2"
+          Size="217,43"
           Id="Package\Data Flow Task | Create data"
           TopLeft="321.202379280435,118.623811497489" />
         <AnnotationLayout
           Text="---------------- HB Passage -----------------"
           ParentId="Package"
-          Size="388.8,48.8"
+          Size="389,48"
           Id="b790dd7c-d1f9-45f1-8feb-7ff5a3c6bd22"
           TopLeft="234,41">
           <AnnotationLayout.FontInfo>
@@ -3253,159 +3252,159 @@ where [refTable].[id_tis] = ? and [refTable].[date] = ?</property>
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="164.8,43.2"
+          Size="185,43"
           Id="Package\Data Flow Task | Create data\Lookup | DimDate"
-          TopLeft="140.972220121572,1295.11110873487" />
+          TopLeft="137.972220121572,780.11110873487" />
         <NodeLayout
-          Size="152.8,41.6"
+          Size="164,42"
           Id="Package\Data Flow Task | Create data\Lookup DimSite"
-          TopLeft="157.249996703118,438.566662955085" />
+          TopLeft="149.249996703118,333.566662955085" />
         <NodeLayout
-          Size="155.2,43.2"
+          Size="154,42"
           Id="Package\Data Flow Task | Create data\Lookup Passage"
           TopLeft="152.83333004266,116.666664884488" />
         <NodeLayout
-          Size="167.2,43.2"
+          Size="181,43"
           Id="Package\Data Flow Task | Create data\Lookup | DimTime"
-          TopLeft="146.527775594344,1484.61110838619" />
+          TopLeft="137.527775594344,936.61110838619" />
         <NodeLayout
-          Size="215.2,41.6"
-          Id="Package\Data Flow Task | Create data\Derived Column | Type casts"
-          TopLeft="119.444442664583,1204.38888755871" />
+          Size="235,42"
+          Id="Package\Data Flow Task | Create data\Derived Column | Date Type cast"
+          TopLeft="488.444442664583,773.38888755871" />
         <NodeLayout
-          Size="183.2,43.2"
+          Size="183,43"
           Id="Package\Data Flow Task | Create data\Lookup DimTrainType"
-          TopLeft="144.166663326323,718.43332774659" />
+          TopLeft="137.166663326323,523.43332774659" />
         <NodeLayout
-          Size="176.8,43.2"
+          Size="177,43"
           Id="Package\Data Flow Task | Create data\Lookup DimDirection"
-          TopLeft="142.83333004266,839.199996807575" />
+          TopLeft="141.83333004266,599.199996807575" />
         <NodeLayout
-          Size="207.2,43.2"
+          Size="246,43"
           Id="Package\Data Flow Task | Create data\Derived Column HWL HWR"
-          TopLeft="131.749996740371,324.499997791648" />
+          TopLeft="474.527774518149,213.611108902759" />
         <NodeLayout
-          Size="183.2,43.2"
+          Size="183,42"
           Id="Package\Data Flow Task | Create data\Lookup | DimWeather"
-          TopLeft="136.111109082897,1401.27777350313" />
+          TopLeft="137.111109082897,862.27777350313" />
         <NodeLayout
-          Size="188.8,41.6"
-          Id="Package\Data Flow Task | Create data\Lookup TDS_Passagess"
-          TopLeft="138,1036" />
+          Size="242,42"
+          Id="Package\Data Flow Task | Create data\Lookup  | Carrier - TDS_Passagess"
+          TopLeft="139.222222222222,700.111111111111" />
         <NodeLayout
-          Size="244,41.6"
+          Size="244,42"
           Id="Package\Data Flow Task | Create data\OLE DB Source | passage_HB_Axle"
           TopLeft="109.583330061287,4.5666664419572" />
         <NodeLayout
-          Size="220,41.6"
+          Size="220,42"
           Id="Package\Data Flow Task | Create data\Derived Column | Cast Carrier"
-          TopLeft="115,1117" />
+          TopLeft="498.666666666667,698.111111111111" />
         <NodeLayout
-          Size="252,43.2"
+          Size="252,43"
           Id="Package\Data Flow Task | Create data\Lookup FactHBPassage duplicity skip"
           TopLeft="472.619040576475,118.857140731812" />
         <NodeLayout
-          Size="183.2,43.2"
+          Size="183,46"
           Id="Package\Data Flow Task | Create data\Lookup DimFaultLevel"
-          TopLeft="137.916663419455,574.133329629501" />
+          TopLeft="139.916663419455,429.133329629501" />
         <NodeLayout
-          Size="168,41.6"
+          Size="168,42"
           Id="Package\Data Flow Task | Create data\Lookup PassageHB"
           TopLeft="147.083330247551,213.699998783469" />
         <NodeLayout
-          Size="199.2,41.6"
-          Id="Package\Data Flow Task | Create data\Derived Column 1 | Casts"
-          TopLeft="129.499996609986,955.433331930836" />
+          Size="238,42"
+          Id="Package\Data Flow Task | Create data\Derived Column 1 | Train No Cast"
+          TopLeft="497.499996609986,601.433331930836" />
         <NodeLayout
-          Size="252.8,43.2"
+          Size="285,43"
           Id="Package\Data Flow Task | Create data\OLE DB Destination | FactHBPassage"
-          TopLeft="98.1944410440824,1599.41110153125" />
+          TopLeft="457.416663266305,937.744434864583" />
         <EdgeLayout
           Id="Package\Data Flow Task | Create data.Paths[Lookup Match Output2]"
-          TopLeft="232.541663372889,617.133329629501">
+          TopLeft="230.041663372889,475.133329629501">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
-              EndConnector="0,101.299998117089"
+              EndConnector="0,48.299998117089"
               Start="0,0"
-              End="0,93.799998117089">
+              End="0,40.799998117089">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,93.799998117089" />
+                    End="0,40.799998117089" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,41.0953115585445,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,14.5953115585445,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task | Create data.Paths[Lookup Match Output1]"
-          TopLeft="231.583330061286,480.566662955085">
+          TopLeft="231.333330061287,375.566662955085">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
-              EndConnector="0,93.566666674416"
+              EndConnector="0,53.566666674416"
               Start="0,0"
-              End="0,86.066666674416">
+              End="0,46.066666674416">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,86.066666674416" />
+                    End="0,46.066666674416" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,37.228645837208,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,17.228645837208,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task | Create data.Paths[Lookup Match Output]"
-          TopLeft="233.166663493961,255.699998783469">
+          TopLeft="315.083330247551,234.905553843114">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
-              EndConnector="0,68.799999008179"
+              EndConnector="159.444444270598,0"
               Start="0,0"
-              End="0,61.299999008179">
+              End="151.944444270598,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,61.299999008179" />
+                    End="151.944444270598,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,24.8453120040895,96.3827734375,11.609375"
+              BoundingBox="27.7808354165489,5,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task | Create data.Paths[Derived Column Output3]"
-          TopLeft="225.208331393078,1246.38888755871">
+          TopLeft="488.444442664583,797.99999814679">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
-              EndConnector="0,48.72222117616"
+              EndConnector="-165.472222543011,0"
               Start="0,0"
-              End="0,41.22222117616">
+              End="-157.972222543011,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,41.22222117616" />
+                    End="-157.972222543011,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3416,18 +3415,18 @@ where [refTable].[id_tis] = ? and [refTable].[date] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task | Create data.Paths[Derived Column Output2]"
-          TopLeft="225.972221332291,1159">
+          TopLeft="607.305554665625,740.111111111111">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
-              EndConnector="0,45.3888875587099"
+              EndConnector="0,33.2777764475989"
               Start="0,0"
-              End="0,37.8888875587099">
+              End="0,25.7777764475989">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,37.8888875587099" />
+                    End="0,25.7777764475989" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3438,18 +3437,30 @@ where [refTable].[id_tis] = ? and [refTable].[date] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task | Create data.Paths[Derived Column Output1]"
-          TopLeft="230.749998304993,997.433331930836">
+          TopLeft="616.499996609986,643.433331930836">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
-              EndConnector="0,38.5666680691641"
+              EndConnector="-356.277774387764,56.6777791802754"
               Start="0,0"
-              End="0,31.0666680691641">
+              End="-356.277774387764,49.1777791802754">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.0666680691641" />
+                    End="0,24.3388895901377" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.3388895901377"
+                    Point2="0,28.3388895901377"
+                    Point3="-4,28.3388895901377" />
+                  <mssgle:LineSegment
+                    End="-352.277774387764,28.3388895901377" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-352.277774387764,28.3388895901377"
+                    Point2="-356.277774387764,28.3388895901377"
+                    Point3="-356.277774387764,32.3388895901377" />
+                  <mssgle:LineSegment
+                    End="-356.277774387764,49.1777791802754" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3460,18 +3471,30 @@ where [refTable].[id_tis] = ? and [refTable].[date] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task | Create data.Paths[Derived Column Output]"
-          TopLeft="234.499996721744,367.499997791648">
+          TopLeft="597.527774518149,256.611108902759">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
-              EndConnector="0,71.066665163437"
+              EndConnector="-366.277777815031,76.9555540523259"
               Start="0,0"
-              End="0,63.566665163437">
+              End="-366.277777815031,69.4555540523259">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,63.566665163437" />
+                    End="0,34.4777770261629" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34.4777770261629"
+                    Point2="0,38.4777770261629"
+                    Point3="-4,38.4777770261629" />
+                  <mssgle:LineSegment
+                    End="-362.277777815031,38.4777770261629" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-362.277777815031,38.4777770261629"
+                    Point2="-366.277777815031,38.4777770261629"
+                    Point3="-366.277777815031,42.4777770261629" />
+                  <mssgle:LineSegment
+                    End="-366.277777815031,69.4555540523259" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3516,193 +3539,193 @@ where [refTable].[id_tis] = ? and [refTable].[date] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task | Create data.Paths[Lookup No Match Output]"
-          TopLeft="472.619040576475,139.26190280815">
+          TopLeft="472.619040576475,139.01190280815">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
-              EndConnector="-164.785710533815,0"
+              EndConnector="-165.785710533815,0"
               Start="0,0"
-              End="-157.285710533815,0">
+              End="-158.285710533815,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-157.285710533815,0" />
+                    End="-158.285710533815,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-134.449241985657,5,111.6127734375,11.609375"
+              BoundingBox="-134.949241985658,5,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task | Create data.Paths[Lookup Match Output9]"
-          TopLeft="230.708330145105,159.666664884488">
+          TopLeft="230.458330145105,158.666664884488">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
-              EndConnector="0,54.033333898981"
+              EndConnector="0,55.033333898981"
               Start="0,0"
-              End="0,46.533333898981">
+              End="0,47.533333898981">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,46.533333898981" />
+                    End="0,47.533333898981" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,17.4619794494905,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,17.9619794494905,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task | Create data.Paths[Lookup Match Output8]"
-          TopLeft="227.361108319213,1527.27777505285">
+          TopLeft="318.527775594344,958.677771625387">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
-              EndConnector="0,72.1333264783998"
+              EndConnector="138.888887671961,0"
               Start="0,0"
-              End="0,64.6333264783998">
+              End="131.388887671961,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,64.6333264783998" />
+                    End="131.388887671961,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,26.5119757391999,96.3827734375,11.609375"
+              BoundingBox="17.5030571172303,5,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task | Create data.Paths[Lookup Match Output7]"
-          TopLeft="228.652775671954,1443.9444401698">
+          TopLeft="228.31944233862,904.27777350313">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
-              EndConnector="0,40.6666682163873"
+              EndConnector="0,32.3333348830599"
               Start="0,0"
-              End="0,33.1666682163873">
+              End="0,24.8333348830599">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,33.1666682163873" />
+                    End="0,24.8333348830599" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,10.7786466081937,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,6.61197994152997,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task | Create data.Paths[Lookup Match Output6]"
-          TopLeft="225.541664602235,1337.77777540154">
+          TopLeft="229.541664602235,823.11110873487">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
-              EndConnector="0,63.4999981015919"
+              EndConnector="0,39.16666476826"
               Start="0,0"
-              End="0,55.9999981015919">
+              End="0,31.66666476826">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,55.9999981015919" />
+                    End="0,31.66666476826" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,22.195311550796,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,10.02864488413,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task | Create data.Paths[Lookup Match Output5]"
-          TopLeft="228.75,1078">
+          TopLeft="381.222222222222,720.111111111111">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
-              EndConnector="0,39"
+              EndConnector="117.444444444445,0"
               Start="0,0"
-              End="0,31.5">
+              End="109.944444444445,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.5" />
+                    End="109.944444444445,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,9.9453125,96.3827734375,11.609375"
+              BoundingBox="6.78083550347225,5,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task | Create data.Paths[Lookup Match Output4]"
-          TopLeft="230.166663326323,882.199996807575">
+          TopLeft="318.83333004266,621.566664369205">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
-              EndConnector="0,73.233335123261"
+              EndConnector="178.666666567326,0"
               Start="0,0"
-              End="0,65.733335123261">
+              End="171.166666567326,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,65.733335123261" />
+                    End="171.166666567326,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,27.0619800616305,96.3827734375,11.609375"
+              BoundingBox="37.391946564913,5,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task | Create data.Paths[Lookup Match Output3]"
-          TopLeft="233.499996684492,761.43332774659">
+          TopLeft="229.499996684492,566.43332774659">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
-              EndConnector="0,77.766669060985"
+              EndConnector="0,32.766669060985"
               Start="0,0"
-              End="0,70.266669060985">
+              End="0,25.266669060985">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,70.266669060985" />
+                    End="0,25.266669060985" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,29.3286470304925,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,6.8286470304925,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -3715,7 +3738,7 @@ where [refTable].[id_tis] = ? and [refTable].[date] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -3725,7 +3748,7 @@ where [refTable].[id_tis] = ? and [refTable].[date] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -3761,7 +3784,7 @@ where [refTable].[id_tis] = ? and [refTable].[date] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -3771,7 +3794,7 @@ where [refTable].[id_tis] = ? and [refTable].[date] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -3784,7 +3807,7 @@ where [refTable].[id_tis] = ? and [refTable].[date] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -3871,7 +3894,7 @@ where [refTable].[id_tis] = ? and [refTable].[date] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task | Create data\Lookup TDS_Passagess">
+    design-time-name="Package\Data Flow Task | Create data\Lookup  | Carrier - TDS_Passagess">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -3953,7 +3976,7 @@ where [refTable].[id_tis] = ? and [refTable].[date] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
